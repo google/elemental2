@@ -1,0 +1,45 @@
+50,53c50,51
+<  * @param {function(this:THIS, VALUE, KEY, MAP)} callback
+<  * @param {THIS=} opt_thisArg
+<  * @this {MAP}
+<  * @template MAP,THIS
+---
+>  * @param {function(VALUE, KEY, Map<KEY, VALUE>)} callback
+>  * @param {*=} opt_thisArg
+79,81c77
+<  * @return {THIS}
+<  * @this {THIS}
+<  * @template THIS
+---
+>  * @return {Map<KEY,VALUE>}
+137,139c133
+<  * @return {THIS}
+<  * @this {THIS}
+<  * @template THIS
+---
+>  * @return {WeakMap<KEY,VALUE>}
+156,158c150
+<  * @return {THIS}
+<  * @this {THIS}
+<  * @template THIS
+---
+>  * @return {Set<VALUE>}
+181,184c173,174
+<  * @param {function(this: THIS, VALUE, VALUE, SET)} callback
+<  * @param {THIS=} opt_thisArg
+<  * @this {SET}
+<  * @template SET,THIS
+---
+>  * @param {function(VALUE, VALUE, Set<VALUE>)} callback
+>  * @param {*=} opt_thisArg
+229,231c219
+<  * @return {THIS}
+<  * @this {THIS}
+<  * @template THIS
+---
+>  * @return {WeakSet<VALUE>}
+251c239
+< WeakSet.prototype.has;
+---
+> WeakSet.prototype.has;
+\ No newline at end of file

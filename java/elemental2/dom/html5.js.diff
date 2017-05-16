@@ -1,0 +1,21 @@
+2227,2230d2226
+<  * We say that this extends ClipboardData, because Event.prototype.clipboardData
+<  * is a DataTransfer on WebKit but a ClipboardData on IE. The interfaces are so
+<  * similar that it's easier to merge them.
+<  *
+2235d2230
+<  * @extends {ClipboardData}
+2253d2247
+<  * @override
+2261d2254
+<  * @override
+2269d2261
+<  * @override
+2371,2377d2362
+< /**
+<  * @return {?Entry} The Entry corresponding to this item, or null. Note that
+<  * despite its name,this method only works in Chrome, and will eventually
+<  * be renamed to {@code getAsEntry}.
+<  * @nosideeffects
+<  */
+< DataTransferItem.prototype.webkitGetAsEntry = function() { return null; };

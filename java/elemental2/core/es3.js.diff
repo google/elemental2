@@ -1,0 +1,237 @@
+390,399d389
+<  * Executes a function when a non-existent method is called on an object.
+<  * Mozilla-only.
+<  *
+<  * @param {Function} fun
+<  * @return {*}
+<  * @see http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/noSuchMethod
+<  */
+< Object.prototype.__noSuchMethod__ = function(fun) {};
+< 
+< /**
+459,467d448
+<  * Removes a watchpoint set with the {@see Object.prototype.watch} method.
+<  * Mozilla-only.
+<  * @param {string} prop The name of a property of the object.
+<  * @see http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/unwatch
+<  * @return {undefined}
+<  */
+< Object.prototype.unwatch = function(prop) {};
+< 
+< /**
+476,486d456
+<  * Sets a watchpoint method.
+<  * Mozilla-only.
+<  * @param {string} prop The name of a property of the object.
+<  * @param {Function} handler A function to call.
+<  * @see http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/watch
+<  * @return {undefined}
+<  */
+< Object.prototype.watch = function(prop, handler) {};
+< 
+< 
+< /**
+557c527
+<  * @param {...*} var_args
+---
+>  * @param {...T} items
+563c533
+< function Array(var_args) {}
+---
+> function Array(items) {}
+577,579c547,548
+<  * @param {...*} var_args
+<  * @return {!Array<?>}
+<  * @this {*}
+---
+>  * @param {...T} items
+>  * @return {!Array<T>}
+583c552
+< Array.prototype.concat = function(var_args) {};
+---
+> Array.prototype.concat = function(items) {};
+602,604d570
+<  * @this {IArrayLike<T>}
+<  * @modifies {this}
+<  * @template T
+615,617d580
+<  * @this {IArrayLike<T>}
+<  * @template T
+<  * @modifies {this}
+626,629c589
+<  * @return {THIS} A reference to the original modified array.
+<  * @this {THIS}
+<  * @template THIS
+<  * @modifies {this}
+---
+>  * @return {Array<T>} A reference to the original modified array.
+638,639d597
+<  * @this {IArrayLike<T>}
+<  * @modifies {this}
+641d598
+<  * @template T
+649c606
+<  * @param {*=} opt_begin Zero-based index at which to begin extraction.  A
+---
+>  * @param {number=} opt_begin Zero-based index at which to begin extraction.  A
+651c608
+<  * @param {*=} opt_end Zero-based index at which to end extraction.  slice
+---
+>  * @param {number=} opt_end Zero-based index at which to end extraction.  slice
+654,655d610
+<  * @this {IArrayLike<T>|string}
+<  * @template T
+666,668d620
+<  * @this {IArrayLike<T>}
+<  * @template T
+<  * @modifies {this}
+678c630
+<  * @param {*=} opt_index Index at which to start changing the array. If negative,
+---
+>  * @param {number=} opt_index Index at which to start changing the array. If negative,
+681c633
+<  * @param {*=} opt_howMany An integer indicating the number of old array elements
+---
+>  * @param {number=} opt_howMany An integer indicating the number of old array elements
+685,687d636
+<  * @this {IArrayLike<T>}
+<  * @modifies {this}
+<  * @template T
+712c661
+<  * @param {...*} var_args
+---
+>  * @param {...T} var_args
+727,728c676
+<  * @this {IArrayLike<T>|string}
+<  * @template T,R
+---
+>  * @template R
+740,741c688
+<  * @this {IArrayLike<T>|string}
+<  * @template T,R
+---
+>  * @template R
+748,749c695,696
+<  * @param {?function(this:S, T, number, !Array<T>): ?} callback
+<  * @param {S=} opt_thisobj
+---
+>  * @param {?function(T, number, !Array<T>): ?} callback
+>  * @param {*=} opt_thisobj
+751,752d697
+<  * @this {IArrayLike<T>|string}
+<  * @template T,S
+759,760c704,705
+<  * @param {?function(this:S, T, number, !Array<T>): ?} callback
+<  * @param {S=} opt_thisobj
+---
+>  * @param {?function(T, number, !Array<T>): ?} callback
+>  * @param {*=} opt_thisobj
+762,763d706
+<  * @this {IArrayLike<T>|string}
+<  * @template T,S
+770,773c713,714
+<  * @param {?function(this:S, T, number, !Array<T>): ?} callback
+<  * @param {S=} opt_thisobj
+<  * @this {IArrayLike<T>|string}
+<  * @template T,S
+---
+>  * @param {?function(T, number, !Array<T>): ?} callback
+>  * @param {*=} opt_thisobj
+784d724
+<  * @this {IArrayLike<T>|string}
+786d725
+<  * @template T
+796d734
+<  * @this {IArrayLike<T>|string}
+798d735
+<  * @template T
+805,806c742,743
+<  * @param {?function(this:S, T, number, !Array<T>): R} callback
+<  * @param {S=} opt_thisobj
+---
+>  * @param {?function(T, number, !Array<T>): R} callback
+>  * @param {*=} opt_thisobj
+808,809c745
+<  * @this {IArrayLike<T>|string}
+<  * @template T,S,R
+---
+>  * @template R
+816,817c752,753
+<  * @param {?function(this:S, T, number, !Array<T>): ?} callback
+<  * @param {S=} opt_thisobj
+---
+>  * @param {?function( T, number, !Array<T>): ?} callback
+>  * @param {*=} opt_thisobj
+819,820d754
+<  * @this {IArrayLike<T>|string}
+<  * @template T,S
+842,910d775
+< 
+< /**
+<  * @param {IArrayLike<T>} arr
+<  * @param {?function(this:S, T, number, ?) : ?} callback
+<  * @param {S=} opt_context
+<  * @return {boolean}
+<  * @template T,S
+<  */
+< Array.every = function(arr, callback, opt_context) {};
+< 
+< /**
+<  * @param {IArrayLike<T>} arr
+<  * @param {?function(this:S, T, number, ?) : ?} callback
+<  * @param {S=} opt_context
+<  * @return {!Array<T>}
+<  * @template T,S
+<  */
+< Array.filter = function(arr, callback, opt_context) {};
+< 
+< /**
+<  * @param {IArrayLike<T>} arr
+<  * @param {?function(this:S, T, number, ?) : ?} callback
+<  * @param {S=} opt_context
+<  * @template T,S
+<  * @return {undefined}
+<  */
+< Array.forEach = function(arr, callback, opt_context) {};
+< 
+< /**
+<  * Mozilla 1.6+ only.
+<  * @param {IArrayLike<T>} arr
+<  * @param {T} obj
+<  * @param {number=} opt_fromIndex
+<  * @return {number}
+<  * @template T
+<  * @nosideeffects
+<  * @see http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+<  */
+< Array.indexOf = function(arr, obj, opt_fromIndex) {};
+< 
+< /**
+<  * Mozilla 1.6+ only.
+<  * @param {IArrayLike<T>} arr
+<  * @param {T} obj
+<  * @param {number=} opt_fromIndex
+<  * @return {number}
+<  * @template T
+<  * @nosideeffects
+<  * @see http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf
+<  */
+< Array.lastIndexOf = function(arr, obj, opt_fromIndex) {};
+< 
+< /**
+<  * @param {IArrayLike<T>} arr
+<  * @param {?function(this:S, T, number, !Array<T>): R} callback
+<  * @param {S=} opt_context
+<  * @return {!Array<R>}
+<  * @template T,S,R
+<  */
+< Array.map = function(arr, callback, opt_context) {};
+< 
+< /**
+<  * @param {IArrayLike<T>} arr
+<  * @param {?function(this:S, T, number, ?) : ?} callback
+<  * @param {S=} opt_context
+<  * @return {boolean}
+<  * @template T,S
+<  */
+< Array.some = function(arr, callback, opt_context) {};

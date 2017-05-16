@@ -1,0 +1,8 @@
+36c36
+<  * @param {EventListener|function(!Event):(boolean|undefined)} listener
+---
+>  * @param {EventListener} listener
+46c46
+<  * @param {EventListener|function(!Event):(boolean|undefined)} listener
+---
+>  * @param {EventListener} listener

@@ -1,0 +1,181 @@
+1062,1194d1061
+< 
+< /**
+<  * This is not an official DOM interface. It is used to add generic typing
+<  * and respective type inference where available.
+<  * {@see goog.Thenable} inherits from this making all promises
+<  * interoperate.
+<  * @interface
+<  * @template TYPE
+<  */
+< function IThenable() {}
+< 
+< 
+< /**
+<  * @param {?(function(TYPE):VALUE)=} opt_onFulfilled
+<  * @param {?(function(*): *)=} opt_onRejected
+<  * @return {RESULT}
+<  * @template VALUE
+<  *
+<  * When a Promise (or thenable) is returned from the fulfilled callback,
+<  * the result is the payload of that promise, not the promise itself.
+<  *
+<  * @template RESULT := type('IThenable',
+<  *     cond(isUnknown(VALUE), unknown(),
+<  *       mapunion(VALUE, (V) =>
+<  *         cond(isTemplatized(V) && sub(rawTypeOf(V), 'IThenable'),
+<  *           templateTypeOf(V, 0),
+<  *           cond(sub(V, 'Thenable'),
+<  *              unknown(),
+<  *              V)))))
+<  * =:
+<  */
+< IThenable.prototype.then = function(opt_onFulfilled, opt_onRejected) {};
+< 
+< 
+< /**
+<  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+<  * @param {function(
+<  *             function((TYPE|IThenable<TYPE>|Thenable|null)=),
+<  *             function(*=))} resolver
+<  * @constructor
+<  * @implements {IThenable<TYPE>}
+<  * @template TYPE
+<  */
+< function Promise(resolver) {}
+< 
+< 
+< /**
+<  * @param {VALUE=} opt_value
+<  * @return {RESULT}
+<  * @template VALUE
+<  * @template RESULT := type('Promise',
+<  *     cond(isUnknown(VALUE), unknown(),
+<  *       mapunion(VALUE, (V) =>
+<  *         cond(isTemplatized(V) && sub(rawTypeOf(V), 'IThenable'),
+<  *           templateTypeOf(V, 0),
+<  *           cond(sub(V, 'Thenable'),
+<  *              unknown(),
+<  *              V)))))
+<  * =:
+<  */
+< Promise.resolve = function(opt_value) {};
+< 
+< 
+< /**
+<  * @param {*=} opt_error
+<  * @return {!Promise<?>}
+<  */
+< Promise.reject = function(opt_error) {};
+< 
+< 
+< /**
+<  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+<  * @param {!Iterable<VALUE>} iterable
+<  * @return {!Promise<!Array<RESULT>>}
+<  * @template VALUE
+<  * @template RESULT := mapunion(VALUE, (V) =>
+<  *     cond(isUnknown(V),
+<  *         unknown(),
+<  *         cond(isTemplatized(V) && sub(rawTypeOf(V), 'IThenable'),
+<  *             templateTypeOf(V, 0),
+<  *             cond(sub(V, 'Thenable'), unknown(), V))))
+<  * =:
+<  */
+< Promise.all = function(iterable) {};
+< 
+< 
+< /**
+<  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+<  * @param {!Iterable<VALUE>} iterable
+<  * @return {!Promise<RESULT>}
+<  * @template VALUE
+<  * @template RESULT := mapunion(VALUE, (V) =>
+<  *     cond(isUnknown(V),
+<  *         unknown(),
+<  *         cond(isTemplatized(V) && sub(rawTypeOf(V), 'IThenable'),
+<  *             templateTypeOf(V, 0),
+<  *             cond(sub(V, 'Thenable'), unknown(), V))))
+<  * =:
+<  */
+< Promise.race = function(iterable) {};
+< 
+< 
+< /**
+<  * @param {?(function(this:void, TYPE):VALUE)=} opt_onFulfilled
+<  * @param {?(function(this:void, *): *)=} opt_onRejected
+<  * @return {RESULT}
+<  * @template VALUE
+<  *
+<  * When a Promise (or thenable) is returned from the fulfilled callback,
+<  * the result is the payload of that promise, not the promise itself.
+<  *
+<  * @template RESULT := type('Promise',
+<  *     cond(isUnknown(VALUE), unknown(),
+<  *       mapunion(VALUE, (V) =>
+<  *         cond(isTemplatized(V) && sub(rawTypeOf(V), 'IThenable'),
+<  *           templateTypeOf(V, 0),
+<  *           cond(sub(V, 'Thenable'),
+<  *              unknown(),
+<  *              V)))))
+<  * =:
+<  * @override
+<  */
+< Promise.prototype.then = function(opt_onFulfilled, opt_onRejected) {};
+< 
+< 
+< /**
+<  * @param {function(*): RESULT} onRejected
+<  * @return {!Promise<RESULT>}
+<  * @template RESULT
+<  */
+< Promise.prototype.catch = function(onRejected) {};
+< 
+< 
+1207,1208c1074,1075
+<  * @param {function(this:S, (string|T), number): R=} opt_mapFn
+<  * @param {S=} opt_this
+---
+>  * @param {function((string|T), number): R=} opt_mapFn
+>  * @param {*=} opt_this
+1210c1077
+<  * @template T,S,R
+---
+>  * @template T,R
+1226,1230c1093,1095
+<  * @param {!function(this:S, T, number, !Array<T>): boolean} predicate
+<  * @param {S=} opt_this
+<  * @return {T|undefined}
+<  * @this {IArrayLike<T>|string}
+<  * @template T,S
+---
+>  * @param {!function(T, number, !Array<T>): boolean} predicate
+>  * @param {*=} opt_this
+>  * @return {T}
+1237,1238c1102,1103
+<  * @param {!function(this:S, T, number, !Array<T>): boolean} predicate
+<  * @param {S=} opt_this
+---
+>  * @param {!function(T, number, !Array<T>): boolean} predicate
+>  * @param {*=} opt_this
+1240,1241d1104
+<  * @this {IArrayLike<T>|string}
+<  * @template T,S
+1252,1253d1114
+<  * @this {!IArrayLike<T>|string}
+<  * @template T
+1264d1124
+<  * @template T
+1274,1275d1133
+<  * @this {!IArrayLike<T>|string}
+<  * @template T
+1409,1410c1267,1268
+<  * @param {function(this: THIS, ...?): RESULT} target
+<  * @param {THIS} thisArg
+---
+>  * @param {function(...?): RESULT} target
+>  * @param {*} thisArg
+1413c1271
+<  * @template THIS, RESULT
+---
+>  * @template RESULT
