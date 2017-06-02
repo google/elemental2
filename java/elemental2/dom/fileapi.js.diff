@@ -407,11 +407,11 @@
 < FileError.prototype.code;
 < 
 < /**
-585c201
+574c190
 <  * @type {FileError}
 ---
 >  * @type {DOMError}
-623,1019c239
+612,1008c228
 < FileReader.prototype.onloadend;
 < 
 < /**
