@@ -6,3 +6,5 @@ package(default_visibility = [
 ])
 
 licenses(["notice"])  # Apache2
+
+exports_files(["LICENSE"])
