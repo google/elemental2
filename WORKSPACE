@@ -7,9 +7,9 @@ maven_server(
 
 new_http_archive(
   name="com_google_closure_compiler",
-  url="https://github.com/google/closure-compiler/archive/v20170409.tar.gz",
+  url="https://github.com/google/closure-compiler/archive/master.tar.gz",
   build_file="jscomp.BUILD",
-  strip_prefix="closure-compiler-20170409"
+  strip_prefix="closure-compiler-master"
 )
 
 http_archive(
