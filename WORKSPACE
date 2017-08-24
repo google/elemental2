@@ -1,5 +1,10 @@
 workspace(name = "com_google_elemental2")
 
+maven_server(
+    name = "sonatype_snapshot",
+    url = "https://oss.sonatype.org/content/repositories/snapshots",
+)
+
 new_http_archive(
   name="com_google_closure_compiler",
   url="https://github.com/google/closure-compiler/archive/v20170409.tar.gz",
@@ -46,7 +51,8 @@ maven_jar(
 
 maven_jar(
     name = "jscomp",
-    artifact = "com.google.javascript:closure-compiler:v20170409",
+    artifact = "com.google.javascript:closure-compiler:1.0-SNAPSHOT",
+    server = "sonatype_snapshot",
 )
 
 maven_jar(
