@@ -16,7 +16,7 @@ jsinterop_generator_import(
     name = "promise",
     srcs = glob(["*.java"]),
     externs_srcs = ["promise.js"],
-    gwt_inherit_files = ["promise.inherits"],
+    gwt_module_name = "elemental2.promise.Promise",
     gwt_xml = "Promise.gwt.xml",
     types_mapping_files = ["promise.types"],
 )
