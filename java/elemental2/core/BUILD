@@ -53,7 +53,6 @@ filegroup(
         "//third_party:es5.js",
         ":es6_patched",
         ":es6_collections_patched",
-        "//third_party:es7_observe.js",
     ],
 )
 

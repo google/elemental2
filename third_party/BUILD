@@ -8,7 +8,6 @@ licenses(["notice"])  # Apache2
 # for being able to test our bazel build. We will refer to the externs in closure-compiler github
 # repo before to really opensource elemental2
 exports_files([
-    "es7_observe.js",
     "mediakeys.js",
     "svg.js",
     "w3c_clipboardevent.js",
@@ -33,12 +32,6 @@ alias(
     name = "es6_collections.js",
     actual = "@com_google_closure_compiler//:externs/es6_collections.js",
 )
-
-# TODO(dramaix): Not opensourced yet
-#alias(
-#    name = "es7_observe.js",
-#    actual = "empty.js",
-#)
 
 alias(
     name = "w3c_event.js",
