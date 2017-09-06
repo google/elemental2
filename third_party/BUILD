@@ -210,6 +210,11 @@ alias(
    actual = "@com_google_closure_compiler//:externs/browser/webstorage.js",
 )
 
+alias(
+    name = "streamsapi.js",
+    actual = "@com_google_closure_compiler//:externs/browser/streamsapi.js",
+)
+
 java_library(
     name = "gwt-jsinterop-annotations",
     exports = ["@jsinterop_annotations//jar"],
