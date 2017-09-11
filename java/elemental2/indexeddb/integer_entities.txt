@@ -1,0 +1,6 @@
+elemental2.indexeddb.IDBCursor.advance.count
+elemental2.indexeddb.IDBFactory.cmp
+elemental2.indexeddb.IDBIndex.getAll.count
+elemental2.indexeddb.IDBIndex.getAllKeys.count
+elemental2.indexeddb.IDBObjectStore.getAll.count
+elemental2.indexeddb.IDBObjectStore.getAllKeys.count

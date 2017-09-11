@@ -20,6 +20,7 @@ jsinterop_generator(
     name = "webgl",
     srcs = [":externs"],
     extension_type_prefix = "WebGl",
+    integer_entities_files = ["integer_entities.txt"],
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/dom",

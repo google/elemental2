@@ -60,6 +60,7 @@ filegroup(
 jsinterop_generator(
     name = "core",
     srcs = [":externs"],
+    integer_entities_files = ["integer_entities.txt"],
     # These extern definitions are required for the j2cl build test because
     # J2CL refers these symbols in the jre emulation
     j2cl_test_externs_list = ["required_j2cl_externs.js"],

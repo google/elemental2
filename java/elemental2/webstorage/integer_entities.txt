@@ -1,0 +1,2 @@
+elemental2.webstorage.Storage.key.index
+elemental2.webstorage.Storage.getLength

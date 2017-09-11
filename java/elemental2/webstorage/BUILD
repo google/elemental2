@@ -20,6 +20,7 @@ jsinterop_generator(
     name = "webstorage",
     srcs = [":externs"],
     extension_type_prefix = "WebStorage",
+    integer_entities_files = ["integer_entities.txt"],
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/dom",

@@ -20,6 +20,7 @@ jsinterop_generator(
     name = "indexeddb",
     srcs = [":externs"],
     extension_type_prefix = "IndexedDb",
+    integer_entities_files = ["integer_entities.txt"],
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/dom",

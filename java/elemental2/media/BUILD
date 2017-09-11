@@ -22,6 +22,7 @@ filegroup(
 jsinterop_generator(
     name = "media",
     srcs = [":externs"],
+    integer_entities_files = ["integer_entities.txt"],
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/dom",
