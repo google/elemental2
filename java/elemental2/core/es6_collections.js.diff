@@ -38,8 +38,3 @@
 <  * @template THIS
 ---
 >  * @return {WeakSet<VALUE>}
-255c243
-< WeakSet.prototype.has;
----
-> WeakSet.prototype.has;
-\ No newline at end of file

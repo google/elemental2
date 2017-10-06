@@ -133,30 +133,30 @@
 < 
 < 
 1234,1235c1101,1102
-<  * @param {function(this:S, (string|T), number): R=} opt_mapFn
+<  * @param {function(this:S, (string|T), number): R=} opt_callback
 <  * @param {S=} opt_this
 ---
->  * @param {function((string|T), number): R=} opt_mapFn
+>  * @param {function((string|T), number): R=} opt_callback
 >  * @param {*=} opt_this
 1237c1104
 <  * @template T,S,R
 ---
 >  * @template T,R
 1253,1257c1120,1122
-<  * @param {!function(this:S, T, number, !Array<T>): boolean} predicate
+<  * @param {!function(this:S, T, number, !Array<T>): boolean} predicateFn
 <  * @param {S=} opt_this
 <  * @return {T|undefined}
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S
 ---
->  * @param {!function(T, number, !Array<T>): boolean} predicate
+>  * @param {!function(T, number, !Array<T>): boolean} predicateFn
 >  * @param {*=} opt_this
 >  * @return {T}
 1264,1265c1129,1130
-<  * @param {!function(this:S, T, number, !Array<T>): boolean} predicate
+<  * @param {!function(this:S, T, number, !Array<T>): boolean} predicateFn
 <  * @param {S=} opt_this
 ---
->  * @param {!function(T, number, !Array<T>): boolean} predicate
+>  * @param {!function(T, number, !Array<T>): boolean} predicateFn
 >  * @param {*=} opt_this
 1267,1268d1131
 <  * @this {IArrayLike<T>|string}
@@ -170,10 +170,10 @@
 <  * @this {!IArrayLike<T>|string}
 <  * @template T
 1449,1450c1307,1308
-<  * @param {function(this: THIS, ...?): RESULT} target
+<  * @param {function(this: THIS, ...?): RESULT} targetFn
 <  * @param {THIS} thisArg
 ---
->  * @param {function(...?): RESULT} target
+>  * @param {function(...?): RESULT} targetFn
 >  * @param {*} thisArg
 1453c1311
 <  * @template THIS, RESULT

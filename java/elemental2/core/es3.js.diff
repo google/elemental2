@@ -236,6 +236,6 @@
 < 
 < /**
 1899c1764
-<  * @param {string|Function} str
+<  * @param {string|Function} replacement
 ---
->  * @param {string|function(string, ...?):*} str
+>  * @param {string|function(string, ...?):*} replacement
