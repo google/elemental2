@@ -54,17 +54,10 @@
 <  */
 < var sun;
 < 
-183,184c141,143
+183c141
 <  * @param {Function|string} callback
-<  * @param {number=} opt_delay
 ---
 >  * @param {function(...?):undefined|string} callback
->  * @param {number=} opt_delay 
->  * @param {...?} var_args
-189c148
-< function setInterval(callback, opt_delay) {}
----
-> function setInterval(callback, opt_delay, var_args) {}
 192c151
 <  * @param {Function|string} callback
 ---
