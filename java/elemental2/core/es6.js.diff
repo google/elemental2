@@ -133,10 +133,10 @@
 < 
 < 
 1254,1255c1121,1122
-<  * @param {function(this:S, (string|T), number): R=} opt_callback
+<  * @param {function(this:S, (string|T), number): R=} opt_mapFn
 <  * @param {S=} opt_this
 ---
->  * @param {function((string|T), number): R=} opt_callback
+>  * @param {function((string|T), number): R=} opt_mapFn
 >  * @param {*=} opt_this
 1257c1124
 <  * @template T,S,R
