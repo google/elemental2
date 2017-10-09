@@ -54,15 +54,15 @@
 <  */
 < var sun;
 < 
-183c141
+184c142
 <  * @param {Function|string} callback
 ---
 >  * @param {function(...?):undefined|string} callback
-192c151
+194c152
 <  * @param {Function|string} callback
 ---
 >  * @param {function(...?):undefined|string} callback
-194c153
+196c154
 <  * @param {...*} var_args
 ---
 >  * @param {...?} var_args

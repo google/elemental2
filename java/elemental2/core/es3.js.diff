@@ -235,7 +235,7 @@
 < Array.some = function(arr, callback, opt_context) {};
 < 
 < /**
-1899c1764
+1900c1765
 <  * @param {string|Function} replacement
 ---
 >  * @param {string|function(string, ...?):*} replacement

@@ -1,4 +1,4 @@
-51,67c51,52
+56,72c56,57
 <  * @see http://www.w3.org/TR/FileAPI/#dfn-slice
 <  * @param {number=} start
 <  * @param {number=} length
@@ -19,20 +19,20 @@
 ---
 >  * @see http://www.w3.org/TR/FileAPI/#dfn-type
 >  * @type {string}
-69c54
+74c59
 < Blob.prototype.webkitSlice = function(start, end, opt_contentType) {};
 ---
 > Blob.prototype.type;
-72,73c57
+77,78c62
 <  * This replaces Blob.slice in Firefox.
 <  * @see http://lists.w3.org/Archives/Public/public-webapps/2011AprJun/0222.html
 ---
 >  * @see http://www.w3.org/TR/FileAPI/#dfn-slice
-75c59
+80c64
 <  * @param {number=} end
 ---
 >  * @param {number=} length
-80,281c64
+85,286c69
 < Blob.prototype.mozSlice = function(start, end, opt_contentType) {};
 < 
 < /**
@@ -237,7 +237,7 @@
 < Entry.prototype.getMetadata = function(successCallback, errorCallback) {};
 ---
 > Blob.prototype.slice = function(start, length, opt_contentType) {};
-283,289d65
+288,294d70
 < /**
 <  * @see http://www.w3.org/TR/file-system-api/#widl-Entry-getParent
 <  * @param {function(!Entry)} successCallback
@@ -245,7 +245,7 @@
 <  * @return {undefined}
 <  */
 < Entry.prototype.getParent = function(successCallback, errorCallback) {};
-303,316d78
+308,321d83
 <  * Chrome uses this instead of name.
 <  * @deprecated Use name instead.
 <  * @type {string}
@@ -260,7 +260,7 @@
 < File.prototype.fileSize;
 < 
 < /**
-335,480d96
+340,485d101
 <  * @see http://www.w3.org/TR/file-system-api/#the-fileentry-interface
 <  * @constructor
 <  * @extends {Entry}
@@ -407,11 +407,11 @@
 < FileError.prototype.code;
 < 
 < /**
-574c190
+579c195
 <  * @type {FileError}
 ---
 >  * @type {DOMError}
-612,1008c228
+617,1013c233
 < FileReader.prototype.onloadend;
 < 
 < /**
