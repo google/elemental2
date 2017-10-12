@@ -20,6 +20,8 @@ load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_gen
 # TODO(b/36088884): clean-up the extern file directly
 # Define better callback for Strng.replace.
 # TODO(b/62258818): remove this specific patch when the bug is fixed and the extern file is updated.
+# Make RegExp API stricter.
+# TODO(b/38034193): clean up the RegExp API in the extern file directly.
 patch_extern_file(
     name = "es3_patched",
     src = "//third_party:es3.js",

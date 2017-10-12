@@ -239,3 +239,15 @@
 <  * @param {string|Function} replacement
 ---
 >  * @param {string|function(string, ...?):*} replacement
+2061c1926
+<  * @param {*} pattern
+---
+>  * @param {string} pattern
+2072c1937
+<  * @param {*} str The string to search.
+---
+>  * @param {string} str The string to search.
+2082c1947
+<  * @param {*} str The string to search.
+---
+>  * @param {string} str The string to search.
