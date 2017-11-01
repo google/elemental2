@@ -334,3 +334,50 @@ Window.prototype.console;
  */
 var console;
 // end of console API
+
+// History API extension.
+// See http://w3c.github.io/html/browsers.html#the-history-interface.
+// This is partially defined in //javascript/externs/browser/ie_dom5.js
+// should be moved to //javascript/externs/browser/html5.js
+/**
+ * Returns the number of entries in the joint session history.
+ *
+ * @see http://w3c.github.io/html/browsers.html#dom-history-length
+ * @type {number}
+ */
+History.prototype.length;
+
+/**
+ * Goes back or forward the specified number of steps in the joint session 
+ * history.
+ * A zero delta will reload the current page.
+ * If the delta is out of range, does nothing.
+ *
+ * @see http://w3c.github.io/html/browsers.html#dom-history-go
+ *
+ * @param {number=} opt_delta The delta to move forward (if delta > 0)
+ *        or bacward (if delta < 0) in history.
+ * @return {undefined}
+ */
+History.prototype.go = function(opt_delta) {};
+
+/**
+ * Goes back one step in the joint session history.
+ * If there is no previous page, does nothing.
+ *
+ * @see http://w3c.github.io/html/browsers.html#dom-history-back
+ *
+ * @return {undefined}
+ */
+History.prototype.back = function() {};
+
+/**
+ * Goes forward one step in the joint session history.
+ * If there is no next page, does nothing.
+ *
+ * @see http://w3c.github.io/html/browsers.html#dom-history-forward
+ *
+ * @return {undefined}
+ */
+History.prototype.forward = function() {};
+// End of History API extension.
