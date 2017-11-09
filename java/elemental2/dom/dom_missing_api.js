@@ -32,6 +32,88 @@
 function Location() {}
 
 /**
+ * Returns a DOMStringList object listing the origins of the ancestor browsing
+ * contexts, from the parent browsing context to the top-level browsing
+ * context.
+ * @return {DOMStringList}
+ * @see https://html.spec.whatwg.org/multipage/history.html#dom-location-ancestororigins
+ */
+Location.prototype.ancestorOrigins;
+
+/**
+ * Returns the Location object's URL's fragment (includes leading "#" if
+ * non-empty). Can be set, to navigate to the same URL with a changed fragment
+ * (ignores leading "#").
+ * @see https://html.spec.whatwg.org/multipage/history.html#dom-location-hash
+ * @type {string}
+ */
+Location.prototype.hash;
+
+/**
+ * Returns the Location object's URL's host and port (if different from the
+ * default port for the scheme). Can be set, to navigate to the same URL with
+ * a changed host and port.
+ * @see https://html.spec.whatwg.org/multipage/history.html#dom-location-host
+ * @type {string}
+ */
+Location.prototype.host;
+
+/**
+ * Returns the Location object's URL's host. Can be set, to navigate to the
+ * same URL with a changed host.
+ * @see https://html.spec.whatwg.org/multipage/history.html#dom-location-hostname
+ * @type {string}
+ */
+Location.prototype.hostname;
+
+/**
+ * Returns the Location object's URL. Can be set, to navigate to the given URL.
+ * @see https://html.spec.whatwg.org/multipage/history.html#dom-location-href
+ * @type {string}
+ */
+Location.prototype.href;
+
+/**
+ * Returns the Location object's URL's origin.
+ * @see https://html.spec.whatwg.org/multipage/history.html#dom-location-origin
+ * @const {string}
+ */
+Location.prototype.origin;
+
+/**
+ * Returns the Location object's URL's path. Can be set, to navigate to the
+ * same URL with a changed path.
+ * @see https://html.spec.whatwg.org/multipage/history.html#dom-location-pathname
+ * @type {string}
+ */
+Location.prototype.pathname;
+
+/**
+ * Returns the Location object's URL's port. Can be set, to navigate to the
+ * same URL with a changed port.
+ * @see https://html.spec.whatwg.org/multipage/history.html#dom-location-port
+ * @type {number}
+ */
+Location.prototype.port;
+
+/**
+ * Returns the Location object's URL's scheme. Can be set, to navigate to the
+ * same URL with a changed scheme.
+ * @see https://html.spec.whatwg.org/multipage/history.html#dom-location-protocol
+ * @type {string}
+ */
+Location.prototype.protocol;
+
+/**
+ * Returns the Location object's URL's query (includes leading "?" if
+ * non-empty). Can be set, to navigate to the same URL with a changed query
+ * (ignores leading "?").
+ * @see https://html.spec.whatwg.org/multipage/history.html#dom-location-search
+ * @type {string}
+ */
+Location.prototype.search;
+
+/**
  * Navigates to the given page.
  * @param {string} url
  * @return {undefined}
