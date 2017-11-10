@@ -160,7 +160,7 @@ alias(
 
 alias(
    name = "w3c_eventsource.js",
-   actual = "@com_google_closure_compiler//:contrib/externs/w3c_eventsource.js",
+   actual = "@com_google_closure_compiler//:externs/browser/w3c_eventsource.js",
 )
 
 alias(
