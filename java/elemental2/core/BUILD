@@ -66,4 +66,5 @@ jsinterop_generator(
     # These extern definitions are required for the j2cl build test because
     # J2CL refers these symbols in the jre emulation
     j2cl_test_externs_list = ["required_j2cl_externs.js"],
+    wildcard_types_files = ["wildcard_types.txt"],
 )
