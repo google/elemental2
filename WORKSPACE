@@ -21,7 +21,7 @@ http_archive(
 # third_party libs used by jsinterop generator.
 maven_jar(
     name = "jsinterop_base",
-    artifact = "com.google.jsinterop:base:1.0.0-beta-2",
+    artifact = "com.google.jsinterop:base:1.0.0-beta-3",
 )
 
 maven_jar(
