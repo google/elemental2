@@ -4,7 +4,7 @@
 <  * @return {T|RadioNodeList<T>|null}
 ---
 >  * @return {T|null}
-2727a2727,2905
+2727a2727,2908
 > /**
 >  * @type {boolean}
 >  * @see https://developer.mozilla.org/en/DOM/window.closed
@@ -120,22 +120,25 @@
 > 
 > /**
 >  * @param {*} message
+>  * @return {undefined}
 >  * @see https://developer.mozilla.org/en/DOM/window.alert
 >  */
 > Window.prototype.alert = function(message) {};
 > 
 > /**
->  * @param {string=} opt_message
+>  * @param {*} message
+>  * @return {boolean}
 >  * @see https://developer.mozilla.org/en/DOM/window.confirm
 >  */
-> Window.prototype.confirm = function(opt_message) {};
+> Window.prototype.confirm = function(message) {};
 > 
 > /**
->  * @param {string=} opt_message
->  * @param {string=} opt_default
+>  * @param {string} message
+>  * @param {string=} opt_value
+>  * @return {?string}
 >  * @see https://developer.mozilla.org/en/DOM/window.prompt
 >  */
-> Window.prototype.prompt = function(opt_message, opt_default) {};
+> Window.prototype.prompt = function(message, opt_value) {};
 > 
 > 
 > /** @see https://developer.mozilla.org/en/DOM/window.blur */
