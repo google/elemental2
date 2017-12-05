@@ -102,4 +102,4 @@ Please refer to [the license file](LICENSE).
 
 Disclaimer
 ----------
-This is not an official Google product. [](this/is/a/test)
+This is not an official Google product.
