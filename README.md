@@ -12,11 +12,13 @@ If you want to modify and/or build the last version on your own, follow the inst
 
 - Install [Bazel](https://bazel.build/versions/master/docs/install.html).
 - clone this repository with git: `git clone https://github.com/google/elemental2.git`
-- Inside the repository, have bazel build all the jar files:
+- Inside the repository, run the script `build_gwt_mvn_jars.sh`:
 
-      $ bazel build //java/elemental2/...
+      $ ./build_gwt_mvn_jars.sh /path/to/output/directory
 
-The jars are available in your `bazel-bin/java` directory.
+The jars are available in `/path/to/output/directory` directory. If you don't
+provide a argument to the script, the script will create a temporary directory 
+for the generated jar.
 
 Bazel dependencies
 ------------------
@@ -47,7 +49,7 @@ If your project use [Maven](https://maven.apache.org), add maven dependencies in
     <dependency>
       <groupId>com.google.elemental2</groupId>
       <artifactId>${artifact-id}</artifactId>
-      <version>1.0.0-beta-1</version>
+      <version>1.0.0-beta-3</version>
     </dependency>
 
 
@@ -66,16 +68,16 @@ Download the jar files
 ----------------------
 You can also download manually the jars files.
 
- module | jar file 
+ module | jar file
  ------ | --------
- core | [elemental2-core.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-core/1.0.0-beta-1/elemental2-core-1.0.0-beta-1.jar)
- dom | [elemental2-dom.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-dom/1.0.0-beta-1/elemental2-dom-1.0.0-beta-1.jar)
- promise | [elemental2-promise.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-promise/1.0.0-beta-1/elemental2-promise-1.0.0-beta-1.jar)
- indexeddb | [elemental2-indexeddb.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-indexeddb/1.0.0-beta-1/elemental2-indexeddb-1.0.0-beta-1.jar)
- svg | [elemental2-svg.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-svg/1.0.0-beta-1/elemental2-svg-1.0.0-beta-1.jar)
- webgl | [elemental2-webgl.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webgl/1.0.0-beta-1/elemental2-webgl-1.0.0-beta-1.jar)
- media | [elemental2-media.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-media/1.0.0-beta-1/elemental2-media-1.0.0-beta-1.jar)
- webstorage | [elemental2-webstorage.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webstorage/1.0.0-beta-1/elemental2-webstorage-1.0.0-beta-1.jar)
+ core | [elemental2-core.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-core/1.0.0-beta-3/elemental2-core-1.0.0-beta-3.jar)
+ dom | [elemental2-dom.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-dom/1.0.0-beta-3/elemental2-dom-1.0.0-beta-3.jar)
+ promise | [elemental2-promise.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-promise/1.0.0-beta-3/elemental2-promise-1.0.0-beta-3.jar)
+ indexeddb | [elemental2-indexeddb.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-indexeddb/1.0.0-beta-3/elemental2-indexeddb-1.0.0-beta-3.jar)
+ svg | [elemental2-svg.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-svg/1.0.0-beta-3/elemental2-svg-1.0.0-beta-3.jar)
+ webgl | [elemental2-webgl.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webgl/1.0.0-beta-3/elemental2-webgl-1.0.0-beta-3.jar)
+ media | [elemental2-media.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-media/1.0.0-beta-3/elemental2-media-1.0.0-beta-3.jar)
+ webstorage | [elemental2-webstorage.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webstorage/1.0.0-beta-3/elemental2-webstorage-1.0.0-beta-3.jar)
 
 GWT
 ---
