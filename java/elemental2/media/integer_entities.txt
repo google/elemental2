@@ -18,6 +18,9 @@ elemental2.media.AudioBuffer.copyToChannel.startInChannel
 elemental2.media.AudioBuffer.getChannelData.channel
 elemental2.media.AudioBuffer.length
 elemental2.media.AudioBuffer.numberOfChannels
+elemental2.media.AudioContext.createJavaScriptNode.bufferSize
+elemental2.media.AudioContext.createJavaScriptNode.numberOfInputs
+elemental2.media.AudioContext.createJavaScriptNode.numberOfOuputs
 elemental2.media.BaseAudioContext.createBuffer.numberOfChannels
 elemental2.media.BaseAudioContext.createBuffer.length
 elemental2.media.BaseAudioContext.createChannelMerger.numberOfInputs
@@ -25,5 +28,9 @@ elemental2.media.BaseAudioContext.createChannelSplitter.numberOfOutputs
 elemental2.media.BaseAudioContext.createScriptProcessor.bufferSize
 elemental2.media.BaseAudioContext.createScriptProcessor.numberOfInputChannels_opt
 elemental2.media.BaseAudioContext.createScriptProcessor.numberOfOutputChannels_opt
+elemental2.media.JavaScriptAudioNode.bufferSize
 elemental2.media.OfflineAudioContext.null.length
 elemental2.media.OfflineAudioContext.null.numberOfChannels
+elemental2.media.MediaKeyStatusMap.getSize
+elemental2.media.ScriptProcessorNode.bufferSize
+elemental2.media.WebkitOfflineAudioContext.null.length

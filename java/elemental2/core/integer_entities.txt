@@ -1,4 +1,16 @@
 elemental2.core.Arguments.length
+elemental2.core.Atomics.add.index
+elemental2.core.Atomics.and.index
+elemental2.core.Atomics.compareExchange.index
+elemental2.core.Atomics.exchange.index
+elemental2.core.Atomics.isLockFree.size
+elemental2.core.Atomics.load.index
+elemental2.core.Atomics.or.index
+elemental2.core.Atomics.store.index
+elemental2.core.Atomics.sub.index
+elemental2.core.Atomics.wait.index
+elemental2.core.Atomics.wake.index
+elemental2.core.Atomics.xor.index
 elemental2.core.JsArray.index
 elemental2.core.JsArray.length
 elemental2.core.JsArray.copyWithin.target
@@ -18,6 +30,15 @@ elemental2.core.JsArray.slice.end
 elemental2.core.JsArray.splice.index
 elemental2.core.JsArray.splice.howMany
 elemental2.core.JsArray.unshift
+elemental2.core.JsArray.EveryCallbackFn.onInvoke.p1
+elemental2.core.JsArray.FilterCallbackFn.onInvoke.p1
+elemental2.core.JsArray.FindIndexPredicateFn.onInvoke.p1
+elemental2.core.JsArray.FindPredicateFn.onInvoke.p1
+elemental2.core.JsArray.ForEachCallbackFn.onInvoke.p1
+elemental2.core.JsArray.MapCallbackFn.onInvoke.p1
+elemental2.core.JsArray.ReduceCallbackFn.onInvoke.p2
+elemental2.core.JsArray.ReduceRightCallbackFn.onInvoke.p2
+elemental2.core.JsArray.SomeCallbackFn.onInvoke.p1
 elemental2.core.ArrayBuffer.byteLength
 elemental2.core.ArrayBuffer.null.length
 elemental2.core.ArrayBuffer.slice.begin
@@ -145,6 +166,7 @@ elemental2.core.JsString.lastIndexOf
 elemental2.core.JsString.lastIndexOf.fromIndex
 elemental2.core.JsString.localeCompare
 elemental2.core.JsString.padEnd.targetLength
+elemental2.core.JsString.padStart.targetLength
 elemental2.core.JsString.repeat.count
 elemental2.core.JsString.search
 elemental2.core.JsString.slice.begin
@@ -187,3 +209,6 @@ elemental2.core.Uint16Array.null.length0
 elemental2.core.Uint32Array.null.byteOffset
 elemental2.core.Uint32Array.null.length
 elemental2.core.Uint32Array.null.length0
+elemental2.core.SharedArrayBuffer.byteLength
+elemental2.core.SharedArrayBuffer.null.length
+
