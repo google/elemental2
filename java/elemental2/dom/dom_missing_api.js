@@ -91,8 +91,8 @@ Location.prototype.pathname;
 /**
  * Returns the Location object's URL's port. Can be set, to navigate to the
  * same URL with a changed port.
- * @see https://html.spec.whatwg.org/multipage/history.html#dom-location-port
- * @type {number}
+ * @see https://html.spec.whatwg.org/multipage/history.html#the-location-interface:dom-location-port
+ * @type {string}
  */
 Location.prototype.port;
 
