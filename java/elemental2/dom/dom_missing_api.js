@@ -463,3 +463,25 @@ History.prototype.back = function() {};
  */
 History.prototype.forward = function() {};
 // End of History API extension.
+
+// Window API extension
+/**
+ * @param {*} message
+ * @param {string} targetOrigin
+ * @param {(!Array<!Transferable>)=} opt_transfer
+ * @return {void}
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+ */
+Window.prototype.postMessage = function(message, targetOrigin,
+    opt_transfer) {};
+// End of Window API extension
+
+// WorkerGlobalScope API extension
+/**
+ * Worker postMessage method.
+ * @param {*} message
+ * @param {(!Array<!Transferable>)=} opt_transfer
+ * @return {void}
+ */
+WorkerGlobalScope.prototype.postMessage = function(message, opt_transfer) {}
+// WorkerGlobalScope API extension
