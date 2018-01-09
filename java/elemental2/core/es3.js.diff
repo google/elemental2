@@ -239,15 +239,53 @@
 <  * @param {string|Function} replacement
 ---
 >  * @param {string|function(string, ...?):*} replacement
-2061c1926
+2060c1925
 <  * @param {*} pattern
 ---
 >  * @param {string} pattern
-2072c1937
+2071c1936
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2082c1947
+2081c1946
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
+2379,2415d2243
+< 
+< // JScript extensions.
+< // @see http://msdn.microsoft.com/en-us/library/894hfyb4(VS.80).aspx
+< 
+< /**
+<  * @see http://msdn.microsoft.com/en-us/library/7sw4ddf8.aspx
+<  * @type {function(new:?, string, string=)}
+<  */
+< function ActiveXObject(progId, opt_location) {}
+< 
+< /**
+<  * @return {string}
+<  * @nosideeffects
+<  * @see http://msdn.microsoft.com/en-us/library/9k34bww2(VS.80).aspx
+<  */
+< function ScriptEngine() {}
+< 
+< /**
+<  * @return {number}
+<  * @nosideeffects
+<  * @see http://msdn.microsoft.com/en-us/library/yf25ky07(VS.80).aspx
+<  */
+< function ScriptEngineMajorVersion() {}
+< 
+< /**
+<  * @return {number}
+<  * @nosideeffects
+<  * @see http://msdn.microsoft.com/en-us/library/wx3812cz(VS.80).aspx
+<  */
+< function ScriptEngineMinorVersion() {}
+< 
+< /**
+<  * @return {number}
+<  * @nosideeffects
+<  * @see http://msdn.microsoft.com/en-us/library/e98hsk2f(VS.80).aspx
+<  */
+< function ScriptEngineBuildVersion() {}

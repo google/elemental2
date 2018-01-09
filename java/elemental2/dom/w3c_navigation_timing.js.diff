@@ -1,4 +1,4 @@
-177,179d176
+197,199d196
 < // Nonstandard. Only available in Blink.
 < // Returns more granular results with the --enable-memory-info flag.
 < /** @type {MemoryInfo} */ Performance.prototype.memory;

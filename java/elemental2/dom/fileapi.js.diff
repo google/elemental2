@@ -260,7 +260,7 @@
 < File.prototype.fileSize;
 < 
 < /**
-340,485d101
+346,491d107
 <  * @see http://www.w3.org/TR/file-system-api/#the-fileentry-interface
 <  * @constructor
 <  * @extends {Entry}
@@ -407,11 +407,11 @@
 < FileError.prototype.code;
 < 
 < /**
-579c195
+585c201
 <  * @type {FileError}
 ---
 >  * @type {DOMError}
-617,1013c233
+623,1019c239
 < FileReader.prototype.onloadend;
 < 
 < /**
