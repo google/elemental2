@@ -35,6 +35,7 @@ elemental2.core.JsArray.FilterCallbackFn.onInvoke.p1
 elemental2.core.JsArray.FindIndexPredicateFn.onInvoke.p1
 elemental2.core.JsArray.FindPredicateFn.onInvoke.p1
 elemental2.core.JsArray.ForEachCallbackFn.onInvoke.p1
+elemental2.core.JsArray.FromMapFn.onInvoke.p1
 elemental2.core.JsArray.MapCallbackFn.onInvoke.p1
 elemental2.core.JsArray.ReduceCallbackFn.onInvoke.p2
 elemental2.core.JsArray.ReduceRightCallbackFn.onInvoke.p2
