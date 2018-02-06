@@ -44,7 +44,7 @@ Elemental2 is split up in several jars files. Refer to the following targets in 
 
 Maven dependencies
 ------------------
-If your project use [Maven](https://maven.apache.org), add maven dependencies in your pom.xml:
+If your project use [Maven](https://maven.apache.org), add maven dependencies in your `pom.xml`:
 
     <dependency>
       <groupId>com.google.elemental2</groupId>
@@ -81,7 +81,7 @@ You can also download manually the jars files.
 
 GWT
 ---
-If you use Elemental2 with [GWT](http://www.gwtproject.org/), you need to inherit the right gwt module in your gwt.xml file:
+If you use Elemental2 with [GWT](http://www.gwtproject.org/), you need to inherit the right gwt module in your `gwt.xml` file:
 
  module | GWT module name
  ------ | ---------------
