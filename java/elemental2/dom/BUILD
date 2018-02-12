@@ -129,6 +129,7 @@ filegroup(
 jsinterop_generator(
     name = "dom",
     srcs = [":externs"],
+    name_mapping_files = ["name_mappings.txt"],
     integer_entities_files = ["integer_entities.txt"],
     deps = [
         "//java/elemental2/core",
