@@ -130,6 +130,7 @@ jsinterop_generator(
     name = "dom",
     srcs = [":externs"],
     integer_entities_files = ["integer_entities.txt"],
+    name_mapping_files = ["name_mappings.txt"],
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/promise",

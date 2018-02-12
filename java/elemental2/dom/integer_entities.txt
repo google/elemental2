@@ -305,3 +305,4 @@ elemental2.dom.DomGlobal.mozCancelAnimationFrame.handle
 elemental2.dom.DomGlobal.msCancelAnimationFrame.handle
 elemental2.dom.DomGlobal.oCancelAnimationFrame.handle
 elemental2.dom.DomGlobal.webkitCancelAnimationFrame.handle
+elemental2.dom.NodeList.ForEachCallbackFn.onInvoke.currentIndex
