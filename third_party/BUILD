@@ -139,6 +139,11 @@ alias(
 )
 
 alias(
+    name = "w3c_abort.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_abort.js",
+)
+
+alias(
     name = "fetchapi.js",
     actual = "@com_google_closure_compiler//:externs/browser/fetchapi.js",
 )
