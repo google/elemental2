@@ -6,11 +6,6 @@
 # where the resulting jar files will be copied. If no argument is provided,
 # the script will use a temporary directory.
 
-create_artifact() {
-  jar cf $1 .
-  mv $1 $2
-}
-
 artifact_directory=$1
 
 if [[ -z "${artifact_directory}" ]]; then
