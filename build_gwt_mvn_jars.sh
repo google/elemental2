@@ -6,6 +6,8 @@
 # where the resulting jar files will be copied. If no argument is provided,
 # the script will use a temporary directory.
 
+set -e
+
 artifact_directory=$1
 
 if [[ -z "${artifact_directory}" ]]; then
