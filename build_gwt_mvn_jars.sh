@@ -50,12 +50,18 @@ for artifact in "${elemental_artifacts[@]}"; do
   jar xf "${artifact_path}/${jar_file}"
 
   jar cf "elemental2-${artifact}.jar" .
+
   mkdir -p "${artifact_directory}/com/google/elemental2/elemental2-${artifact}/${version}"
+
+  cp -f "${bazel_root}/java/elemental2/${artifact}/pom.xml" "${artifact_directory}/com/google/elemental2/elemental2-${artifact}/${version}/elemental2-${artifact}-${version}.pom"
+  sed -i '' -e "s/ELEMENTAL2_VERSION/${version}/g" "${artifact_directory}/com/google/elemental2/elemental2-${artifact}/${version}/elemental2-${artifact}-${version}.pom"
+  echo "elemental2-${artifact}-${version}.pom created in ${artifact_directory}"
+
   mv -f "elemental2-${artifact}.jar" "${artifact_directory}/com/google/elemental2/elemental2-${artifact}/${version}/elemental2-${artifact}-${version}.jar"
-  echo "elemental2-${artifact}.jar created in ${artifact_directory}"
+  echo "elemental2-${artifact}-${version}.jar created in ${artifact_directory}"
 
   mv -f "${artifact_path}/${src_jar}" "${artifact_directory}/com/google/elemental2/elemental2-${artifact}/${version}/elemental2-${artifact}-${version}-sources.jar"
-  echo "elemental2-${artifact}-sources.jar created in ${artifact_directory}"
+  echo "elemental2-${artifact}-${version}-sources.jar created in ${artifact_directory}"
 
   rm -rf "${tmp_directory}"
 done

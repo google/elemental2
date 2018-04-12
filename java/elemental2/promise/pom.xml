@@ -4,7 +4,7 @@
 
   <groupId>com.google.elemental2</groupId>
   <artifactId>elemental2-promise</artifactId>
-  <version>1.0.0-RC1</version>
+  <version>ELEMENTAL2_VERSION</version>
   <packaging>jar</packaging>
 
   <name>Elemental2 Promise</name>
