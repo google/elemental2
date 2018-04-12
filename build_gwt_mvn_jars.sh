@@ -26,6 +26,8 @@ fi
 
 version=$2
 
+BAZEL=${BAZEL:-bazel}
+
 echo "Building version ${version} and outputting artifacts to ${artifact_directory}"
 
 bazel_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -39,8 +41,8 @@ for artifact in "${elemental_artifacts[@]}"; do
 
   # ask bazel to explicitly build both jar files
   cd "${bazel_root}"
-  bazel build "${artifact_bazel_path}:${jar_file}"
-  bazel build "${artifact_bazel_path}:${src_jar}"
+  ${BAZEL} build "${artifact_bazel_path}:${jar_file}"
+  ${BAZEL} build "${artifact_bazel_path}:${src_jar}"
 
   tmp_directory="$(mktemp -d)"
   cd "${tmp_directory}"
