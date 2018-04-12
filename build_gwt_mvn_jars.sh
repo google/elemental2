@@ -39,7 +39,7 @@ for artifact in "${elemental_artifacts[@]}"; do
   jar xf "${artifact_path}/${jar_file}"
 
   jar cf "elemental2-${artifact}.jar" .
-  mv -f "elemental2-${artifact}.jar" "${artifact_directory}"
+  mv -f "elemental2-${artifact}.jar" "${artifact_directory}/elemental2-${artifact}.jar"
   echo "elemental2-${artifact}.jar created in ${artifact_directory}"
 
   mv -f "${artifact_path}/${src_jar}" "${artifact_directory}/elemental2-${artifact}-sources.jar"
