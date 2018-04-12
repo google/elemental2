@@ -29,7 +29,7 @@ version=$2
 echo "Building version ${version} and outputting artifacts to ${artifact_directory}"
 
 bazel_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-declare -a elemental_artifacts=(core dom indexeddb media promise svg webgl webstorage)
+declare -a elemental_artifacts=(core dom indexeddb media promise svg webassembly webgl webstorage)
 
 for artifact in "${elemental_artifacts[@]}"; do
   artifact_path="${bazel_root}/bazel-bin/java/elemental2/${artifact}"
