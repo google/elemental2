@@ -6,12 +6,12 @@
 # where the resulting jar files will be copied. If no argument is provided,
 # the script will use a temporary directory.
 
-create_artifact() {
-  jar cf $1 .
-  mv $1 $2
-}
+set -e
 
-artifact_directory=$1
+artifact_directory=`cd "$1" && pwd`
+if [[ "$?" != "0" ]]; then
+  exit 1
+fi
 
 if [[ -z "${artifact_directory}" ]]; then
   artifact_directory="$(mktemp -d)"
@@ -44,10 +44,10 @@ for artifact in "${elemental_artifacts[@]}"; do
   jar xf "${artifact_path}/${jar_file}"
 
   jar cf "elemental2-${artifact}.jar" .
-  mv "elemental2-${artifact}.jar" "${artifact_directory}"
+  mv -f "elemental2-${artifact}.jar" "${artifact_directory}/elemental2-${artifact}.jar"
   echo "elemental2-${artifact}.jar created in ${artifact_directory}"
 
-  mv "${artifact_path}/${src_jar}" "${artifact_directory}/elemental2-${artifact}-sources.jar"
+  mv -f "${artifact_path}/${src_jar}" "${artifact_directory}/elemental2-${artifact}-sources.jar"
   echo "elemental2-${artifact}-sources.jar created in ${artifact_directory}"
 
   rm -rf "${tmp_directory}"
