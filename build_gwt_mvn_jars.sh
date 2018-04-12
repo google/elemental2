@@ -8,7 +8,10 @@
 
 set -e
 
-artifact_directory=$1
+artifact_directory=`cd "$1" && pwd`
+if [[ "$?" != "0" ]]; then
+  exit 1
+fi
 
 if [[ -z "${artifact_directory}" ]]; then
   artifact_directory="$(mktemp -d)"
