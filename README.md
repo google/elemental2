@@ -14,11 +14,10 @@ If you want to modify and/or build the last version on your own, follow the inst
 - clone this repository with git: `git clone https://github.com/google/elemental2.git`
 - Inside the repository, run the script `build_gwt_mvn_jars.sh`:
 
-      $ ./build_gwt_mvn_jars.sh /path/to/output/directory
+      $ ./build_gwt_mvn_jars.sh /path/to/output/directory 1.0.0-myversion-p1
 
-The jars are available in `/path/to/output/directory` directory. If you don't
-provide a argument to the script, the script will create a temporary directory 
-for the generated jar.
+The jars are available in `/path/to/output/directory` directory using a maven2 layout with the
+version specified `1.0.0-myversion-p1`.
 
 Bazel dependencies
 ------------------

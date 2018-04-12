@@ -8,19 +8,25 @@
 
 set -e
 
+if [[ "$1" == "" ]]; then
+  echo "Error: Publish directory parameter not specified."  >&2
+  exit 1
+fi
+
+if [[ "$2" == "" ]]; then
+  echo "Error: Version parameter not specified."  >&2
+  exit 1
+fi
+
 artifact_directory=`cd "$1" && pwd`
 if [[ "$?" != "0" ]]; then
+  echo "Error: ${artifact_directory} is not a directory or could not be accessed."  >&2
   exit 1
 fi
 
-if [[ -z "${artifact_directory}" ]]; then
-  artifact_directory="$(mktemp -d)"
-fi
+version=$2
 
-if [[ ! -d "${artifact_directory}" ]]; then
-  echo "Error: ${artifact_directory} is not a directory."  >&2
-  exit 1
-fi
+echo "Building version ${version} and outputting artifacts to ${artifact_directory}"
 
 bazel_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare -a elemental_artifacts=(core dom indexeddb media promise svg webgl webstorage)
@@ -44,10 +50,11 @@ for artifact in "${elemental_artifacts[@]}"; do
   jar xf "${artifact_path}/${jar_file}"
 
   jar cf "elemental2-${artifact}.jar" .
-  mv -f "elemental2-${artifact}.jar" "${artifact_directory}/elemental2-${artifact}.jar"
+  mkdir -p "${artifact_directory}/com/google/elemental2/elemental2-${artifact}/${version}"
+  mv -f "elemental2-${artifact}.jar" "${artifact_directory}/com/google/elemental2/elemental2-${artifact}/${version}/elemental2-${artifact}-${version}.jar"
   echo "elemental2-${artifact}.jar created in ${artifact_directory}"
 
-  mv -f "${artifact_path}/${src_jar}" "${artifact_directory}/elemental2-${artifact}-sources.jar"
+  mv -f "${artifact_path}/${src_jar}" "${artifact_directory}/com/google/elemental2/elemental2-${artifact}/${version}/elemental2-${artifact}-${version}-sources.jar"
   echo "elemental2-${artifact}-sources.jar created in ${artifact_directory}"
 
   rm -rf "${tmp_directory}"
