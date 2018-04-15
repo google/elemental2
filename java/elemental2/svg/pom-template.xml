@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.google.elemental2</groupId>
+  <artifactId>elemental2-svg</artifactId>
+  <version>ELEMENTAL2_VERSION</version>
+  <packaging>jar</packaging>
+
+  <name>Elemental2 SVG</name>
+  <description>Thin Java abstractions for the native SVG APIs.</description>
+  <url>https://www.gwtproject.org</url>
+
+  <dependencies>
+    <generated_bzl_deps />
+  </dependencies>
+</project>

@@ -28,4 +28,13 @@ jsinterop_generator(
         "//java/elemental2/dom",
         "//java/elemental2/promise",
     ],
+    gwt_library_tags = ["maven_coordinates=com.google.elemental2:elemental2-media:ELEMENTAL2_VERSION"],
+)
+
+load("@google_bazel_common//tools/maven:pom_file.bzl", "pom_file")
+
+pom_file(
+    name = "pom.xml",
+    targets = [":media"],
+    template_file = "pom-template.xml",
 )

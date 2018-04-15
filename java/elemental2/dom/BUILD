@@ -1,8 +1,8 @@
 # This package contains the build rule to build elemental2-dom.
 
 package(default_visibility = [
-    "//third_party/java/elemental2:__subpackages__",
     "//:__subpackages__",
+    "//third_party/java/elemental2:__subpackages__",
 ])
 
 # Apache2
@@ -130,10 +130,19 @@ filegroup(
 jsinterop_generator(
     name = "dom",
     srcs = [":externs"],
+    gwt_library_tags = ["maven_coordinates=com.google.elemental2:elemental2-dom:ELEMENTAL2_VERSION"],
     integer_entities_files = ["integer_entities.txt"],
     name_mapping_files = ["name_mappings.txt"],
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/promise",
     ],
+)
+
+load("@google_bazel_common//tools/maven:pom_file.bzl", "pom_file")
+
+pom_file(
+    name = "pom.xml",
+    targets = [":dom"],
+    template_file = "pom-template.xml",
 )

@@ -1,8 +1,8 @@
 # This package contains the build rule to build elemental2-core.
 
 package(default_visibility = [
-    "//third_party/java/elemental2:__subpackages__",
     "//:__subpackages__",
+    "//third_party/java/elemental2:__subpackages__",
 ])
 
 # Apache2
@@ -67,4 +67,17 @@ jsinterop_generator(
     # J2CL refers these symbols in the jre emulation
     j2cl_test_externs_list = ["required_j2cl_externs.js"],
     wildcard_types_files = ["wildcard_types.txt"],
+    gwt_library_tags = ["maven_coordinates=com.google.elemental2:elemental2-core:ELEMENTAL2_VERSION"],
+)
+
+load("@google_bazel_common//tools/maven:pom_file.bzl", "pom_file")
+
+pom_file(
+    name = "pom.xml",
+    preferred_group_ids = [
+        "com.google.elemental2",
+        "com.google.jsinterop",
+    ],
+    targets = [":core"],
+    template_file = "pom-template.xml",
 )

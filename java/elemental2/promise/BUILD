@@ -19,4 +19,13 @@ jsinterop_generator_import(
     gwt_module_name = "elemental2.promise.Promise",
     gwt_xml = "Promise.gwt.xml",
     types_mapping_files = ["promise.types"],
+    gwt_library_tags = ["maven_coordinates=com.google.elemental2:elemental2-promise:ELEMENTAL2_VERSION"],
+)
+
+load("@google_bazel_common//tools/maven:pom_file.bzl", "pom_file")
+
+pom_file(
+    name = "pom.xml",
+    targets = [":promise"],
+    template_file = "pom-template.xml"
 )

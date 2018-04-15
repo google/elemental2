@@ -25,4 +25,13 @@ jsinterop_generator(
         "//java/elemental2/core",
         "//java/elemental2/dom",
     ],
+    gwt_library_tags = ["maven_coordinates=com.google.elemental2:elemental2-indexeddb:ELEMENTAL2_VERSION"],
+)
+
+load("@google_bazel_common//tools/maven:pom_file.bzl", "pom_file")
+
+pom_file(
+    name = "pom.xml",
+    targets = [":indexeddb"],
+    template_file = "pom-template.xml",
 )
