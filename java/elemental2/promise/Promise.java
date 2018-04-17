@@ -98,9 +98,21 @@ public class Promise<T> implements IThenable<T> {
     }
   }
 
-  public static native <V> Promise<V[]> all(IThenable<? extends V>... promises);
+  @JsOverlay
+  public static <V> Promise<V[]> all(IThenable<? extends V>... promises) {
+    return allInternal(promises);
+  }
+  
+  @JsMethod(name = "all")
+  private static native <V> Promise<V[]> allInternal(IThenable<? extends V>[] promises);
 
-  public static native <V> Promise<V> race(IThenable<? extends V>... promises);
+  @JsOverlay
+  public static <V> Promise<V> race(IThenable<? extends V>... promises) {
+    return raceInternal(promises);
+  }
+  
+  @JsMethod(name = "race")
+  private static native <V> Promise<V> raceInternal(IThenable<? extends V>[] promises);
 
   public static native Promise<Object> reject(Object error);
 
