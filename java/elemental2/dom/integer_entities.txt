@@ -289,6 +289,11 @@ elemental2.dom.WritableStreamDefaultWriter.getDesiredSize
 elemental2.dom.WritableStreamDefaultWriter.setDesiredSize.desiredSize
 elemental2.dom.XMLHttpRequest.readyState
 elemental2.dom.XMLHttpRequest.status
+elemental2.dom.XMLHttpRequest.DONE
+elemental2.dom.XMLHttpRequest.HEADERS_RECEIVED
+elemental2.dom.XMLHttpRequest.LOADING
+elemental2.dom.XMLHttpRequest.OPENED
+elemental2.dom.XMLHttpRequest.UNSENT
 elemental2.dom.XPathEvaluator.evaluate.type
 elemental2.dom.XPathExpression.evaluate.type
 elemental2.dom.XPathResult.resultType
