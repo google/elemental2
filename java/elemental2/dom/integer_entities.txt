@@ -62,12 +62,6 @@ elemental2.dom.DOMTokenList.length
 elemental2.dom.DOMTokenList.item.index
 elemental2.dom.DOMImplementationList.length
 elemental2.dom.DOMImplementationList.item.index
-elemental2.dom.Element.clientHeight
-elemental2.dom.Element.clientLeft
-elemental2.dom.Element.clientTop
-elemental2.dom.Element.clientWidth
-elemental2.dom.Element.scrollHeight
-elemental2.dom.Element.scrollWidth
 elemental2.dom.ErrorEvent.colno
 elemental2.dom.ErrorEvent.lineno
 elemental2.dom.ErrorEventInit.getColno
@@ -89,10 +83,6 @@ elemental2.dom.HTMLCanvasElement.height
 elemental2.dom.HTMLCanvasElement.width
 elemental2.dom.HTMLCollection.length
 elemental2.dom.HTMLCollection.item.index
-elemental2.dom.HTMLElement.offsetHeight
-elemental2.dom.HTMLElement.offsetLeft
-elemental2.dom.HTMLElement.offsetTop
-elemental2.dom.HTMLElement.offsetWidth
 elemental2.dom.HTMLElement.tabIndex
 elemental2.dom.HTMLFormElement.length
 elemental2.dom.HTMLImageElement.height
