@@ -227,5 +227,5 @@ java_library(
 
 java_library(
     name = "jsinterop-base",
-    exports = ["@jsinterop_base//jar"],
+    exports = ["@com_google_jsinterop_base//java/jsinterop/base:base"],
 )
