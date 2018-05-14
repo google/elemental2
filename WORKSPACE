@@ -18,12 +18,13 @@ http_archive(
     strip_prefix="jsinterop-generator-master",
 )
 
-# third_party libs used by jsinterop generator.
-maven_jar(
-    name = "jsinterop_base",
-    artifact = "com.google.jsinterop:base:1.0.0-RC1",
+http_archive(
+    name = "com_google_jsinterop_base",
+    url = "https://github.com/google/jsinterop-base/archive/master.zip",
+    strip_prefix="jsinterop-base-master",
 )
 
+# third_party libs used by jsinterop generator.
 maven_jar(
     name = "jsinterop_annotations",
     artifact = "com.google.jsinterop:jsinterop-annotations:1.0.2",
@@ -65,3 +66,13 @@ http_jar(
     url = "https://github.com/google/google-java-format/releases/download/google-java-format-1.3/google-java-format-1.3-all-deps.jar",
 )
 
+# third_party libs used by jsinterop-base
+maven_jar(
+    name = "gwt_dev",
+    artifact = "com.google.gwt:gwt-dev:2.8.1",
+)
+
+http_archive(
+  name="org_gwtproject_gwt",
+  url="https://gwt.googlesource.com/gwt/+archive/master.tar.gz",
+)

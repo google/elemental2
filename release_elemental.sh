@@ -9,8 +9,8 @@ lib_version=$1
 
 bazel_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-deploy_target='@com_google_jsinterop_generator//:deploy'
-license_header='@com_google_jsinterop_generator//:license.txt'
+deploy_target='@com_google_jsinterop_base//:deploy'
+license_header="$(bazel info output_base)/external/com_google_jsinterop_base/license.txt"
 group_id="com.google.elemental2"
 
 echo "enter your gpg passphrase:"
