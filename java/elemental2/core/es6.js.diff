@@ -1,4 +1,4 @@
-1103,1235d1102
+1103,1242d1102
 < 
 < /**
 <  * This is not an official DOM interface. It is used to add generic typing
@@ -132,17 +132,24 @@
 < Promise.prototype.catch = function(onRejected) {};
 < 
 < 
-1248,1249c1115,1116
+< /**
+<  * @param {function()} callback
+<  * @return {!Promise<TYPE>}
+<  */
+< Promise.prototype.finally = function(callback) {};
+< 
+< 
+1255,1256c1115,1116
 <  * @param {function(this:S, (string|T), number): R=} opt_mapFn
 <  * @param {S=} opt_this
 ---
 >  * @param {function((string|T), number): R=} opt_mapFn
 >  * @param {*=} opt_this
-1251c1118
+1258c1118
 <  * @template T,S,R
 ---
 >  * @template T,R
-1267,1271c1134,1136
+1274,1278c1134,1136
 <  * @param {!function(this:S, T, number, !Array<T>): boolean} predicateFn
 <  * @param {S=} opt_this
 <  * @return {T|undefined}
@@ -152,30 +159,30 @@
 >  * @param {!function(T, number, !Array<T>): boolean} predicateFn
 >  * @param {*=} opt_this
 >  * @return {T}
-1278,1279c1143,1144
+1285,1286c1143,1144
 <  * @param {!function(this:S, T, number, !Array<T>): boolean} predicateFn
 <  * @param {S=} opt_this
 ---
 >  * @param {!function(T, number, !Array<T>): boolean} predicateFn
 >  * @param {*=} opt_this
-1281,1282d1145
+1288,1289d1145
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S
-1293,1294d1155
+1300,1301d1155
 <  * @this {!IArrayLike<T>|string}
 <  * @template T
-1305d1165
+1312d1165
 <  * @template T
-1316,1317d1175
+1323,1324d1175
 <  * @this {!IArrayLike<T>|string}
 <  * @template T
-1463,1464c1321,1322
+1470,1471c1321,1322
 <  * @param {function(this: THIS, ...?): RESULT} targetFn
 <  * @param {THIS} thisArg
 ---
 >  * @param {function(...?): RESULT} targetFn
 >  * @param {*} thisArg
-1467c1325
+1474c1325
 <  * @template THIS, RESULT
 ---
 >  * @template RESULT

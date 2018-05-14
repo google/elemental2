@@ -5,7 +5,7 @@
 >  
 > /**
 >  * @type {!Window}
-80,122d85
+87,129d92
 < // Magic functions for Firefox's LiveConnect.
 < // We'll probably never use these in practice. But redefining them
 < // will fire up the JVM, so we want to reserve the symbol names.
@@ -49,15 +49,15 @@
 <  */
 < var netscape;
 < 
-186c149
+193c156
 <  * @param {Function|string} callback
 ---
 >  * @param {function(...?):undefined|string} callback
-196c159
+203c166
 <  * @param {Function|string} callback
 ---
 >  * @param {function(...?):undefined|string} callback
-198c161
+205c168
 <  * @param {...*} var_args
 ---
 >  * @param {...?} var_args

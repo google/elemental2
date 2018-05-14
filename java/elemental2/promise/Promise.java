@@ -33,6 +33,11 @@ import jsinterop.base.Js;
 @JsType(isNative = true, namespace = JsPackage.GLOBAL)
 public class Promise<T> implements IThenable<T> {
   @JsFunction
+  public interface FinallyOnFinallyCallbackFn {
+    void onInvoke();
+  }
+
+  @JsFunction
   public interface CatchOnRejectedCallbackFn<V> {
     IThenable<V> onInvoke(Object error);
   }
@@ -102,7 +107,7 @@ public class Promise<T> implements IThenable<T> {
   public static <V> Promise<V[]> all(IThenable<? extends V>... promises) {
     return allInternal(promises);
   }
-  
+
   @JsMethod(name = "all")
   private static native <V> Promise<V[]> allInternal(IThenable<? extends V>[] promises);
 
@@ -110,7 +115,7 @@ public class Promise<T> implements IThenable<T> {
   public static <V> Promise<V> race(IThenable<? extends V>... promises) {
     return raceInternal(promises);
   }
-  
+
   @JsMethod(name = "race")
   private static native <V> Promise<V> raceInternal(IThenable<? extends V>[] promises);
 
@@ -140,4 +145,7 @@ public class Promise<T> implements IThenable<T> {
 
   @Override
   public native <V> Promise<V> then(ThenOnFulfilledCallbackFn<? super T, ? extends V> onFulfilled);
+
+  @JsMethod(name = "finally")
+  public native Promise<T> finally_(FinallyOnFinallyCallbackFn onFinally);
 }
