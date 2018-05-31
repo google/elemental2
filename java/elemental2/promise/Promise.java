@@ -119,7 +119,7 @@ public class Promise<T> implements IThenable<T> {
   @JsMethod(name = "race")
   private static native <V> Promise<V> raceInternal(IThenable<? extends V>[] promises);
 
-  public static native Promise<Object> reject(Object error);
+  public static native <V> Promise<V> reject(Object error);
 
   @JsOverlay
   public static final <V> Promise<V> resolve(IThenable<V> value) {
