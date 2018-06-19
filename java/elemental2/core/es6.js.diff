@@ -149,7 +149,7 @@
 <  * @template T,S,R
 ---
 >  * @template T,R
-1274,1278c1134,1136
+1282,1286c1142,1144
 <  * @param {!function(this:S, T, number, !Array<T>): boolean} predicateFn
 <  * @param {S=} opt_this
 <  * @return {T|undefined}
@@ -159,30 +159,30 @@
 >  * @param {!function(T, number, !Array<T>): boolean} predicateFn
 >  * @param {*=} opt_this
 >  * @return {T}
-1285,1286c1143,1144
+1293,1294c1151,1152
 <  * @param {!function(this:S, T, number, !Array<T>): boolean} predicateFn
 <  * @param {S=} opt_this
 ---
 >  * @param {!function(T, number, !Array<T>): boolean} predicateFn
 >  * @param {*=} opt_this
-1288,1289d1145
+1296,1297d1153
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S
-1300,1301d1155
+1308,1309d1163
 <  * @this {!IArrayLike<T>|string}
 <  * @template T
-1312d1165
+1320d1173
 <  * @template T
-1323,1324d1175
+1331,1332d1183
 <  * @this {!IArrayLike<T>|string}
 <  * @template T
-1470,1471c1321,1322
+1478,1479c1329,1330
 <  * @param {function(this: THIS, ...?): RESULT} targetFn
 <  * @param {THIS} thisArg
 ---
 >  * @param {function(...?): RESULT} targetFn
 >  * @param {*} thisArg
-1474c1325
+1482c1333
 <  * @template THIS, RESULT
 ---
 >  * @template RESULT
