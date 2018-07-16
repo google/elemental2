@@ -9,127 +9,105 @@
 < Object.prototype.__noSuchMethod__ = function(fun) {};
 < 
 < /**
-461,469d450
-<  * Removes a watchpoint set with the {@see Object.prototype.watch} method.
-<  * Mozilla-only.
-<  * @param {string} prop The name of a property of the object.
-<  * @see http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/unwatch
-<  * @return {undefined}
-<  */
-< Object.prototype.unwatch = function(prop) {};
-< 
-< /**
-478,488d458
-<  * Sets a watchpoint method.
-<  * Mozilla-only.
-<  * @param {string} prop The name of a property of the object.
-<  * @param {Function} handler A function to call.
-<  * @see http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/watch
-<  * @return {undefined}
-<  */
-< Object.prototype.watch = function(prop, handler) {};
-< 
-< 
-< /**
-559c529
+539c529
 <  * @param {...*} var_args
 ---
 >  * @param {...T} items
-565c535
+545c535
 < function Array(var_args) {}
 ---
 > function Array(items) {}
-579,581c549,550
+559,561c549,550
 <  * @param {...*} var_args
 <  * @return {!Array<?>}
 <  * @this {*}
 ---
 >  * @param {...T} items
 >  * @return {!Array<T>}
-585c554
+565c554
 < Array.prototype.concat = function(var_args) {};
 ---
 > Array.prototype.concat = function(items) {};
-604,606d572
+584,586d572
 <  * @this {IArrayLike<T>}
 <  * @modifies {this}
 <  * @template T
-618,620d583
+598,600d583
 <  * @this {IArrayLike<T>}
 <  * @template T
 <  * @modifies {this}
-629,632c592
+609,612c592
 <  * @return {THIS} A reference to the original modified array.
 <  * @this {THIS}
 <  * @template THIS
 <  * @modifies {this}
 ---
 >  * @return {Array<T>} A reference to the original modified array.
-641,642d600
+621,622d600
 <  * @this {IArrayLike<T>}
 <  * @modifies {this}
-644d601
+624d601
 <  * @template T
-652c609
+632c609
 <  * @param {*=} opt_begin Zero-based index at which to begin extraction.  A
 ---
 >  * @param {number=} opt_begin Zero-based index at which to begin extraction.  A
-654c611
+634c611
 <  * @param {*=} opt_end Zero-based index at which to end extraction.  slice
 ---
 >  * @param {number=} opt_end Zero-based index at which to end extraction.  slice
-657,658d613
+637,638d613
 <  * @this {IArrayLike<T>|string}
 <  * @template T
-669,671d623
+649,651d623
 <  * @this {IArrayLike<T>}
 <  * @template T
 <  * @modifies {this}
-681c633
+661c633
 <  * @param {*=} opt_index Index at which to start changing the array. If negative,
 ---
 >  * @param {number=} opt_index Index at which to start changing the array. If negative,
-684c636
+664c636
 <  * @param {*=} opt_howMany An integer indicating the number of old array elements
 ---
 >  * @param {number=} opt_howMany An integer indicating the number of old array elements
-688,690d639
+668,670d639
 <  * @this {IArrayLike<T>}
 <  * @modifies {this}
 <  * @template T
-715c664
+695c664
 <  * @param {...*} var_args
 ---
 >  * @param {...T} var_args
-730,731c679
+710,711c679
 <  * @this {IArrayLike<T>|string}
 <  * @template T,R
 ---
 >  * @template R
-743,744c691
+723,724c691
 <  * @this {IArrayLike<T>|string}
 <  * @template T,R
 ---
 >  * @template R
-751,752c698,699
+731,732c698,699
 <  * @param {?function(this:S, T, number, !Array<T>): ?} callback
 <  * @param {S=} opt_thisobj
 ---
 >  * @param {?function(T, number, !Array<T>): ?} callback
 >  * @param {*=} opt_thisobj
-754,755d700
+734,735d700
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S
-762,763c707,708
+742,743c707,708
 <  * @param {?function(this:S, T, number, !Array<T>): ?} callback
 <  * @param {S=} opt_thisobj
 ---
 >  * @param {?function(T, number, !Array<T>): ?} callback
 >  * @param {*=} opt_thisobj
-765,766d709
+745,746d709
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S
-773,776c716,717
+753,756c716,717
 <  * @param {?function(this:S, T, number, !Array<T>): ?} callback
 <  * @param {S=} opt_thisobj
 <  * @this {IArrayLike<T>|string}
@@ -137,35 +115,35 @@
 ---
 >  * @param {?function(T, number, !Array<T>): ?} callback
 >  * @param {*=} opt_thisobj
-787d727
+767d727
 <  * @this {IArrayLike<T>|string}
-789d728
+769d728
 <  * @template T
-799d737
+779d737
 <  * @this {IArrayLike<T>|string}
-801d738
+781d738
 <  * @template T
-808,809c745,746
+788,789c745,746
 <  * @param {?function(this:S, T, number, !Array<T>): R} callback
 <  * @param {S=} opt_thisobj
 ---
 >  * @param {?function(T, number, !Array<T>): R} callback
 >  * @param {*=} opt_thisobj
-811,812c748
+791,792c748
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S,R
 ---
 >  * @template R
-819,820c755,756
+799,800c755,756
 <  * @param {?function(this:S, T, number, !Array<T>): ?} callback
 <  * @param {S=} opt_thisobj
 ---
 >  * @param {?function( T, number, !Array<T>): ?} callback
 >  * @param {*=} opt_thisobj
-822,823d757
+802,803d757
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S
-847,915d780
+827,895d780
 <  * @param {IArrayLike<T>} arr
 <  * @param {?function(this:S, T, number, ?) : ?} callback
 <  * @param {S=} opt_context
@@ -235,23 +213,23 @@
 < Array.some = function(arr, callback, opt_context) {};
 < 
 < /**
-1900c1765
+1880c1765
 <  * @param {string|Function} replacement
 ---
 >  * @param {string|function(string, ...?):*} replacement
-2060c1925
+2040c1925
 <  * @param {*} pattern
 ---
 >  * @param {string} pattern
-2071c1936
+2051c1936
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2079c1944
+2059c1944
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2405,2441d2269
+2385,2421d2269
 < 
 < // JScript extensions.
 < // @see http://msdn.microsoft.com/en-us/library/894hfyb4(VS.80).aspx
