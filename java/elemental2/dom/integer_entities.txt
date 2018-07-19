@@ -195,6 +195,7 @@ elemental2.dom.NamedNodeMap.item.index
 elemental2.dom.NameList.length
 elemental2.dom.NameList.getName.index
 elemental2.dom.NameList.getNamespaceURI.index
+elemental2.dom.Navigator.hardwareConcurrency
 elemental2.dom.Node.compareDocumentPosition
 elemental2.dom.Node.nodeType
 elemental2.dom.NodeList.length
