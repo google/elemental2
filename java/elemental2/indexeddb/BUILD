@@ -15,7 +15,6 @@ filegroup(
     srcs = ["//third_party:w3c_indexeddb.js"],
 )
 
-# SVG api
 jsinterop_generator(
     name = "indexeddb",
     srcs = [":externs"],

@@ -15,7 +15,6 @@ filegroup(
     srcs = ["//third_party:webgl.js"],
 )
 
-# SVG api
 jsinterop_generator(
     name = "webgl",
     srcs = [":externs"],

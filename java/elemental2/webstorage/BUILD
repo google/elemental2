@@ -15,7 +15,6 @@ filegroup(
     srcs = ["//third_party:webstorage.js"],
 )
 
-# SVG api
 jsinterop_generator(
     name = "webstorage",
     srcs = [":externs"],

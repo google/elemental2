@@ -18,7 +18,6 @@ filegroup(
     ],
 )
 
-# SVG api
 jsinterop_generator(
     name = "media",
     srcs = [":externs"],
