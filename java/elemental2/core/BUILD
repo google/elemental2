@@ -64,9 +64,8 @@ jsinterop_generator(
     srcs = [":externs"],
     global_scope_class_name = "Global",
     integer_entities_files = ["integer_entities.txt"],
-    # These extern definitions are required for the j2cl build test because
-    # J2CL refers these symbols in the jre emulation
-    j2cl_test_externs_list = ["required_j2cl_externs.js"],
+    # override auto generated js_deps since modified externs cause conflicts
+    j2cl_js_deps = [],
     wildcard_types_files = ["wildcard_types.txt"],
     deps = [
         "//java/elemental2/promise",
