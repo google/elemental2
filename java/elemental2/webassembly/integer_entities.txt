@@ -1,0 +1,15 @@
+elemental2.webassembly.MemoryDescriptor.getInitial
+elemental2.webassembly.MemoryDescriptor.getMaximum
+elemental2.webassembly.MemoryDescriptor.setInitial.initial
+elemental2.webassembly.MemoryDescriptor.setMaximum.maximum
+elemental2.webassembly.TableDescriptor.getInitial
+elemental2.webassembly.TableDescriptor.getMaximum
+elemental2.webassembly.TableDescriptor.setInitial.initial
+elemental2.webassembly.TableDescriptor.setMaximum.maximum
+elemental2.webassembly.webassembly.Memory.grow
+elemental2.webassembly.webassembly.Memory.grow.delta
+elemental2.webassembly.webassembly.Table.get.index
+elemental2.webassembly.webassembly.Table.grow
+elemental2.webassembly.webassembly.Table.grow.delta
+elemental2.webassembly.webassembly.Table.length
+elemental2.webassembly.webassembly.Table.set.index

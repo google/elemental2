@@ -38,6 +38,7 @@ Elemental2 is split up in several jars files. Refer to the following targets in 
  promise | `@com_google_elemental2//java/elemental2/promise`
  indexeddb | `@com_google_elemental2//java/elemental2/indexeddb`
  svg | `@com_google_elemental2//java/elemental2/svg`
+ webassembly | `@com_google_elemental2//java/elemental2/webassembly`
  webgl | `@com_google_elemental2//java/elemental2/webgl`
  media | `@com_google_elemental2//java/elemental2/media`
  webstorage | `@com_google_elemental2//java/elemental2/webstorage`
@@ -60,6 +61,7 @@ If your project use [Maven](https://maven.apache.org), add maven dependencies in
  promise | `elemental2-promise`
  indexeddb | `elemental2-indexeddb`
  svg | `elemental2-svg`
+ webassembly | `elemental2-webassembly`
  webgl | `elemental2-webgl`
  media | `elemental2-media`
  webstorage | `elemental2-webstorage`
@@ -75,6 +77,7 @@ You can also download manually the jars files.
  promise | [elemental2-promise.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-promise/1.0.0-RC1/elemental2-promise-1.0.0-RC1.jar)
  indexeddb | [elemental2-indexeddb.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-indexeddb/1.0.0-RC1/elemental2-indexeddb-1.0.0-RC1.jar)
  svg | [elemental2-svg.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-svg/1.0.0-RC1/elemental2-svg-1.0.0-RC1.jar)
+ webassembly | [elemental2-webassembly.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webassembly/1.0.0-RC1/elemental2-webassembly-1.0.0-RC1.jar)
  webgl | [elemental2-webgl.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webgl/1.0.0-RC1/elemental2-webgl-1.0.0-RC1.jar)
  media | [elemental2-media.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-media/1.0.0-RC1/elemental2-media-1.0.0-RC1.jar)
  webstorage | [elemental2-webstorage.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webstorage/1.0.0-RC1/elemental2-webstorage-1.0.0-RC1.jar)
@@ -90,6 +93,7 @@ If you use Elemental2 with [GWT](http://www.gwtproject.org/), you need to inheri
  promise | `elemental2.promise.Promise`
  indexeddb | `elemental2.indexeddb.IndexedDb`
  svg | `elemental2.svg.Svg`
+ webassembly | `elemental2.webassembly.WebAssembly`
  webgl | `elemental2.webgl.WebGl`
  media | `elemental2.media.Media`
  webstorage | `elemental2.webstorage.WebStorage`

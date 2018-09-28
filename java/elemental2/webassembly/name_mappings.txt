@@ -1,0 +1,2 @@
+elemental2.webassembly.webassembly.Table.GetFn.onInvoke.p0=parameters
+elemental2.webassembly.webassembly.Table.SetValueFn.onInvoke.p0=parameters
