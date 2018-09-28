@@ -11,7 +11,8 @@ bazel_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 deploy_target='@com_google_jsinterop_base//:deploy'
 license_header="$(bazel info output_base)/external/com_google_jsinterop_base/license.txt"
-group_id="com.google.elemental2"
+# The group id can be customized in case you want to build using a custom groupid
+group_id=${ELEMENTAL2_GROUP_ID:-com.google.elemental2}
 
 # The invoker of script can pass GPG password to avoid having
 # the script wait for user to supply credentials interactively
