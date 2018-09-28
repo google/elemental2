@@ -122,6 +122,7 @@ filegroup(
         "//third_party:w3c_elementtraversal.js",
         "//third_party:w3c_selectors.js",
         "//third_party:w3c_geolocation.js",
+        "//third_party:w3c_requestidlecallback.js",
     ],
 )
 

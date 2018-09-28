@@ -152,6 +152,12 @@ alias(
     name = "w3c_serviceworker.js",
     actual = "@com_google_closure_compiler//:externs/browser/w3c_serviceworker.js",
 )
+
+alias(
+   name = "w3c_requestidlecallback.js",
+   actual = "@com_google_closure_compiler//:externs/browser/w3c_requestidlecallback.js",
+)
+
 alias(
    name = "w3c_navigation_timing.js",
    actual = "@com_google_closure_compiler//:externs/browser/w3c_navigation_timing.js",
