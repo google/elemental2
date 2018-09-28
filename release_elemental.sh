@@ -13,8 +13,14 @@ deploy_target='@com_google_jsinterop_base//:deploy'
 license_header="$(bazel info output_base)/external/com_google_jsinterop_base/license.txt"
 group_id="com.google.elemental2"
 
-echo "enter your gpg passphrase:"
-read -s gpg_passphrase
+# The invoker of script can pass GPG password to avoid having
+# the script wait for user to supply credentials interactively
+gpg_passphrase=${ELEMENTAL2_GPG_PASS:-}
+
+if [ -z ${gpg_passphrase} ]; then
+  echo "enter your gpg passphrase:"
+  read -s gpg_passphrase
+fi
 
 cd ${bazel_root}
 
