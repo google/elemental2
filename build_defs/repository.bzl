@@ -9,7 +9,7 @@ def load_elemental2_repo_deps():
   http_archive(
       name = "com_google_closure_compiler",
       url = "https://github.com/google/closure-compiler/archive/%s.zip"% _CLOSURE_COMPILER_VERSION,
-      build_file = "//:jscomp.BUILD",
+      build_file = Label("//:jscomp.BUILD"),
       strip_prefix = "closure-compiler-%s" % _CLOSURE_COMPILER_VERSION,
   )
 
