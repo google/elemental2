@@ -1,78 +1,29 @@
 workspace(name = "com_google_elemental2")
 
-maven_server(
-    name = "sonatype_snapshot",
-    url = "https://oss.sonatype.org/content/repositories/snapshots",
-)
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-new_http_archive(
-  name="com_google_closure_compiler",
-  url="https://github.com/google/closure-compiler/archive/master.tar.gz",
-  build_file="jscomp.BUILD",
-  strip_prefix="closure-compiler-master"
-)
+# Load J2CL separately
+_J2CL_VERSION = "master"
 
 http_archive(
-    name = "com_google_jsinterop_generator",
-    url = "https://github.com/google/jsinterop-generator/archive/master.zip",
-    strip_prefix="jsinterop-generator-master",
+    name = "com_google_j2cl",
+    strip_prefix = "j2cl-%s" % _J2CL_VERSION,
+    url = "https://github.com/google/j2cl/archive/%s.zip" % _J2CL_VERSION,
 )
 
-http_archive(
-    name = "com_google_jsinterop_base",
-    url = "https://github.com/google/jsinterop-base/archive/master.zip",
-    strip_prefix="jsinterop-base-master",
-)
+load("@com_google_j2cl//build_defs:repository.bzl", "load_j2cl_repo_deps")
 
-# third_party libs used by jsinterop generator.
-maven_jar(
-    name = "jsinterop_annotations",
-    artifact = "com.google.jsinterop:jsinterop-annotations:1.0.2",
-)
+load_j2cl_repo_deps()
 
-maven_jar(
-    name = "jsr305",
-    artifact = "com.google.code.findbugs:jsr305:3.0.1",
-)
+load("@com_google_j2cl//build_defs:rules.bzl", "setup_j2cl_workspace")
 
-maven_jar(
-    name = "guava",
-    artifact = "com.google.guava:guava:21.0",
-)
+setup_j2cl_workspace()
 
-maven_jar(
-    name = "args4j",
-    artifact = "args4j:args4j:2.33",
-)
+# Load other dependencies
+load("//build_defs:repository.bzl", "load_elemental2_repo_deps")
 
-maven_jar(
-    name = "auto_value",
-    artifact = "com.google.auto.value:auto-value:1.4",
-)
+load_elemental2_repo_deps()
 
-maven_jar(
-    name = "jscomp",
-    artifact = "com.google.javascript:closure-compiler:1.0-SNAPSHOT",
-    server = "sonatype_snapshot",
-)
+load("//build_defs:workspace.bzl", "setup_elemental2_workspace")
 
-maven_jar(
-    name = "error_prone",
-    artifact = "com.google.errorprone:error_prone_annotations:2.0.19",
-)
-
-http_jar(
-    name = "com_google_google_java_format",
-    url = "https://github.com/google/google-java-format/releases/download/google-java-format-1.3/google-java-format-1.3-all-deps.jar",
-)
-
-# third_party libs used by jsinterop-base
-maven_jar(
-    name = "gwt_dev",
-    artifact = "com.google.gwt:gwt-dev:2.8.1",
-)
-
-http_archive(
-  name="org_gwtproject_gwt",
-  url="https://gwt.googlesource.com/gwt/+archive/master.tar.gz",
-)
+setup_elemental2_workspace()

@@ -11,7 +11,7 @@ exports_files([
     "mediakeys.js",
     "svg.js",
     "w3c_clipboardevent.js",
-    ])
+])
 
 alias(
     name = "es3.js",
@@ -152,9 +152,10 @@ alias(
     name = "w3c_serviceworker.js",
     actual = "@com_google_closure_compiler//:externs/browser/w3c_serviceworker.js",
 )
+
 alias(
-   name = "w3c_navigation_timing.js",
-   actual = "@com_google_closure_compiler//:externs/browser/w3c_navigation_timing.js",
+    name = "w3c_navigation_timing.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_navigation_timing.js",
 )
 
 # TODO(dramaix): Not opensourced yet
@@ -164,28 +165,28 @@ alias(
 #)
 
 alias(
-   name = "w3c_eventsource.js",
-   actual = "@com_google_closure_compiler//:externs/browser/w3c_eventsource.js",
+    name = "w3c_eventsource.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_eventsource.js",
 )
 
 alias(
-   name = "w3c_elementtraversal.js",
-   actual = "@com_google_closure_compiler//:externs/browser/w3c_elementtraversal.js",
+    name = "w3c_elementtraversal.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_elementtraversal.js",
 )
 
 alias(
-   name = "w3c_selectors.js",
-   actual = "@com_google_closure_compiler//:externs/browser/w3c_selectors.js",
+    name = "w3c_selectors.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_selectors.js",
 )
 
 alias(
-   name = "w3c_geolocation.js",
-   actual = "@com_google_closure_compiler//:externs/browser/w3c_geolocation.js",
+    name = "w3c_geolocation.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_geolocation.js",
 )
 
 alias(
-   name = "w3c_indexeddb.js",
-   actual = "@com_google_closure_compiler//:externs/browser/w3c_indexeddb.js",
+    name = "w3c_indexeddb.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_indexeddb.js",
 )
 
 # TODO(dramaix): Not opensourced yet
@@ -195,8 +196,8 @@ alias(
 #)
 
 alias(
-   name = "w3c_audio.js",
-   actual = "@com_google_closure_compiler//:externs/browser/w3c_audio.js",
+    name = "w3c_audio.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_audio.js",
 )
 
 # TODO(dramaix): Not opensourced yet
@@ -206,13 +207,13 @@ alias(
 #)
 
 alias(
-   name = "webgl.js",
-   actual = "@com_google_closure_compiler//:externs/browser/webgl.js",
+    name = "webgl.js",
+    actual = "@com_google_closure_compiler//:externs/browser/webgl.js",
 )
 
 alias(
-   name = "webstorage.js",
-   actual = "@com_google_closure_compiler//:externs/browser/webstorage.js",
+    name = "webstorage.js",
+    actual = "@com_google_closure_compiler//:externs/browser/webstorage.js",
 )
 
 alias(
@@ -220,12 +221,22 @@ alias(
     actual = "@com_google_closure_compiler//:externs/browser/streamsapi.js",
 )
 
-java_library(
+alias(
     name = "gwt-jsinterop-annotations",
-    exports = ["@jsinterop_annotations//jar"],
+    actual = "@com_google_j2cl//:jsinterop-annotations",
 )
 
-java_library(
+alias(
+    name = "gwt-jsinterop-annotations-j2cl",
+    actual = "@com_google_j2cl//:jsinterop-annotations-j2cl",
+)
+
+alias(
     name = "jsinterop-base",
-    exports = ["@com_google_jsinterop_base//java/jsinterop/base:base"],
+    actual = "@com_google_jsinterop_base//:jsinterop-base",
+)
+
+alias(
+    name = "jsinterop-base-j2cl",
+    actual = "@com_google_jsinterop_base//:jsinterop-base-j2cl",
 )

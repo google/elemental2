@@ -3,7 +3,6 @@
 # and the resulting API is not user friendly
 
 package(default_visibility = [
-    "//third_party/java/elemental2:__subpackages__",
     "//:__subpackages__",
 ])
 

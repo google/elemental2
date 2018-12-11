@@ -1,7 +1,6 @@
 # This package contains the build rule to build elemental2-media.
 
 package(default_visibility = [
-    "//third_party/java/elemental2:__subpackages__",
     "//:__subpackages__",
 ])
 
