@@ -338,11 +338,6 @@ elemental2.dom.DomGlobal.mozCancelAnimationFrame.handle
 elemental2.dom.DomGlobal.msCancelAnimationFrame.handle
 elemental2.dom.DomGlobal.oCancelAnimationFrame.handle
 elemental2.dom.DomGlobal.webkitCancelAnimationFrame.handle
-elemental2.dom.DomGlobal.cancelRequestAnimationFrame.handle
-elemental2.dom.DomGlobal.clearImmediate.immediateID
-elemental2.dom.DomGlobal.setImmediate
-elemental2.dom.DomGlobal.clearInterval.intervalID
-elemental2.dom.DomGlobal.setInterval
 elemental2.dom.NodeList.ForEachCallbackFn.onInvoke.currentIndex
 elemental2.dom.WorkerNavigator.hardwareConcurrency
 elemental2.dom.WorkerGlobalScope.OnerrorFn.onInvoke.colno
