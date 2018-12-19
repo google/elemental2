@@ -225,6 +225,8 @@ elemental2.dom.Node.compareDocumentPosition
 elemental2.dom.Node.nodeType
 elemental2.dom.NodeList.length
 elemental2.dom.NodeList.item.index
+elemental2.dom.OffscreenCanvas.height
+elemental2.dom.OffscreenCanvas.width
 elemental2.dom.Performance.setResourceTimingBufferSize.maxSize
 elemental2.dom.PerformanceResourceTiming.decodedBodySize
 elemental2.dom.PerformanceResourceTiming.encodedBodySize
