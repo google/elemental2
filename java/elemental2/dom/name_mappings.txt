@@ -1,3 +1,4 @@
+elemental2.dom.DomGlobal.RequestIdleCallbackCallbackFn.onInvoke.p0=deadline
 elemental2.dom.NodeList.ForEachCallbackFn.onInvoke.p0=currentValue
 elemental2.dom.NodeList.ForEachCallbackFn.onInvoke.p1=currentIndex
 elemental2.dom.NodeList.ForEachCallbackFn.onInvoke.p2=listObj

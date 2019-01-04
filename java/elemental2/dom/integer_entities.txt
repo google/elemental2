@@ -168,6 +168,8 @@ elemental2.dom.HTMLVideoElement.videoWidth
 elemental2.dom.HTMLVideoElement.webkitDecodedFrameCount
 elemental2.dom.HTMLVideoElement.webkitDroppedFrameCount
 elemental2.dom.HTMLVideoElement.width
+elemental2.dom.IdleCallbackOptions.getTimeout
+elemental2.dom.IdleCallbackOptions.setTimeout.timeout
 elemental2.dom.ImageBitmap.getHeight
 elemental2.dom.ImageBitmap.getWidth
 elemental2.dom.ImageData.height
@@ -338,6 +340,9 @@ elemental2.dom.DomGlobal.mozCancelAnimationFrame.handle
 elemental2.dom.DomGlobal.msCancelAnimationFrame.handle
 elemental2.dom.DomGlobal.oCancelAnimationFrame.handle
 elemental2.dom.DomGlobal.webkitCancelAnimationFrame.handle
+elemental2.dom.DomGlobal.cancelIdleCallback.handle
+elemental2.dom.DomGlobal.requestIdleCallback.options
+elemental2.dom.DomGlobal.requestIdleCallback
 elemental2.dom.NodeList.ForEachCallbackFn.onInvoke.currentIndex
 elemental2.dom.WorkerNavigator.hardwareConcurrency
 elemental2.dom.WorkerGlobalScope.OnerrorFn.onInvoke.colno
