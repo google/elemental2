@@ -1,0 +1,9 @@
+49,50c49,53
+< /** @const {function()} */
+< AbortController.prototype.abort;
+---
+> /**
+>  * @const
+>  * @return {void}
+>  */
+> AbortController.prototype.abort = function() {};

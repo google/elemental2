@@ -84,6 +84,14 @@ patch_extern_file(
     patch_file = "w3c_serviceworker.js.diff",
 )
 
+# Patch for w3c_abort.js that causes generator to incorrectly generate type of abort function.
+# The extern file can probably be cleaned up directly
+patch_extern_file(
+    name = "w3c_abort_patched",
+    src = "//third_party:w3c_abort.js",
+    patch_file = "w3c_abort.js.diff",
+)
+
 filegroup(
     name = "externs",
     srcs = [
@@ -112,7 +120,7 @@ filegroup(
         # TODO(dramaix): remove old webkit api and rename file to w3c_notifications.js
         "//third_party:webkit_notifications.js",
         "//third_party:streamsapi.js",
-        "//third_party:w3c_abort.js",
+        ":w3c_abort_patched",
         "//third_party:fetchapi.js",
         ":w3c_serviceworker_patched",
         ":w3c_navigation_timing_patched",
