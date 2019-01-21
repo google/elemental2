@@ -19,3 +19,7 @@
 <  * @nosideeffects
 <  */
 < DataTransferItem.prototype.webkitGetAsEntry = function() { return null; };
+2984c2984
+<  * @type {?function(!MessageEvent<?>)}
+---
+>  * @type {?(function(!MessageEvent<?>): void)}

@@ -42,6 +42,7 @@ patch_extern_file(
 #  and should not be part from Elemental. There is a dependency to this type in html5.js
 #  where DataTransfer extends ClipboardData. We've made an attempt to break
 #  this dependency (http://cl/124542026) but that breaks apps (http://b/29263729).
+#  This file also patches return type of WebSocket.onmessage function. This could be migrated back to externs file.
 patch_extern_file(
     name = "html5_patched",
     src = "//third_party:html5.js",
