@@ -430,7 +430,7 @@ var console;
 History.prototype.length;
 
 /**
- * Goes back or forward the specified number of steps in the joint session 
+ * Goes back or forward the specified number of steps in the joint session
  * history.
  * A zero delta will reload the current page.
  * If the delta is out of range, does nothing.

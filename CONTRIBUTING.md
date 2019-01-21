@@ -51,4 +51,3 @@ Be sure to replace `/path/to/closure-compiler/repo` and `/path/to/jsinterop-gene
 
 
 You can now implement local modifications in both project and ask Bazel to build elemental2 with those modifications.
-

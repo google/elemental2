@@ -7,4 +7,3 @@ elemental2.dom.WorkerGlobalScope.OnerrorFn.onInvoke.p1=source
 elemental2.dom.WorkerGlobalScope.OnerrorFn.onInvoke.p2=lineno
 elemental2.dom.WorkerGlobalScope.OnerrorFn.onInvoke.p3=colno
 elemental2.dom.WorkerGlobalScope.OnerrorFn.onInvoke.p4=error
-

@@ -17,7 +17,7 @@ If you want to modify and/or build the last version on your own, follow the inst
       $ ./build_gwt_mvn_jars.sh /path/to/output/directory
 
 The jars are available in `/path/to/output/directory` directory. If you don't
-provide a argument to the script, the script will create a temporary directory 
+provide a argument to the script, the script will create a temporary directory
 for the generated jar.
 
 Bazel dependencies
