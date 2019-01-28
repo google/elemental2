@@ -50,13 +50,13 @@
 < var netscape;
 < 
 193c156
-<  * @param {Function|string} callback
+<  * @param {Function|!TrustedScript|string} callback
 ---
->  * @param {function(...?):undefined|string} callback
+>  * @param {function(...?):undefined|!TrustedScript|string} callback
 203c166
-<  * @param {Function|string} callback
+<  * @param {Function|!TrustedScript|string} callback
 ---
->  * @param {function(...?):undefined|string} callback
+>  * @param {function(...?):undefined|!TrustedScript|string} callback
 205c168
 <  * @param {...*} var_args
 ---

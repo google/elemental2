@@ -1,10 +1,10 @@
-721d720
+723d722
 <  * @implements {IObject<string, (T|RadioNodeList<T>)>}
-730c729
+732c731
 <  * @return {T|RadioNodeList<T>|null}
 ---
 >  * @return {T|null}
-2758a2758,2939
+2770a2770,2951
 > /**
 >  * @type {boolean}
 >  * @see https://developer.mozilla.org/en/DOM/window.closed

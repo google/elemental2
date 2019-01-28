@@ -92,6 +92,7 @@ filegroup(
         "//third_party:w3c_event3.js",
         "//third_party:w3c_device_sensor_event.js",
         "//third_party:w3c_touch_event.js",
+        "//third_party:w3c_trusted_types.js",
         "//third_party:w3c_dom1.js",
         ":w3c_dom2_patched",
         "//third_party:w3c_dom3.js",
