@@ -12,6 +12,33 @@
   <description>Thin Java abstractions for the native Web Storage APIs.</description>
   <url>https://www.gwtproject.org</url>
 
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/google/elemental2.git</connection>
+    <developerConnection>scm:git:git@github.com:google/elemental2.git</developerConnection>
+    <url>https://github.com/google/elemental2</url>
+  </scm>
+
+  <issueManagement>
+    <url>https://github.com/google/elemental2/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <developers>
+    <developer>
+      <name>j2cl team</name>
+      <organization>Google</organization>
+      <organizationUrl>http://www.google.com</organizationUrl>
+    </developer>
+  </developers>
+
   <dependencies>
     <dependency>
       <groupId>com.google.jsinterop</groupId>
