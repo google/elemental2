@@ -54,6 +54,11 @@ alias(
 )
 
 alias(
+    name = "w3c_trusted_types.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_trusted_types.js",
+)
+
+alias(
     name = "w3c_dom1.js",
     actual = "@com_google_closure_compiler//:externs/browser/w3c_dom1.js",
 )
