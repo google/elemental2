@@ -107,6 +107,7 @@ filegroup(
         "//third_party:w3c_range.js",
         "//third_party:w3c_css.js",
         "//third_party:w3c_css3d.js",
+        "//third_party:w3c_geometry1.js",
         "//third_party:w3c_xml.js",
         "//third_party:flash.js",
         "//third_party:w3c_anim_timing.js",
