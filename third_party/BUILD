@@ -114,6 +114,11 @@ alias(
 )
 
 alias(
+    name = "w3c_geometry1.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_geometry1.js",
+)
+
+alias(
     name = "w3c_css.js",
     actual = "@com_google_closure_compiler//:externs/browser/w3c_css.js",
 )
