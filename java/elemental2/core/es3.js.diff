@@ -1,4 +1,4 @@
-392,401d391
+399,408d398
 <  * Executes a function when a non-existent method is called on an object.
 <  * Mozilla-only.
 <  *
@@ -9,105 +9,105 @@
 < Object.prototype.__noSuchMethod__ = function(fun) {};
 < 
 < /**
-539c529
+546c536
 <  * @param {...*} var_args
 ---
 >  * @param {...T} items
-545c535
+552c542
 < function Array(var_args) {}
 ---
 > function Array(items) {}
-559,561c549,550
+566,568c556,557
 <  * @param {...*} var_args
 <  * @return {!Array<?>}
 <  * @this {*}
 ---
 >  * @param {...T} items
 >  * @return {!Array<T>}
-565c554
+572c561
 < Array.prototype.concat = function(var_args) {};
 ---
 > Array.prototype.concat = function(items) {};
-584,586d572
+591,593d579
 <  * @this {IArrayLike<T>}
 <  * @modifies {this}
 <  * @template T
-598,600d583
+605,607d590
 <  * @this {IArrayLike<T>}
 <  * @template T
 <  * @modifies {this}
-609,612c592
+616,619c599
 <  * @return {THIS} A reference to the original modified array.
 <  * @this {THIS}
 <  * @template THIS
 <  * @modifies {this}
 ---
 >  * @return {Array<T>} A reference to the original modified array.
-621,622d600
+628,629d607
 <  * @this {IArrayLike<T>}
 <  * @modifies {this}
-624d601
+631d608
 <  * @template T
-632c609
+639c616
 <  * @param {*=} opt_begin Zero-based index at which to begin extraction.  A
 ---
 >  * @param {number=} opt_begin Zero-based index at which to begin extraction.  A
-634c611
+641c618
 <  * @param {*=} opt_end Zero-based index at which to end extraction.  slice
 ---
 >  * @param {number=} opt_end Zero-based index at which to end extraction.  slice
-637,638d613
+644,645d620
 <  * @this {IArrayLike<T>|string}
 <  * @template T
-649,651d623
+656,658d630
 <  * @this {IArrayLike<T>}
 <  * @template T
 <  * @modifies {this}
-661c633
+668c640
 <  * @param {*=} opt_index Index at which to start changing the array. If negative,
 ---
 >  * @param {number=} opt_index Index at which to start changing the array. If negative,
-664c636
+671c643
 <  * @param {*=} opt_howMany An integer indicating the number of old array elements
 ---
 >  * @param {number=} opt_howMany An integer indicating the number of old array elements
-668,670d639
+675,677d646
 <  * @this {IArrayLike<T>}
 <  * @modifies {this}
 <  * @template T
-695c664
+702c671
 <  * @param {...*} var_args
 ---
 >  * @param {...T} var_args
-710,711c679
+717,718c686
 <  * @this {IArrayLike<T>|string}
 <  * @template T,R
 ---
 >  * @template R
-723,724c691
+730,731c698
 <  * @this {IArrayLike<T>|string}
 <  * @template T,R
 ---
 >  * @template R
-731,732c698,699
+738,739c705,706
 <  * @param {?function(this:S, T, number, !Array<T>): ?} callback
 <  * @param {S=} opt_thisobj
 ---
 >  * @param {?function(T, number, !Array<T>): ?} callback
 >  * @param {*=} opt_thisobj
-734,735d700
+741,742d707
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S
-742,743c707,708
+749,750c714,715
 <  * @param {?function(this:S, T, number, !Array<T>): ?} callback
 <  * @param {S=} opt_thisobj
 ---
 >  * @param {?function(T, number, !Array<T>): ?} callback
 >  * @param {*=} opt_thisobj
-745,746d709
+752,753d716
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S
-753,756c716,717
+760,763c723,724
 <  * @param {?function(this:S, T, number, !Array<T>): ?} callback
 <  * @param {S=} opt_thisobj
 <  * @this {IArrayLike<T>|string}
@@ -115,35 +115,35 @@
 ---
 >  * @param {?function(T, number, !Array<T>): ?} callback
 >  * @param {*=} opt_thisobj
-767d727
+774d734
 <  * @this {IArrayLike<T>|string}
-769d728
+776d735
 <  * @template T
-779d737
+786d744
 <  * @this {IArrayLike<T>|string}
-781d738
+788d745
 <  * @template T
-788,789c745,746
+795,796c752,753
 <  * @param {?function(this:S, T, number, !Array<T>): R} callback
 <  * @param {S=} opt_thisobj
 ---
 >  * @param {?function(T, number, !Array<T>): R} callback
 >  * @param {*=} opt_thisobj
-791,792c748
+798,799c755
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S,R
 ---
 >  * @template R
-799,800c755,756
+806,807c762,763
 <  * @param {?function(this:S, T, number, !Array<T>): ?} callback
 <  * @param {S=} opt_thisobj
 ---
 >  * @param {?function( T, number, !Array<T>): ?} callback
 >  * @param {*=} opt_thisobj
-802,803d757
+809,810d764
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S
-827,895d780
+834,902d787
 <  * @param {IArrayLike<T>} arr
 <  * @param {?function(this:S, T, number, ?) : ?} callback
 <  * @param {S=} opt_context
@@ -213,23 +213,23 @@
 < Array.some = function(arr, callback, opt_context) {};
 < 
 < /**
-1880c1765
+1887c1772
 <  * @param {string|Function} replacement
 ---
 >  * @param {string|function(string, ...?):*} replacement
-2040c1925
+2047c1932
 <  * @param {*} pattern
 ---
 >  * @param {string} pattern
-2051c1936
+2058c1943
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2059c1944
+2066c1951
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2385,2393d2269
+2392,2400d2276
 < 
 < // JScript extensions.
 < // @see http://msdn.microsoft.com/en-us/library/894hfyb4(VS.80).aspx

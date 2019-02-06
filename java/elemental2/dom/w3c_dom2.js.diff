@@ -4,7 +4,7 @@
 <  * @return {T|RadioNodeList<T>|null}
 ---
 >  * @return {T|null}
-2770a2770,2951
+2764a2764,2945
 > /**
 >  * @type {boolean}
 >  * @see https://developer.mozilla.org/en/DOM/window.closed
