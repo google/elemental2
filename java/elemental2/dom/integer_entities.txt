@@ -347,4 +347,3 @@ elemental2.dom.NodeList.ForEachCallbackFn.onInvoke.currentIndex
 elemental2.dom.WorkerNavigator.hardwareConcurrency
 elemental2.dom.WorkerGlobalScope.OnerrorFn.onInvoke.colno
 elemental2.dom.WorkerGlobalScope.OnerrorFn.onInvoke.lineno
-
