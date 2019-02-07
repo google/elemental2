@@ -58,6 +58,6 @@
 ---
 >  * @param {function(...?):undefined|!TrustedScript|string} callback
 205c168
-<  * @param {...*} var_args
+<  * @param {...*} callbackParams
 ---
->  * @param {...?} var_args
+>  * @param {...?} callbackParams
