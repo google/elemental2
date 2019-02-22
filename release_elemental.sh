@@ -18,7 +18,7 @@ read -s gpg_passphrase
 
 cd ${bazel_root}
 
-elemental_artifacts="core dom indexeddb media promise svg webgl webstorage"
+elemental_artifacts="core dom indexeddb media promise svg webgl webstorage webassembly"
 
 for artifact in ${elemental_artifacts}; do
   artifact_path=${bazel_root}/bazel-bin/java/elemental2/${artifact}

@@ -43,6 +43,12 @@ jsinterop_generator(
     exports = ["//java/elemental2/webgl"],
 )
 
+# Webassembly api
+jsinterop_generator(
+    name = "elemental2-webassembly",
+    exports = ["//java/elemental2/webassembly"],
+)
+
 # Media  api
 jsinterop_generator(
     name = "elemental2-media",

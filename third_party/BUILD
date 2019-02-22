@@ -232,6 +232,11 @@ alias(
 )
 
 alias(
+   name = "webassembly.js",
+   actual = "@com_google_closure_compiler//:contrib/externs/webassembly.js",
+)
+
+alias(
     name = "streamsapi.js",
     actual = "@com_google_closure_compiler//:externs/browser/streamsapi.js",
 )

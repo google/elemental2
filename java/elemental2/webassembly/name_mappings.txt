@@ -1,0 +1,1 @@
+elemental2.webassembly.TableFunction.onInvoke.p0=parameters
