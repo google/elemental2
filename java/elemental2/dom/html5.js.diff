@@ -1,17 +1,17 @@
-2633,2636d2632
+2636,2639d2635
 <  * We say that this extends ClipboardData, because Event.prototype.clipboardData
 <  * is a DataTransfer on WebKit but a ClipboardData on IE. The interfaces are so
 <  * similar that it's easier to merge them.
 <  *
-2641d2636
+2644d2639
 <  * @extends {ClipboardData}
-2659d2653
+2662d2656
 <  * @override
-2667d2660
+2670d2663
 <  * @override
-2675d2667
+2678d2670
 <  * @override
-2777,2783d2768
+2780,2786d2771
 < /**
 <  * @return {?Entry} The Entry corresponding to this item, or null. Note that
 <  * despite its name,this method only works in Chrome, and will eventually
