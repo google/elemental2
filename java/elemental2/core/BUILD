@@ -7,7 +7,10 @@ package(default_visibility = [
 # Apache2
 licenses(["notice"])
 
-load("//:elemental_utils.bzl", "patch_extern_file")
+load(
+    "//build_defs/internal_do_not_use:elemental_utils.bzl",
+    "patch_extern_file",
+)
 load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 # Removes non standard Object methods.
