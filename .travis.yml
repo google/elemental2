@@ -34,8 +34,7 @@ before_script:
   # This is so we understand failures better
   - echo "build --verbose_failures" >> .bazelrc
 
-script:
-  - bazel build java/...
+script: ./bazel_build_test.sh
 
 notifications:
   email: false
