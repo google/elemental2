@@ -194,13 +194,13 @@
 1373,1374d1207
 <  * @this {!IArrayLike<T>|string}
 <  * @template T
-1542,1543c1375,1376
+1549,1550c1382,1383
 <  * @param {function(this: THIS, ...?): RESULT} targetFn
 <  * @param {THIS} thisArg
 ---
 >  * @param {function(...?): RESULT} targetFn
 >  * @param {*} thisArg
-1546c1379
+1553c1386
 <  * @template THIS, RESULT
 ---
 >  * @template RESULT
