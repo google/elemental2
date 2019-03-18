@@ -4,6 +4,9 @@ elemental2.dom.Blob.slice.start
 elemental2.dom.ByteLengthQueuingStrategy.size
 elemental2.dom.ByteLengthQueuingStrategy.SizeChunkType.getByteLength
 elemental2.dom.ByteLengthQueuingStrategy.SizeChunkType.setByteLength.byteLength
+elemental2.dom.CloseEventInit.getCode
+elemental2.dom.CloseEventInit.setCode.code
+elemental2.dom.CloseEvent.code
 elemental2.dom.CSSMediaRule.deleteRule.index
 elemental2.dom.CSSMediaRule.insertRule.index
 elemental2.dom.CSSRule.type
@@ -301,6 +304,14 @@ elemental2.dom.VideoPlaybackQuality.getTotalVideoFrames
 elemental2.dom.VideoPlaybackQuality.setTotalVideoFrames.totalVideoFrames
 elemental2.dom.VTTCue.size
 elemental2.dom.VTTRegion.lines
+elemental2.dom.WebSocket__Constants.CLOSED
+elemental2.dom.WebSocket__Constants.CLOSING
+elemental2.dom.WebSocket__Constants.CONNECTING
+elemental2.dom.WebSocket__Constants.OPEN
+elemental2.dom.WebSocket.CLOSED
+elemental2.dom.WebSocket.CLOSING
+elemental2.dom.WebSocket.CONNECTING
+elemental2.dom.WebSocket.OPEN
 elemental2.dom.WebSocket.bufferedAmount
 elemental2.dom.WebSocket.close.code
 elemental2.dom.WebSocket.readyState
