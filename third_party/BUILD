@@ -8,7 +8,6 @@ licenses(["notice"])  # Apache2
 # for being able to test our bazel build. We will refer to the externs in closure-compiler github
 # repo before to really opensource elemental2
 exports_files([
-    "mediakeys.js",
     "svg.js",
     "w3c_clipboardevent.js",
 ])
@@ -234,6 +233,11 @@ alias(
 alias(
    name = "webassembly.js",
    actual = "@com_google_closure_compiler//:contrib/externs/webassembly.js",
+)
+
+alias(
+    name = "mediakeys.js",
+    actual = "@com_google_closure_compiler//:externs/browser/mediakeys.js",
 )
 
 alias(
