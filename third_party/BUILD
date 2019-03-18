@@ -216,6 +216,11 @@ alias(
 )
 
 alias(
+    name = "whatwg_console.js",
+    actual = "@com_google_closure_compiler//:externs/browser/whatwg_console.js",
+)
+
+alias(
    name = "webassembly.js",
    actual = "@com_google_closure_compiler//:contrib/externs/webassembly.js",
 )
