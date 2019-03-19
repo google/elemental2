@@ -9,7 +9,6 @@ licenses(["notice"])  # Apache2
 # repo before to really opensource elemental2
 exports_files([
     "svg.js",
-    "w3c_clipboardevent.js",
 ])
 
 alias(
@@ -172,11 +171,10 @@ alias(
     actual = "@com_google_closure_compiler//:externs/browser/w3c_navigation_timing.js",
 )
 
-# TODO(dramaix): Not opensourced yet
-#alias(
-#   name = "w3c_clipboardevent.js",
-#   actual = "@com_google_closure_compiler//:externs/browser/w3c_clipboardevent.js",
-#)
+alias(
+   name = "w3c_clipboardevent.js",
+   actual = "@com_google_closure_compiler//:externs/browser/w3c_clipboardevent.js",
+)
 
 alias(
     name = "w3c_eventsource.js",
