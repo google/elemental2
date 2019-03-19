@@ -203,12 +203,6 @@ alias(
     actual = "@com_google_closure_compiler//:externs/browser/w3c_indexeddb.js",
 )
 
-# TODO(dramaix): Not opensourced yet
-#alias(
-#   name = "mediakeys.js",
-#   actual = "@com_google_closure_compiler//:externs/browser/mediakeys.js",
-#)
-
 alias(
     name = "w3c_audio.js",
     actual = "@com_google_closure_compiler//:externs/browser/w3c_audio.js",
