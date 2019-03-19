@@ -4,14 +4,6 @@ package(default_visibility = [
 
 licenses(["notice"])  # Apache2
 
-# TODO(dramaix): These externs files are being opensourced (see cl/154112993). We copied/pasted here
-# for being able to test our bazel build. We will refer to the externs in closure-compiler github
-# repo before to really opensource elemental2
-exports_files([
-    "svg.js",
-    "w3c_clipboardevent.js",
-])
-
 alias(
     name = "es3.js",
     actual = "@com_google_closure_compiler//:externs/es3.js",
@@ -172,11 +164,11 @@ alias(
     actual = "@com_google_closure_compiler//:externs/browser/w3c_navigation_timing.js",
 )
 
-# TODO(dramaix): Not opensourced yet
-#alias(
-#   name = "w3c_clipboardevent.js",
-#   actual = "@com_google_closure_compiler//:externs/browser/w3c_clipboardevent.js",
-#)
+
+alias(
+   name = "w3c_clipboardevent.js",
+   actual = "@com_google_closure_compiler//:externs/browser/w3c_clipboardevent.js",
+)
 
 alias(
     name = "w3c_eventsource.js",
@@ -203,22 +195,15 @@ alias(
     actual = "@com_google_closure_compiler//:externs/browser/w3c_indexeddb.js",
 )
 
-# TODO(dramaix): Not opensourced yet
-#alias(
-#   name = "mediakeys.js",
-#   actual = "@com_google_closure_compiler//:externs/browser/mediakeys.js",
-#)
-
 alias(
     name = "w3c_audio.js",
     actual = "@com_google_closure_compiler//:externs/browser/w3c_audio.js",
 )
 
-# TODO(dramaix): Not opensourced yet
-#alias(
-#   name = "svg.js",
-#   actual = "@com_google_closure_compiler//:externs/browser/svg.js",
-#)
+alias(
+   name = "svg.js",
+   actual = "@com_google_closure_compiler//:contrib/externs/svg.js",
+)
 
 alias(
     name = "webgl.js",
