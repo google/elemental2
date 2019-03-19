@@ -58,6 +58,8 @@ elemental2.dom.DataTransferItemList.remove.i
 elemental2.dom.Document.caretPositionFromPoint.x
 elemental2.dom.Document.caretPositionFromPoint.y
 elemental2.dom.Document.createTouch.identifier
+elemental2.dom.Document.childElementCount
+elemental2.dom.DocumentFragment.childElementCount
 elemental2.dom.DOMException.code
 elemental2.dom.DOMException.ABORT_ERR
 elemental2.dom.DOMException.DATA_CLONE_ERR
@@ -90,6 +92,7 @@ elemental2.dom.DOMTokenList.length
 elemental2.dom.DOMTokenList.item.index
 elemental2.dom.DOMImplementationList.length
 elemental2.dom.DOMImplementationList.item.index
+elemental2.dom.Element.childElementCount
 elemental2.dom.Element.clientHeight
 elemental2.dom.Element.clientLeft
 elemental2.dom.Element.clientTop
