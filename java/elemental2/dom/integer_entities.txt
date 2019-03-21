@@ -307,10 +307,6 @@ elemental2.dom.VideoPlaybackQuality.getTotalVideoFrames
 elemental2.dom.VideoPlaybackQuality.setTotalVideoFrames.totalVideoFrames
 elemental2.dom.VTTCue.size
 elemental2.dom.VTTRegion.lines
-elemental2.dom.WebSocket__Constants.CLOSED
-elemental2.dom.WebSocket__Constants.CLOSING
-elemental2.dom.WebSocket__Constants.CONNECTING
-elemental2.dom.WebSocket__Constants.OPEN
 elemental2.dom.WebSocket.CLOSED
 elemental2.dom.WebSocket.CLOSING
 elemental2.dom.WebSocket.CONNECTING
