@@ -92,6 +92,7 @@ elemental2.dom.DOMTokenList.length
 elemental2.dom.DOMTokenList.item.index
 elemental2.dom.DOMImplementationList.length
 elemental2.dom.DOMImplementationList.item.index
+elemental2.dom.Element.ALLOW_KEYBOARD_INPUT
 elemental2.dom.Element.childElementCount
 elemental2.dom.Element.clientHeight
 elemental2.dom.Element.clientLeft
@@ -99,6 +100,8 @@ elemental2.dom.Element.clientTop
 elemental2.dom.Element.clientWidth
 elemental2.dom.Element.scrollHeight
 elemental2.dom.Element.scrollWidth
+elemental2.dom.Element.webkitRequestFullScreen.allowKeyboardInput
+elemental2.dom.Element.webkitRequestFullscreen.allowKeyboardInput
 elemental2.dom.ErrorEvent.colno
 elemental2.dom.ErrorEvent.lineno
 elemental2.dom.ErrorEventInit.getColno
