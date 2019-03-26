@@ -188,6 +188,10 @@ elemental2.dom.LongRange.getMax
 elemental2.dom.LongRange.setMax.max
 elemental2.dom.LongRange.getMin
 elemental2.dom.LongRange.setMin.min
+elemental2.dom.MediaError.MEDIA_ERR_ABORTED
+elemental2.dom.MediaError.MEDIA_ERR_DECODE
+elemental2.dom.MediaError.MEDIA_ERR_NETWORK
+elemental2.dom.MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED
 elemental2.dom.MediaError.code
 elemental2.dom.MediaList.length
 elemental2.dom.MediaList.item.index
