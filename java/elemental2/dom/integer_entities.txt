@@ -60,6 +60,9 @@ elemental2.dom.Document.caretPositionFromPoint.y
 elemental2.dom.Document.createTouch.identifier
 elemental2.dom.Document.childElementCount
 elemental2.dom.DocumentFragment.childElementCount
+elemental2.dom.DOMError.SEVERITY_ERROR
+elemental2.dom.DOMError.SEVERITY_FATAL_ERROR
+elemental2.dom.DOMError.SEVERITY_WARNING
 elemental2.dom.DOMException.code
 elemental2.dom.DOMException.ABORT_ERR
 elemental2.dom.DOMException.DATA_CLONE_ERR
