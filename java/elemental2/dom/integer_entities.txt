@@ -110,6 +110,9 @@ elemental2.dom.ErrorEventInit.getLineno
 elemental2.dom.ErrorEventInit.setLineno.lineno
 elemental2.dom.Event.eventPhase
 elemental2.dom.EventSource.readyState
+elemental2.dom.EventSource.CLOSED
+elemental2.dom.EventSource.CONNECTING
+elemental2.dom.EventSource.OPEN
 elemental2.dom.FileList.length
 elemental2.dom.FileReader.readyState
 elemental2.dom.Geolocation.clearWatch.watchId
