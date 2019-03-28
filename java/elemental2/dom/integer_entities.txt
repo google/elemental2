@@ -60,6 +60,13 @@ elemental2.dom.Document.caretPositionFromPoint.y
 elemental2.dom.Document.createTouch.identifier
 elemental2.dom.Document.childElementCount
 elemental2.dom.DocumentFragment.childElementCount
+elemental2.dom.DOMApplicationCache.CHECKING
+elemental2.dom.DOMApplicationCache.DOWNLOADING
+elemental2.dom.DOMApplicationCache.IDLE
+elemental2.dom.DOMApplicationCache.OBSOLETE
+elemental2.dom.DOMApplicationCache.UNCACHED
+elemental2.dom.DOMApplicationCache.UPDATEREADY
+elemental2.dom.DOMApplicationCache.status
 elemental2.dom.DOMError.SEVERITY_ERROR
 elemental2.dom.DOMError.SEVERITY_FATAL_ERROR
 elemental2.dom.DOMError.SEVERITY_WARNING
