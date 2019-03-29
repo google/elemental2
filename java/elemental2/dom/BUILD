@@ -31,16 +31,6 @@ patch_extern_file(
     patch_file = "fileapi.js.diff",
 )
 
-#   Patch for w3c_rtc.js: remove deprecated method MediaStreamTrack.getSources. This static method
-#   is defined on an interface and cause troubles during elemental2 generation. We can remove it
-#   safely because it won't be supported by chrome in january 2017:
-#   https://www.chromestatus.com/features/4765305641369600
-patch_extern_file(
-    name = "w3c_rtc_patched",
-    src = "//third_party:w3c_rtc.js",
-    patch_file = "w3c_rtc.js.diff",
-)
-
 #  Patch for html5.js: Remove reference to ClipboardData that is an api from Internet Explorer
 #  and should not be part from Elemental. There is a dependency to this type in html5.js
 #  where DataTransfer extends ClipboardData. We've made an attempt to break
@@ -104,7 +94,7 @@ filegroup(
         ":fileapi_patched",
         "dom_missing_api.js",
         "//third_party:page_visibility.js",
-        ":w3c_rtc_patched",
+        "//third_party:w3c_rtc.js",
         ":html5_patched",
         ":window_patched",
         "//third_party:w3c_range.js",
