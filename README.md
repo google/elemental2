@@ -1,6 +1,4 @@
-Elemental2
-===================
-[![Build Status](https://secure.travis-ci.org/google/elemental2.png?branch=master)](http://travis-ci.org/google/elemental2)
+# Elemental2 &middot; [![Build Status](https://secure.travis-ci.org/google/elemental2.png?branch=master)](http://travis-ci.org/google/elemental2)
 
 Elemental2 provides type checked access to all browser APIs for Java code. This
 is done by using [closure extern files](https://github.com/google/closure-compiler/tree/master/externs)
