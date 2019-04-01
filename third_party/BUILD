@@ -155,8 +155,8 @@ alias(
 )
 
 alias(
-   name = "w3c_requestidlecallback.js",
-   actual = "@com_google_closure_compiler//:externs/browser/w3c_requestidlecallback.js",
+    name = "w3c_requestidlecallback.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_requestidlecallback.js",
 )
 
 alias(
@@ -164,10 +164,9 @@ alias(
     actual = "@com_google_closure_compiler//:externs/browser/w3c_navigation_timing.js",
 )
 
-
 alias(
-   name = "w3c_clipboardevent.js",
-   actual = "@com_google_closure_compiler//:externs/browser/w3c_clipboardevent.js",
+    name = "w3c_clipboardevent.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_clipboardevent.js",
 )
 
 alias(
@@ -201,8 +200,8 @@ alias(
 )
 
 alias(
-   name = "svg.js",
-   actual = "@com_google_closure_compiler//:contrib/externs/svg.js",
+    name = "svg.js",
+    actual = "@com_google_closure_compiler//:contrib/externs/svg.js",
 )
 
 alias(
@@ -216,8 +215,8 @@ alias(
 )
 
 alias(
-   name = "webassembly.js",
-   actual = "@com_google_closure_compiler//:contrib/externs/webassembly.js",
+    name = "webassembly.js",
+    actual = "@com_google_closure_compiler//:contrib/externs/webassembly.js",
 )
 
 alias(

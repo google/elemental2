@@ -12,7 +12,6 @@ exports_files(["LICENSE"])
 
 load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
-
 # Core of Elemental containing basic javascript types definitions
 jsinterop_generator(
     name = "elemental2-core",

@@ -7,10 +7,7 @@ package(default_visibility = [
 # Apache2
 licenses(["notice"])
 
-load(
-    "//build_defs/internal_do_not_use:elemental_utils.bzl",
-    "patch_extern_file",
-)
+load("//build_defs/internal_do_not_use:elemental_utils.bzl", "patch_extern_file")
 load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 #  Patches for w3c_dom2.js and window.js: Add standard api of Window object that are not defined in
