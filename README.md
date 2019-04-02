@@ -23,25 +23,39 @@ for the generated jar.
 
 Bazel dependencies
 ------------------
-If your project use [Bazel](https://bazel.build), add this repository as an external dependency in your `WORKSPACE` file
+If your project use [Bazel](https://bazel.build), add this repository as an
+external dependency in your `WORKSPACE` file:
 
-      new_http_archive(
-        name = "com_google_elemental2",
-        url="https://github.com/google/elemental2/archive/master.zip",
-      )
+```
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-Elemental2 is split up in several jars files. Refer to the following targets in your `java_library` deps:
+http_archive(
+    name = "com_google_elemental2",
+    strip_prefix = "elemental2-20190325,
+    url = "https://github.com/google/elemental2/archive/v20190325.zip",
+)
 
- module | Bazel targets
- ------ | -------------
- core | `@com_google_elemental2//java/elemental2/core`
- dom | `@com_google_elemental2//java/elemental2/dom`
- promise | `@com_google_elemental2//java/elemental2/promise`
- indexeddb | `@com_google_elemental2//java/elemental2/indexeddb`
- svg | `@com_google_elemental2//java/elemental2/svg`
- webgl | `@com_google_elemental2//java/elemental2/webgl`
- media | `@com_google_elemental2//java/elemental2/media`
- webstorage | `@com_google_elemental2//java/elemental2/webstorage`
+load("@com_google_elemental2//build_defs:repository.bzl", "load_elemental2_repo_deps")
+load_elemental2_repo_deps()
+
+load("@com_google_elemental2//build_defs:workspace.bzl", "setup_elemental2_workspace")
+setup_elemental2_workspace()
+```
+
+Now from you can add elemental2 targets as needed to your `j2cl_library` deps.
+
+Following are the different elemental2 modules and their target names:
+
+ module     | Bazel targets for J2CL
+ -----------| -----------------------
+ core       | `@com_google_elemental2//:elemental2-core-j2cl`
+ dom        | `@com_google_elemental2//:elemental2-dom-j2cl`
+ promise    | `@com_google_elemental2//:elemental2-promise-j2cl`
+ indexeddb  | `@com_google_elemental2//:elemental2-indexeddb-j2cl`
+ svg        | `@com_google_elemental2//:elemental2-svg-j2cl`
+ webgl      | `@com_google_elemental2//:elemental2-webgl-j2cl`
+ media      | `@com_google_elemental2//:elemental2-media-j2cl`
+ webstorage | `@com_google_elemental2//:elemental2-webstorage-j2cl`
 
 Maven dependencies
 ------------------
