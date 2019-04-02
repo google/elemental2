@@ -29,7 +29,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "com_google_elemental2",
-    strip_prefix = "elemental2-20190325,
+    strip_prefix = "elemental2-20190325",
     url = "https://github.com/google/elemental2/archive/v20190325.zip",
 )
 
