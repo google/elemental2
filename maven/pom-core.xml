@@ -50,5 +50,10 @@
       <artifactId>base</artifactId>
       <version>1.0.0-RC1</version>
     </dependency>
+    <dependency>
+      <groupId>__GROUP_ID__</groupId>
+      <artifactId>elemental2-promise</artifactId>
+      <version>__VERSION__</version>
+    </dependency>
   </dependencies>
 </project>
