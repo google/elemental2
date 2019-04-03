@@ -217,19 +217,19 @@
 <  * @param {string|Function} replacement
 ---
 >  * @param {string|function(string, ...?):*} replacement
-2048c1933
+2050c1935
 <  * @param {*} pattern
 ---
 >  * @param {string} pattern
-2059c1944
+2061c1946
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2067c1952
+2069c1954
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2393,2401d2277
+2395,2403d2279
 < 
 < // JScript extensions.
 < // @see http://msdn.microsoft.com/en-us/library/894hfyb4(VS.80).aspx
