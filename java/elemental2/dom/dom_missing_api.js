@@ -297,15 +297,6 @@ Selection.prototype.setBaseAndExtent = function(
 Selection.prototype.setPosition = function(node, offset) {};
 // End of API definition for Selection type.
 
-// Access to the BatterystatusManager Object
-// This is defined in //javascript/externs/gecko_dom.js
-// should be moved to //javascript/externs/w3c_batterystatus.js
-/**
- * @return {!Promise<!BatteryManager>}
- * @see http://www.w3.org/TR/battery-status/
- */
-Navigator.prototype.getBattery = function() {};
-
 // Console API.
 // Defined in //javascript/externs/webkit_dom.js, the console api is now
 // supported by all major browsers.
