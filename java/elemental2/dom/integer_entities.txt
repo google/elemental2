@@ -349,6 +349,7 @@ elemental2.dom.WritableStreamDefaultWriter.getDesiredSize
 elemental2.dom.WritableStreamDefaultWriter.setDesiredSize.desiredSize
 elemental2.dom.XMLHttpRequest.readyState
 elemental2.dom.XMLHttpRequest.status
+elemental2.dom.XMLHttpRequest.timeout
 elemental2.dom.XMLHttpRequest.DONE
 elemental2.dom.XMLHttpRequest.HEADERS_RECEIVED
 elemental2.dom.XMLHttpRequest.LOADING
