@@ -1,11 +1,11 @@
-67a68,73
+62a63,68
 >  * @see https://developer.mozilla.org/en/DOM/window
 >  */
 > var window;
->  
+> 
 > /**
->  * @type {!Window}
-87,129d92
+>  * @const {!Window}
+79,121d84
 < // Magic functions for Firefox's LiveConnect.
 < // We'll probably never use these in practice. But redefining them
 < // will fire up the JVM, so we want to reserve the symbol names.
@@ -49,15 +49,15 @@
 <  */
 < var netscape;
 < 
-193c156
+185c148
 <  * @param {Function|!TrustedScript|string} callback
 ---
 >  * @param {function(...?):undefined|!TrustedScript|string} callback
-203c166
+195c158
 <  * @param {Function|!TrustedScript|string} callback
 ---
 >  * @param {function(...?):undefined|!TrustedScript|string} callback
-205c168
+197c160
 <  * @param {...*} callbackParams
 ---
 >  * @param {...?} callbackParams
