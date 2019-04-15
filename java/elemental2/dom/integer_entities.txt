@@ -119,6 +119,9 @@ elemental2.dom.ErrorEventInit.setColno.colno
 elemental2.dom.ErrorEventInit.getLineno
 elemental2.dom.ErrorEventInit.setLineno.lineno
 elemental2.dom.Event.eventPhase
+elemental2.dom.Event.AT_TARGET
+elemental2.dom.Event.BUBBLING_PHASE
+elemental2.dom.Event.CAPTURING_PHASE
 elemental2.dom.EventSource.readyState
 elemental2.dom.EventSource.CLOSED
 elemental2.dom.EventSource.CONNECTING
