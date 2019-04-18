@@ -110,6 +110,7 @@ filegroup(
         "//third_party:url.js",
         "//third_party:w3c_abort.js",
         "//third_party:fetchapi.js",
+        "//third_party:whatwg_console.js",
         ":w3c_serviceworker_patched",
         ":w3c_navigation_timing_patched",
         "//third_party:w3c_clipboardevent.js",
