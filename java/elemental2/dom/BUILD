@@ -62,13 +62,6 @@ patch_extern_file(
     patch_file = "w3c_event.js.diff",
 )
 
-# Patch for w3c_navigation_timing.js: Remove Performance.prototype.memory available only in blink.
-patch_extern_file(
-    name = "w3c_navigation_timing_patched",
-    src = "//third_party:w3c_navigation_timing.js",
-    patch_file = "w3c_navigation_timing.js.diff",
-)
-
 # Patch for w3c_serviceworker.js: Remove ServiceWorkerGlobalScope.prototype.indexedDB thatis not
 # part of the spec and introduce a cyclic dependency toelemental/indexeddb
 patch_extern_file(
@@ -112,7 +105,7 @@ filegroup(
         "//third_party:fetchapi.js",
         "//third_party:whatwg_console.js",
         ":w3c_serviceworker_patched",
-        ":w3c_navigation_timing_patched",
+        "//third_party:w3c_navigation_timing.js",
         "//third_party:w3c_clipboardevent.js",
         "//third_party:w3c_eventsource.js",
         "//third_party:w3c_elementtraversal.js",
