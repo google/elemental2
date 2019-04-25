@@ -36,7 +36,6 @@ patch_extern_file(
 
 # Patch for window.js:
 #   - add window global variable
-#   - Remove netscape only global variable.
 #   - Improve setTimeout, setInterval methods for generating better java API.
 #  TODO(b/36558100): cleanup extern file directly
 patch_extern_file(
