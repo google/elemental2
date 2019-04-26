@@ -19,7 +19,3 @@
 <  * @nosideeffects
 <  */
 < DataTransferItem.prototype.webkitGetAsEntry = function() { return null; };
-3185c3170
-<  * @constructor
----
->  * @interface
