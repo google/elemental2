@@ -168,20 +168,20 @@
 ---
 >  * @template T,R
 1324,1328c1166,1168
-<  * @param {!function(this:S, T, number, !Array<T>): boolean} predicateFn
+<  * @param {function(this:S, T, number, !Array<T>): boolean} predicateFn
 <  * @param {S=} opt_this
 <  * @return {T|undefined}
 <  * @this {IArrayLike<T>|string}
 <  * @template T,S
 ---
->  * @param {!function(T, number, !Array<T>): boolean} predicateFn
+>  * @param {function(T, number, !Array<T>): boolean} predicateFn
 >  * @param {*=} opt_this
 >  * @return {T}
 1335,1336c1175,1176
-<  * @param {!function(this:S, T, number, !Array<T>): boolean} predicateFn
+<  * @param {function(this:S, T, number, !Array<T>): boolean} predicateFn
 <  * @param {S=} opt_this
 ---
->  * @param {!function(T, number, !Array<T>): boolean} predicateFn
+>  * @param {function(T, number, !Array<T>): boolean} predicateFn
 >  * @param {*=} opt_this
 1338,1339d1177
 <  * @this {IArrayLike<T>|string}
