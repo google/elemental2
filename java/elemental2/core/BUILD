@@ -13,8 +13,6 @@ load(
 )
 load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
-# Removes non standard Object methods.
-# TODO(b/36088631): clean up es3.js directly
 # Removes @this annotations from some Arrays methods. This annotation confuses the generator
 # because it redefine the type parameter defined at type level.
 # TODO(b/36088887): Handle correctly @this annotation

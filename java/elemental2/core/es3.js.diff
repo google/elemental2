@@ -1,14 +1,3 @@
-400,409d399
-<  * Executes a function when a non-existent method is called on an object.
-<  * Mozilla-only.
-<  *
-<  * @param {Function} fun
-<  * @return {*}
-<  * @see http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/noSuchMethod
-<  */
-< Object.prototype.__noSuchMethod__ = function(fun) {};
-< 
-< /**
 547c537
 <  * @param {...*} var_args
 ---
@@ -229,13 +218,3 @@
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2395,2403d2279
-< 
-< // JScript extensions.
-< // @see http://msdn.microsoft.com/en-us/library/894hfyb4(VS.80).aspx
-< 
-< /**
-<  * @see http://msdn.microsoft.com/en-us/library/7sw4ddf8.aspx
-<  * @type {function(new:?, string, string=)}
-<  */
-< function ActiveXObject(progId, opt_location) {}
