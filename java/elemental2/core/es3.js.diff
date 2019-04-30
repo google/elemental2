@@ -202,10 +202,6 @@
 < Array.some = function(arr, callback, opt_context) {};
 < 
 < /**
-1888c1773
-<  * @param {string|Function} replacement
----
->  * @param {string|function(string, ...?):*} replacement
 2050c1935
 <  * @param {*} pattern
 ---
