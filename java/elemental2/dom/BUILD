@@ -24,13 +24,6 @@ patch_extern_file(
     patch_file = "w3c_dom2.js.diff",
 )
 
-# Patch for fileapi.js: Remove old API for local FileSystem
-patch_extern_file(
-    name = "fileapi_patched",
-    src = "//third_party:fileapi.js",
-    patch_file = "fileapi.js.diff",
-)
-
 #  Patch for html5.js: Remove reference to ClipboardData that is an api from Internet Explorer
 #  and should not be part from Elemental. There is a dependency to this type in html5.js
 #  where DataTransfer extends ClipboardData. We've made an attempt to break
@@ -84,7 +77,7 @@ filegroup(
         "//third_party:w3c_dom3.js",
         "//third_party:w3c_dom4.js",
         "//third_party:w3c_batterystatus.js",
-        ":fileapi_patched",
+        "//third_party:w3c_fileapi.js",
         "dom_missing_api.js",
         "//third_party:page_visibility.js",
         "//third_party:w3c_rtc.js",

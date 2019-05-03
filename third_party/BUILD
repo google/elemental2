@@ -75,8 +75,8 @@ alias(
 )
 
 alias(
-    name = "fileapi.js",
-    actual = "@com_google_closure_compiler//:externs/browser/fileapi.js",
+    name = "w3c_fileapi.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_fileapi.js",
 )
 
 alias(
