@@ -1,52 +1,52 @@
-547c537
+552c552
 <  * @param {...*} var_args
 ---
 >  * @param {...T} items
-553c543
+558c558
 < function Array(var_args) {}
 ---
 > function Array(items) {}
-567,568c557,558
+572,573c572,573
 <  * @param {...*} var_args
 <  * @return {!Array<?>}
 ---
 >  * @param {...T} items
 >  * @return {!Array<T>}
-573c562
+578c578
 < Array.prototype.concat = function(var_args) {};
 ---
 > Array.prototype.concat = function(items) {};
-632d609
+637d636
 <  * @template T
-640c617
+645c644
 <  * @param {*=} opt_begin Zero-based index at which to begin extraction.  A
 ---
 >  * @param {number=} opt_begin Zero-based index at which to begin extraction.  A
-642c619
+647c646
 <  * @param {*=} opt_end Zero-based index at which to end extraction.  slice
 ---
 >  * @param {number=} opt_end Zero-based index at which to end extraction.  slice
-669c641
+674c673
 <  * @param {*=} opt_index Index at which to start changing the array. If negative,
 ---
 >  * @param {number=} opt_index Index at which to start changing the array. If negative,
-672c644
+677c676
 <  * @param {*=} opt_howMany An integer indicating the number of old array elements
 ---
 >  * @param {number=} opt_howMany An integer indicating the number of old array elements
-703c672
+708c707
 <  * @param {...*} var_args
 ---
 >  * @param {...T} var_args
-2050c1935
+1986c1985
 <  * @param {*} pattern
 ---
 >  * @param {string} pattern
-2061c1946
+1997c1996
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2069c1954
+2005c2004
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
