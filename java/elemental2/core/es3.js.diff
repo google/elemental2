@@ -16,8 +16,6 @@
 < Array.prototype.concat = function(var_args) {};
 ---
 > Array.prototype.concat = function(items) {};
-637d636
-<  * @template T
 645c644
 <  * @param {*=} opt_begin Zero-based index at which to begin extraction.  A
 ---
