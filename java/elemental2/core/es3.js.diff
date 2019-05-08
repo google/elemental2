@@ -16,35 +16,35 @@
 < Array.prototype.concat = function(var_args) {};
 ---
 > Array.prototype.concat = function(items) {};
-645c644
+645c645
 <  * @param {*=} opt_begin Zero-based index at which to begin extraction.  A
 ---
 >  * @param {number=} opt_begin Zero-based index at which to begin extraction.  A
-647c646
+647c647
 <  * @param {*=} opt_end Zero-based index at which to end extraction.  slice
 ---
 >  * @param {number=} opt_end Zero-based index at which to end extraction.  slice
-674c673
+674c674
 <  * @param {*=} opt_index Index at which to start changing the array. If negative,
 ---
 >  * @param {number=} opt_index Index at which to start changing the array. If negative,
-677c676
+677c677
 <  * @param {*=} opt_howMany An integer indicating the number of old array elements
 ---
 >  * @param {number=} opt_howMany An integer indicating the number of old array elements
-708c707
+708c708
 <  * @param {...*} var_args
 ---
 >  * @param {...T} var_args
-1986c1985
+1986c1986
 <  * @param {*} pattern
 ---
 >  * @param {string} pattern
-1997c1996
+1997c1997
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2005c2004
+2005c2005
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
