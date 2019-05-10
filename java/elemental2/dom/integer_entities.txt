@@ -365,7 +365,7 @@ elemental2.dom.Screen.height
 elemental2.dom.Screen.pixelDepth
 elemental2.dom.Screen.width
 elemental2.dom.Selection.anchorOffset
-elemental2.dom.Selection.collapse.index
+elemental2.dom.Selection.collapse.offset
 elemental2.dom.Selection.extend.offset
 elemental2.dom.Selection.focusOffset
 elemental2.dom.Selection.getRangeAt.index
