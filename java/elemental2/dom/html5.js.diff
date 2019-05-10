@@ -11,11 +11,3 @@
 <  * @override
 2774d2766
 <  * @override
-2876,2882d2867
-< /**
-<  * @return {?Entry} The Entry corresponding to this item, or null. Note that
-<  * despite its name,this method only works in Chrome, and will eventually
-<  * be renamed to {@code getAsEntry}.
-<  * @nosideeffects
-<  */
-< DataTransferItem.prototype.webkitGetAsEntry = function() { return null; };
