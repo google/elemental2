@@ -13,7 +13,3 @@
 <  * @param {Function|!TrustedScript|string} callback
 ---
 >  * @param {function(...?):undefined|!TrustedScript|string} callback
-154c160
-<  * @param {...*} callbackParams
----
->  * @param {...?} callbackParams
