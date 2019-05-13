@@ -1,10 +1,3 @@
-62a63,68
->  * @see https://developer.mozilla.org/en/DOM/window
->  */
-> var window;
-> 
-> /**
->  * @const {!Window}
 142c148
 <  * @param {Function|!TrustedScript|string} callback
 ---
