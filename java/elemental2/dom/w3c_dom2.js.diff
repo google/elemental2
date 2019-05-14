@@ -4,10 +4,3 @@
 <  * @return {T|RadioNodeList<T>|null}
 ---
 >  * @return {T|null}
-
-> /**
->  * @type {string}
->  * @see http://www.w3.org/TR/DOM-Parsing/#widl-Element-innerHTML
->  * @implicitCast
->  */
-> Element.prototype.innerHTML;
