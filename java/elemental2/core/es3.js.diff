@@ -16,22 +16,6 @@
 < Array.prototype.concat = function(var_args) {};
 ---
 > Array.prototype.concat = function(items) {};
-645c645
-<  * @param {*=} opt_begin Zero-based index at which to begin extraction.  A
----
->  * @param {number=} opt_begin Zero-based index at which to begin extraction.  A
-647c647
-<  * @param {*=} opt_end Zero-based index at which to end extraction.  slice
----
->  * @param {number=} opt_end Zero-based index at which to end extraction.  slice
-674c674
-<  * @param {*=} opt_index Index at which to start changing the array. If negative,
----
->  * @param {number=} opt_index Index at which to start changing the array. If negative,
-677c677
-<  * @param {*=} opt_howMany An integer indicating the number of old array elements
----
->  * @param {number=} opt_howMany An integer indicating the number of old array elements
 708c708
 <  * @param {...*} var_args
 ---
