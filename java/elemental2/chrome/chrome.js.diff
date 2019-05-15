@@ -1,0 +1,36 @@
+295c295
+<  * @extends {ChromeBaseEvent<function()>}
+---
+>  * @extends {ChromeBaseEvent<!Function>}
+303c303
+<  * @extends {ChromeBaseEvent<function(string)>}
+---
+>  * @extends {ChromeBaseEvent<!Function>}
+311c311
+<  * @extends {ChromeBaseEvent<function(boolean)>}
+---
+>  * @extends {ChromeBaseEvent<!Function>}
+319c319
+<  * @extends {ChromeBaseEvent<function(number)>}
+---
+>  * @extends {ChromeBaseEvent<!Function>}
+327c327
+<  * @extends {ChromeBaseEvent<function(!Object)>}
+---
+>  * @extends {ChromeBaseEvent<!Function>}
+335c335
+<  * @extends {ChromeBaseEvent<function(!Array<string>)>}
+---
+>  * @extends {ChromeBaseEvent<!Function>}
+343c343
+<  * @extends {ChromeBaseEvent<function(string, string)>}
+---
+>  * @extends {ChromeBaseEvent<!Function>}
+380,382c380,382
+<   USER: '',
+<   CAPTURE: '',
+<   EXTENSION: '',
+---
+>     USER: '',
+>     CAPTURE: '',
+>     EXTENSION: '',

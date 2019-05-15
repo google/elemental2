@@ -1,0 +1,7 @@
+elemental2.chrome.MessageSender.frameId
+elemental2.chrome.Tab.id
+elemental2.chrome.Tab.index
+elemental2.chrome.Tab.windowId
+elemental2.chrome.Tab.openerTabId
+elemental2.chrome.Tab.width
+elemental2.chrome.Tab.height

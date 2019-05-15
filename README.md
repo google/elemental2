@@ -54,6 +54,7 @@ Following are the different elemental2 modules and their target names:
  webgl      | `@com_google_elemental2//:elemental2-webgl-j2cl`
  media      | `@com_google_elemental2//:elemental2-media-j2cl`
  webstorage | `@com_google_elemental2//:elemental2-webstorage-j2cl`
+ chrome     | `@com_google_elemental2//:elemental2-chrome-j2cl`
 
 Maven dependencies
 ------------------
@@ -76,6 +77,7 @@ If your project use [Maven](https://maven.apache.org), add maven dependencies in
  webgl | `elemental2-webgl`
  media | `elemental2-media`
  webstorage | `elemental2-webstorage`
+ chrome | `elemental2-chrome`
 
 Download the jar files
 ----------------------
@@ -91,6 +93,7 @@ You can also download manually the jars files.
  webgl | [elemental2-webgl.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webgl/1.0.0-RC1/elemental2-webgl-1.0.0-RC1.jar)
  media | [elemental2-media.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-media/1.0.0-RC1/elemental2-media-1.0.0-RC1.jar)
  webstorage | [elemental2-webstorage.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webstorage/1.0.0-RC1/elemental2-webstorage-1.0.0-RC1.jar)
+ chrome | [elemental2-chrome.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webstorage/1.0.0-RC1/elemental2-chrome-1.0.0-RC1.jar)
 
 GWT
 ---
@@ -106,6 +109,7 @@ If you use Elemental2 with [GWT](http://www.gwtproject.org/), you need to inheri
  webgl | `elemental2.webgl.WebGl`
  media | `elemental2.media.Media`
  webstorage | `elemental2.webstorage.WebStorage`
+ chrome | `elemental2.chrome.Chrome`
 
 Contributing
 ------------

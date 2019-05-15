@@ -66,3 +66,9 @@ jsinterop_generator(
     name = "elemental2-indexeddb",
     exports = ["//java/elemental2/indexeddb"],
 )
+
+# Chrome api
+jsinterop_generator(
+    name = "elemental2-chrome",
+    exports = ["//java/elemental2/chrome"],
+)

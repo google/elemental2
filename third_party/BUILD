@@ -258,3 +258,13 @@ alias(
     name = "jsinterop-base-j2cl",
     actual = "@com_google_jsinterop_base//:jsinterop-base-j2cl",
 )
+
+alias(
+    name = "chrome.js",
+    actual = "@com_google_closure_compiler//:contrib/externs/chrome.js",
+)
+
+alias(
+    name = "chrome_extensions.js",
+    actual = "@com_google_closure_compiler//:contrib/externs/chrome_extensions.js",
+)
