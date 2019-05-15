@@ -16,19 +16,19 @@
 < Array.prototype.concat = function(var_args) {};
 ---
 > Array.prototype.concat = function(items) {};
-708c708
+706c706
 <  * @param {...*} var_args
 ---
 >  * @param {...T} var_args
-1986c1986
+1984c1984
 <  * @param {*} pattern
 ---
 >  * @param {string} pattern
-1997c1997
+1995c1995
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2005c2005
+2003c2003
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
