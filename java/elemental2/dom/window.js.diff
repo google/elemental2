@@ -1,8 +1,4 @@
-142c148
-<  * @param {Function|!TrustedScript|string} callback
+184c185
+<  * @typedef {Function}
 ---
->  * @param {function(...?):undefined|!TrustedScript|string} callback
-152c158
-<  * @param {Function|!TrustedScript|string} callback
----
->  * @param {function(...?):undefined|!TrustedScript|string} callback
+>  * @typedef {function(...?):undefined}
