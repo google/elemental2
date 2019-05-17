@@ -24,16 +24,6 @@ patch_extern_file(
     patch_file = "w3c_dom2.js.diff",
 )
 
-#  Patch for html5.js: Remove reference to ClipboardData that is an api from Internet Explorer
-#  and should not be part from Elemental. There is a dependency to this type in html5.js
-#  where DataTransfer extends ClipboardData. We've made an attempt to break
-#  this dependency (http://cl/124542026) but that breaks apps (http://b/29263729).
-patch_extern_file(
-    name = "html5_patched",
-    src = "//third_party:html5.js",
-    patch_file = "html5.js.diff",
-)
-
 # Patch for window.js:
 #   - Improve setTimeout, setInterval methods for generating better java API.
 #  TODO(b/36558100): cleanup extern file directly
@@ -71,7 +61,7 @@ filegroup(
         "dom_missing_api.js",
         "//third_party:page_visibility.js",
         "//third_party:w3c_rtc.js",
-        ":html5_patched",
+        "//third_party:html5.js",
         ":window_patched",
         "//third_party:w3c_range.js",
         "//third_party:w3c_geometry1.js",
