@@ -14,7 +14,6 @@ load("@com_google_jsinterop_generator//:jsinterop_generator_import.bzl", "jsinte
 jsinterop_generator_import(
     name = "promise",
     srcs = glob(["*.java"]),
-    externs_srcs = ["promise.js"],
     gwt_module_name = "elemental2.promise.Promise",
     gwt_xml = "Promise.gwt.xml",
     types_mapping_files = ["promise.types"],

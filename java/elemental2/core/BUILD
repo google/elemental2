@@ -23,22 +23,13 @@ patch_extern_file(
     patch_file = "es3.js.diff",
 )
 
-# Removes @this annotations from some Arrays methods. This annotation confuses the generator
-# because it redefine the type parameter defined at type level.
-# TODO(b/36252263): Extract Promise API in its own extern file instead
-patch_extern_file(
-    name = "es6_patched",
-    src = "//third_party:es6.js",
-    patch_file = "es6.js.diff",
-)
-
 filegroup(
     name = "externs",
     srcs = [
         # order matters
         ":es3_patched",
         "//third_party:es5.js",
-        ":es6_patched",
+        "//third_party:es6.js",
         "//third_party:es6_collections.js",
     ],
 )
