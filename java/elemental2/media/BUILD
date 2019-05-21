@@ -21,6 +21,9 @@ jsinterop_generator(
     name = "media",
     srcs = [":externs"],
     integer_entities_files = ["integer_entities.txt"],
+    # override auto generated js_deps in order not to provide extern files
+    # Common extern file are included by default.
+    j2cl_js_deps = [],
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/dom",
