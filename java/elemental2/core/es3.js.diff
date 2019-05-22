@@ -1,25 +1,3 @@
-552c552
-<  * @param {...*} var_args
----
->  * @param {...T} items
-558c558
-< function Array(var_args) {}
----
-> function Array(items) {}
-572,573c572,573
-<  * @param {...*} var_args
-<  * @return {!Array<?>}
----
->  * @param {...T} items
->  * @return {!Array<T>}
-578c578
-< Array.prototype.concat = function(var_args) {};
----
-> Array.prototype.concat = function(items) {};
-706c706
-<  * @param {...*} var_args
----
->  * @param {...T} var_args
 1984c1984
 <  * @param {*} pattern
 ---
