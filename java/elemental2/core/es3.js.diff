@@ -1,12 +1,12 @@
-1984c1984
+2053c2053
 <  * @param {*} pattern
 ---
 >  * @param {string} pattern
-1995c1995
+2064c2064
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2003c2003
+2072c2072
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
