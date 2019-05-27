@@ -225,6 +225,11 @@ alias(
 )
 
 alias(
+    name = "mediasource.js",
+    actual = "@com_google_closure_compiler//:externs/browser/mediasource.js",
+)
+
+alias(
     name = "mediakeys.js",
     actual = "@com_google_closure_compiler//:externs/browser/mediakeys.js",
 )
