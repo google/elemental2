@@ -1,7 +1,4 @@
-elemental2.dom.DomGlobal.MozRequestAnimationFrameCallbackFn.onInvoke.p0=timestamp
-elemental2.dom.DomGlobal.MsRequestAnimationFrameCallbackFn.onInvoke.p0=timestamp
-elemental2.dom.DomGlobal.ORequestAnimationFrameCallbackFn.onInvoke.p0=timestamp
-elemental2.dom.DomGlobal.RequestAnimationFrameCallbackFn.onInvoke.p0=timestamp
+elemental2.dom.FrameRequestCallback.onInvoke.p0=timestamp
 elemental2.dom.DomGlobal.RequestIdleCallbackCallbackFn.onInvoke.p0=deadline
 elemental2.dom.NodeList.ForEachCallbackFn.onInvoke.p0=currentValue
 elemental2.dom.NodeList.ForEachCallbackFn.onInvoke.p1=currentIndex
