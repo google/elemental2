@@ -419,9 +419,17 @@ elemental2.dom.WheelEventInit.setDeltaMode.deltaMode
 elemental2.dom.Window.innerHeight
 elemental2.dom.Window.innerWidth
 elemental2.dom.Window.length
+elemental2.dom.Window.moveBy.x
+elemental2.dom.Window.moveBy.y
+elemental2.dom.Window.moveTo.x
+elemental2.dom.Window.moveTo.y
 elemental2.dom.Window.openDatabase.size
 elemental2.dom.Window.outerHeight
 elemental2.dom.Window.outerWidth
+elemental2.dom.Window.resizeBy.x
+elemental2.dom.Window.resizeBy.y
+elemental2.dom.Window.resizeTo.x
+elemental2.dom.Window.resizeTo.y
 elemental2.dom.Window.screenX
 elemental2.dom.Window.screenY
 elemental2.dom.WritableStreamDefaultWriter.getDesiredSize
