@@ -245,6 +245,11 @@ alias(
 )
 
 alias(
+    name = "w3c_selection.js",
+    actual = "@com_google_closure_compiler//:externs/browser/w3c_selection.js",
+)
+
+alias(
     name = "gwt-jsinterop-annotations",
     actual = "@com_google_j2cl//:jsinterop-annotations",
 )
