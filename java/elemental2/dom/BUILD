@@ -72,6 +72,7 @@ filegroup(
         "//third_party:w3c_anim_timing.js",
         # TODO(dramaix): remove old webkit api and rename file to w3c_notifications.js
         "//third_party:webkit_notifications.js",
+        "//third_party:mediasource.js",
         "//third_party:streamsapi.js",
         "//third_party:url.js",
         "//third_party:w3c_abort.js",
