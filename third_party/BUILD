@@ -250,21 +250,11 @@ alias(
 )
 
 alias(
-    name = "gwt-jsinterop-annotations",
-    actual = "@com_google_j2cl//:jsinterop-annotations",
-)
-
-alias(
-    name = "gwt-jsinterop-annotations-j2cl",
+    name = "jsinterop-annotations",
     actual = "@com_google_j2cl//:jsinterop-annotations-j2cl",
 )
 
 alias(
     name = "jsinterop-base",
-    actual = "@com_google_jsinterop_base//:jsinterop-base",
-)
-
-alias(
-    name = "jsinterop-base-j2cl",
     actual = "@com_google_jsinterop_base//:jsinterop-base-j2cl",
 )
