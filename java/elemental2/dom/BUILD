@@ -1,11 +1,12 @@
 # This package contains the build rule to build elemental2-dom.
 
-package(default_visibility = [
-    "//:__subpackages__",
-])
-
-# Apache2
-licenses(["notice"])
+package(
+    default_visibility = [
+        "//:__subpackages__",
+    ],
+    # Apache2
+    licenses = ["notice"],
+)
 
 load(
     "//build_defs/internal_do_not_use:elemental_utils.bzl",

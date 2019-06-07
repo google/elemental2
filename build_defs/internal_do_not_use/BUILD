@@ -18,4 +18,6 @@
 # support this yet, b/34359566.                          #
 ##########################################################
 
-licenses(["notice"])  # Apache 2.0
+package(
+    licenses = ["notice"],  # Apache 2.0
+)

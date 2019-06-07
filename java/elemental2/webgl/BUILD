@@ -1,11 +1,12 @@
 # This package contains the build rule to build elemental2-webgl.
 
-package(default_visibility = [
-    "//:__subpackages__",
-])
-
-# Apache2
-licenses(["notice"])
+package(
+    default_visibility = [
+        "//:__subpackages__",
+    ],
+    # Apache2
+    licenses = ["notice"],
+)
 
 load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 

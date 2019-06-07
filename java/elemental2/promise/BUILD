@@ -2,12 +2,13 @@
 # This API is hard to generate automaticaly with the JsInterop generator
 # and the resulting API is not user friendly
 
-package(default_visibility = [
-    "//:__subpackages__",
-])
-
-# Apache2
-licenses(["notice"])
+package(
+    default_visibility = [
+        "//:__subpackages__",
+    ],
+    # Apache2
+    licenses = ["notice"],
+)
 
 load("@com_google_jsinterop_generator//:jsinterop_generator_import.bzl", "jsinterop_generator_import")
 

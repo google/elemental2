@@ -1,10 +1,12 @@
 # Description:
 #   Elemental Sample app playing with Promise
 
-# Apache2
-licenses(["notice"])
+package(
+    # Apache2
+    licenses = ["notice"],
+)
 
-load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_library", "j2cl_application")
+load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
 
 j2cl_library(
     name = "promise",

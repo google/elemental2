@@ -1,6 +1,8 @@
-licenses(["notice"])  # Apache 2.0
+package(
+    licenses = ["notice"],  # Apache 2.0
+)
 
-load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_library", "j2cl_application")
+load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
 
 j2cl_library(
     name = "helloworld",
