@@ -467,15 +467,7 @@ elemental2.dom.XPathResult.ANY_UNORDERED_NODE_TYPE
 elemental2.dom.XPathResult.FIRST_ORDERED_NODE_TYPE
 elemental2.dom.DomGlobal.openDatabase.size
 elemental2.dom.DomGlobal.requestAnimationFrame
-elemental2.dom.DomGlobal.webkitRequestAnimationFrame
-elemental2.dom.DomGlobal.mozRequestAnimationFrame
-elemental2.dom.DomGlobal.msRequestAnimationFrame
-elemental2.dom.DomGlobal.oRequestAnimationFrame
 elemental2.dom.DomGlobal.cancelAnimationFrame.handle
-elemental2.dom.DomGlobal.mozCancelAnimationFrame.handle
-elemental2.dom.DomGlobal.msCancelAnimationFrame.handle
-elemental2.dom.DomGlobal.oCancelAnimationFrame.handle
-elemental2.dom.DomGlobal.webkitCancelAnimationFrame.handle
 elemental2.dom.DomGlobal.cancelIdleCallback.handle
 elemental2.dom.DomGlobal.requestIdleCallback.options
 elemental2.dom.DomGlobal.requestIdleCallback
