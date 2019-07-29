@@ -29,7 +29,7 @@ elemental2.media.BaseAudioContext.createScriptProcessor.bufferSize
 elemental2.media.BaseAudioContext.createScriptProcessor.numberOfInputChannels_opt
 elemental2.media.BaseAudioContext.createScriptProcessor.numberOfOutputChannels_opt
 elemental2.media.JavaScriptAudioNode.bufferSize
-elemental2.media.OfflineAudioContext.null.length
-elemental2.media.OfflineAudioContext.null.numberOfChannels
+elemental2.media.OfflineAudioContext.constructor.length
+elemental2.media.OfflineAudioContext.constructor.numberOfChannels
 elemental2.media.MediaKeyStatusMap.getSize
 elemental2.media.ScriptProcessorNode.bufferSize
