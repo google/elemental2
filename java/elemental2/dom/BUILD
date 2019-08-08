@@ -14,17 +14,6 @@ load(
 )
 load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
-#  Patches for w3c_dom2.js and window.js: Add standard api of Window object that are not defined in
-#  w3c_dom*.js but in browsers specific extern files. We've tried to fix that in the extern
-#  files directly (http://cl/124712783) but moving API from one file to another make things
-#  typechecked differently (but correctly) and breaks several apps. This cl will be roll forward
-#  when the broken apps get fixed and the patch should be deleted.
-patch_extern_file(
-    name = "w3c_dom2_patched",
-    src = "//third_party:w3c_dom2.js",
-    patch_file = "w3c_dom2.js.diff",
-)
-
 # Patch for window.js:
 #   - Improve setTimeout, setInterval methods for generating better java API.
 #  TODO(b/36558100): cleanup extern file directly
@@ -54,7 +43,7 @@ filegroup(
         "//third_party:w3c_touch_event.js",
         "//third_party:w3c_trusted_types.js",
         "//third_party:w3c_dom1.js",
-        ":w3c_dom2_patched",
+        "//third_party:w3c_dom2.js",
         "//third_party:w3c_dom3.js",
         "//third_party:w3c_dom4.js",
         "//third_party:w3c_batterystatus.js",
