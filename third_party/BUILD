@@ -258,3 +258,10 @@ alias(
     name = "jsinterop-base",
     actual = "@com_google_jsinterop_base//:jsinterop-base-j2cl",
 )
+
+java_library(
+    name = "gwt-array-stamper",
+    srcs = [
+        "@org_gwtproject_gwt//user:super/com/google/gwt/emul/javaemul/internal/ArrayStamper.java",
+    ],
+)

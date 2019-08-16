@@ -40,6 +40,9 @@ jsinterop_generator(
     name = "core",
     srcs = [":externs"],
     global_scope_class_name = "Global",
+    gwt_java_deps = [
+        "//third_party:gwt-array-stamper",
+    ],
     integer_entities_files = ["integer_entities.txt"],
     # override auto generated js_deps since modified externs cause conflicts
     j2cl_js_deps = [],
