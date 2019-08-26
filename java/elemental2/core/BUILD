@@ -35,10 +35,24 @@ filegroup(
     ],
 )
 
+java_library(
+    name = "core-visitors",
+    srcs = ["BuiltInClosureTypeCleaner.java"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//java/com/google/common/base",
+        "//java/com/google/common/collect:collect-gwt",
+        "@com_google_jsinterop_generator///java/jsinterop/generator/model",
+    ],
+)
+
 # Core of Elemental containing basic javascript types definitions
 jsinterop_generator(
     name = "core",
     srcs = [":externs"],
+    custom_preprocessing_pass = [
+        "elemental2.core.BuiltInClosureTypeCleaner",
+    ],
     global_scope_class_name = "Global",
     gwt_java_deps = [
         "//third_party:gwt-array-stamper",
@@ -47,6 +61,9 @@ jsinterop_generator(
     # override auto generated js_deps since modified externs cause conflicts
     j2cl_js_deps = [],
     wildcard_types_files = ["wildcard_types.txt"],
+    runtime_deps = [
+        ":core-visitors",
+    ],
     deps = [
         "//java/elemental2/promise",
     ],
