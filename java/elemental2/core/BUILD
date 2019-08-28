@@ -42,7 +42,7 @@ java_library(
     deps = [
         "//java/com/google/common/base",
         "//java/com/google/common/collect:collect-gwt",
-        "@com_google_jsinterop_generator///java/jsinterop/generator/model",
+        "@com_google_jsinterop_generator//java/jsinterop/generator/model",
     ],
 )
 
