@@ -265,3 +265,8 @@ java_library(
         "@org_gwtproject_gwt//user:super/com/google/gwt/emul/javaemul/internal/ArrayStamper.java",
     ],
 )
+
+java_library(
+    name = "guava",
+    exports = ["@com_google_guava"],
+)
