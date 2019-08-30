@@ -227,6 +227,16 @@ extern(
     path = "browser/url.js",
 )
 
+extern(
+    name = "mediasource",
+    path = "browser/mediasource.js",
+)
+
+extern(
+    name = "w3c_selection",
+    path = "browser/w3c_selection.js",
+)
+
 # svg.js and webassembly.js are not part of the common externs provided by the
 # js-compiler binary.
 alias(
@@ -237,16 +247,6 @@ alias(
 alias(
     name = "webassembly.js",
     actual = "@com_google_closure_compiler//:contrib/externs/webassembly.js",
-)
-
-alias(
-    name = "mediasource.js",
-    actual = "@com_google_closure_compiler//:externs/browser/mediasource.js",
-)
-
-alias(
-    name = "w3c_selection.js",
-    actual = "@com_google_closure_compiler//:externs/browser/w3c_selection.js",
 )
 
 alias(
