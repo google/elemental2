@@ -160,7 +160,7 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
     improveArrayMethodTyping(unshiftMethod.get(), arrayValueTypeParameter);
 
     // 3. Improve the typing of Array.concat. It must accept items of type T (not Object) and
-    // return an array of type T[] (not Object[]).
+    // return an array of type JsArray<T> (not JsArray<Object>).
     Optional<Method> concatMethodOptional =
         arrayType.getMethods().stream().filter(m -> "concat".equals(m.getName())).findAny();
     checkState(concatMethodOptional.isPresent());
@@ -168,11 +168,16 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
 
     improveArrayMethodTyping(concatMethod, arrayValueTypeParameter);
 
+    checkState(concatMethod.getReturnType() instanceof ParametrizedTypeReference);
+    ParametrizedTypeReference concatReturnType =
+        (ParametrizedTypeReference) concatMethod.getReturnType();
     checkState(
-        concatMethod.getReturnType() instanceof ArrayTypeReference
+        concatReturnType.getActualTypeArguments().size() == 1
             && PredefinedTypeReference.OBJECT.equals(
-                ((ArrayTypeReference) concatMethod.getReturnType()).getArrayType()));
-    concatMethod.setReturnType(new ArrayTypeReference(arrayValueTypeParameter));
+                concatReturnType.getActualTypeArguments().get(0)));
+    concatMethod.setReturnType(
+        new ParametrizedTypeReference(
+            concatReturnType.getMainType(), ImmutableList.of(arrayValueTypeParameter)));
   }
 
   /**

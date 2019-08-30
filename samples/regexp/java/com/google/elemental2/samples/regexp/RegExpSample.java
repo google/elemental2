@@ -86,7 +86,7 @@ public class RegExpSample {
     }
 
     JsString string = Js.uncheckedCast(testTextInput.value);
-    String[] matches = string.match(regExp);
+    String[] matches = string.match(regExp).asArray(new String[] {});
     if (matches == null || matches.length == 0) {
       addResult("String.prototype.match()", "null");
     } else {
