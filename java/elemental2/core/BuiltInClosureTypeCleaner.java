@@ -122,7 +122,7 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
     from.setStatic(true);
     from.setFinal(true);
     from.setTypeParameters(ImmutableList.of(methodTypeVariable));
-    from.setName("fromJavaArray");
+    from.setName("asJsArray");
     from.setReturnType(
         new ParametrizedTypeReference(
             new JavaTypeReference(jsArrayType), ImmutableList.of(methodTypeVariable)));
