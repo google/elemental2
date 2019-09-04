@@ -304,9 +304,6 @@ elemental2.dom.MutationEvent.attrChange
 elemental2.dom.MutationEvent.initMutationEvent.attrChangeArg
 elemental2.dom.NamedNodeMap.length
 elemental2.dom.NamedNodeMap.item.index
-elemental2.dom.NameList.length
-elemental2.dom.NameList.getName.index
-elemental2.dom.NameList.getNamespaceURI.index
 elemental2.dom.Navigator.hardwareConcurrency
 elemental2.dom.Node.compareDocumentPosition
 elemental2.dom.Node.nodeType
