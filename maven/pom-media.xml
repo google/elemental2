@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>__GROUP_ID__</groupId>
-  <artifactId>__ARTIFICAT_ID__</artifactId>
+  <artifactId>__ARTIFACT_ID__</artifactId>
   <version>__VERSION__</version>
   <packaging>jar</packaging>
 
