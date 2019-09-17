@@ -23,7 +23,7 @@ lib_version=$1
 
 bazel_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-deploy_target='@com_google_jsinterop_base//:deploy'
+deploy_target='@com_google_j2cl//:deploy'
 license_header="license.txt"
 group_id="com.google.elemental2"
 
