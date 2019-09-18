@@ -48,12 +48,14 @@ for artifact in ${elemental_artifacts}; do
   maven_artifact="elemental2-${artifact}"
 
   # run that script with bazel as its a dependency of this project
-  bazel run ${deploy_target} -- ${maven_artifact} \
-      ${artifact_path}/${jar_file} \
-      ${artifact_path}/${src_jar} \
-      ${license_header} \
-      ${pom_template} \
-      ${lib_version} \
-      ${group_id} \
-      ${gpg_passphrase}
+  bazel run ${deploy_target} --  \
+    --artifact ${maven_artifact} \
+    --jar-file  ${artifact_path}/${jar_file} \
+    --src-jar ${artifact_path}/${src_jar} \
+    --license-header ${license_header} \
+    --pom-template ${pom_template} \
+    --lib-version ${lib_version} \
+    --group-id ${group_id} \
+    --gpg-passphrase ${gpg_passphrase}
+
 done
