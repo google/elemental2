@@ -24,7 +24,7 @@ lib_version=$1
 bazel_root="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 deploy_target='@com_google_j2cl//:deploy'
-license_header="license.txt"
+license_header="${bazel_root}/license.txt"
 group_id="com.google.elemental2"
 
 echo "enter your gpg passphrase:"
