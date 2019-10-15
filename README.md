@@ -5,20 +5,6 @@ is done by using [closure extern files](https://github.com/google/closure-compil
 and generating JsTypes, which are part of the [new JsInterop specification](https://goo.gl/agme3T)
 that is both implemented in GWT and J2CL.
 
-Build with bazel
------------------
-If you want to modify and/or build the last version on your own, follow the instructions below:
-
-- Install [Bazel](https://bazel.build/versions/master/docs/install.html).
-- clone this repository with git: `git clone https://github.com/google/elemental2.git`
-- Inside the repository, run the script `build_gwt_mvn_jars.sh`:
-
-      $ ./build_gwt_mvn_jars.sh /path/to/output/directory
-
-The jars are available in `/path/to/output/directory` directory. If you don't
-provide a argument to the script, the script will create a temporary directory
-for the generated jar.
-
 Bazel dependencies
 ------------------
 If your project use [Bazel](https://bazel.build), add this repository as an
@@ -106,6 +92,20 @@ If you use Elemental2 with [GWT](http://www.gwtproject.org/), you need to inheri
  webgl | `elemental2.webgl.WebGl`
  media | `elemental2.media.Media`
  webstorage | `elemental2.webstorage.WebStorage`
+
+
+Build GWT compatible maven jar files
+------------------------------------
+If you want to modify and/or build the last version on your own, follow the instructions below:
+
+- Install [Bazel](https://bazel.build/versions/master/docs/install.html).
+- clone this repository with git: `git clone https://github.com/google/elemental2.git`
+- Inside the repository, run the script `release_elemental.sh`:
+
+      $ ./release_elemental.sh --version local --no-deploy
+
+The script will output the directory containing the generated jar files that
+can be used with maven.
 
 Contributing
 ------------
