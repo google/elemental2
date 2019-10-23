@@ -59,7 +59,6 @@ filegroup(
         "//third_party:w3c_dom4.js",
         "//third_party:w3c_batterystatus.js",
         "//third_party:w3c_fileapi.js",
-        "dom_missing_api.js",
         "//third_party:page_visibility.js",
         "//third_party:w3c_rtc.js",
         "//third_party:html5.js",
