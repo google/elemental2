@@ -1,5 +1,11 @@
 # This package contains the build rule to build elemental2-core.
 
+load(
+    "//build_defs/internal_do_not_use:elemental_utils.bzl",
+    "patch_extern_file",
+)
+load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
+
 package(
     default_visibility = [
         "//:__subpackages__",
@@ -7,12 +13,6 @@ package(
     # Apache2
     licenses = ["notice"],
 )
-
-load(
-    "//build_defs/internal_do_not_use:elemental_utils.bzl",
-    "patch_extern_file",
-)
-load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 # Removes non-existing static methods defined in Array type.
 # TODO(b/36088884): clean-up the extern file directly
@@ -41,6 +41,7 @@ java_library(
     visibility = ["//visibility:public"],
     deps = [
         "//third_party:guava",
+        "@com_google_jsinterop_generator//java/jsinterop/generator/helper",
         "@com_google_jsinterop_generator//java/jsinterop/generator/model",
     ],
 )

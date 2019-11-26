@@ -23,10 +23,14 @@ import com.google.common.collect.ImmutableList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Optional;
+import jsinterop.generator.helper.ModelHelper;
+import jsinterop.generator.model.AbstractRewriter;
 import jsinterop.generator.model.AbstractVisitor;
 import jsinterop.generator.model.Annotation;
 import jsinterop.generator.model.AnnotationType;
 import jsinterop.generator.model.ArrayTypeReference;
+import jsinterop.generator.model.Entity;
+import jsinterop.generator.model.Field;
 import jsinterop.generator.model.JavaTypeReference;
 import jsinterop.generator.model.LiteralExpression;
 import jsinterop.generator.model.Method;
@@ -49,6 +53,9 @@ import jsinterop.generator.model.TypeVariableReference;
  *   <li>Improve Array constructor, concat and unshift method definition to be type safer
  *   <li>Add helper methods on JsArray in order to ease the conversion from and to java array.
  *   <li>Remove built-in type parameters for Object type.
+ *   <li>Remove <code>globalThis</code> global variable. This variable is typed with <code>Global
+ *       </code> type that are not expressed in the externs file. <code>Global</code> is a built-in
+ *       JsCompiler type.
  * </ul>
  */
 public class BuiltInClosureTypeCleaner implements ModelVisitor {
@@ -84,6 +91,20 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
 
               type.getTypeParameters().clear();
             }
+          }
+        });
+
+    program.accept(
+        new AbstractRewriter() {
+          @Override
+          public boolean shouldProcessType(Type node) {
+            return ModelHelper.isGlobalType(node);
+          }
+
+          @Override
+          public Entity rewriteField(Field field) {
+            // Remove "globalThis" field from the global type.
+            return "globalThis".equals(field.getName()) ? null : field;
           }
         });
   }
