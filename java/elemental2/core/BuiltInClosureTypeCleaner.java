@@ -60,8 +60,6 @@ import jsinterop.generator.model.TypeVariableReference;
  */
 public class BuiltInClosureTypeCleaner implements ModelVisitor {
   private static final String OBJECT = "Object";
-  private static final String IOBJECT_KEY_NAME = "IObject#KEY1";
-  private static final String IOBJECT_VALUE_NAME = "IObject#VALUE";
 
   @Override
   public void applyTo(Program program) {
@@ -86,8 +84,6 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
               checkState(
                   typeParameters.size() == 2, "Object is not defined with two type parameters");
               Iterator<TypeReference> typeParameterIterator = typeParameters.iterator();
-              checkState(IOBJECT_KEY_NAME.equals(typeParameterIterator.next().getTypeName()));
-              checkState(IOBJECT_VALUE_NAME.equals(typeParameterIterator.next().getTypeName()));
 
               type.getTypeParameters().clear();
             }
