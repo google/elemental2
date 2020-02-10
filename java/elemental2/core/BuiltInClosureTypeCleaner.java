@@ -21,7 +21,6 @@ import static jsinterop.generator.model.PredefinedTypeReference.JS;
 
 import com.google.common.collect.ImmutableList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.Optional;
 import jsinterop.generator.helper.ModelHelper;
 import jsinterop.generator.model.AbstractRewriter;
@@ -83,7 +82,6 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
 
               checkState(
                   typeParameters.size() == 2, "Object is not defined with two type parameters");
-              Iterator<TypeReference> typeParameterIterator = typeParameters.iterator();
 
               type.getTypeParameters().clear();
             }
