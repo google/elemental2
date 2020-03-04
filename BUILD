@@ -3,6 +3,8 @@
 #    that expose native browsers API.
 #
 
+load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
+
 package(
     default_visibility = ["//visibility:public"],
     # Apache2
@@ -10,8 +12,6 @@ package(
 )
 
 exports_files(["LICENSE"])
-
-load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 # Core of Elemental containing basic javascript types definitions
 jsinterop_generator(
