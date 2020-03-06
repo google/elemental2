@@ -1,12 +1,12 @@
 # Description:
 #   Elemental Sample app playing with RegExp and dom manipulation
 
+load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
+
 package(
     # Apache2
     licenses = ["notice"],
 )
-
-load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
 
 j2cl_library(
     name = "regexp",

@@ -1,5 +1,7 @@
 # This package contains the build rule to build elemental2-media.
 
+load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
+
 package(
     default_visibility = [
         "//:__subpackages__",
@@ -7,8 +9,6 @@ package(
     # Apache2
     licenses = ["notice"],
 )
-
-load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 filegroup(
     name = "externs",

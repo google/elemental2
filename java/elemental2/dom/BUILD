@@ -1,5 +1,11 @@
 # This package contains the build rule to build elemental2-dom.
 
+load(
+    "//build_defs/internal_do_not_use:elemental_utils.bzl",
+    "patch_extern_file",
+)
+load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
+
 package(
     default_visibility = [
         "//:__subpackages__",
@@ -7,12 +13,6 @@ package(
     # Apache2
     licenses = ["notice"],
 )
-
-load(
-    "//build_defs/internal_do_not_use:elemental_utils.bzl",
-    "patch_extern_file",
-)
-load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 #  Patches for w3c_dom2.js and window.js: Add standard api of Window object that are not defined in
 #  w3c_dom*.js but in browsers specific extern files. We've tried to fix that in the extern
