@@ -237,16 +237,17 @@ extern(
     path = "browser/w3c_selection.js",
 )
 
-# svg.js and webassembly.js are not part of the common externs provided by the
-# js-compiler binary.
+# svg.js is not part of the common externs provided by the js-compiler binary.
 alias(
     name = "svg.js",
     actual = "@com_google_closure_compiler//:contrib/externs/svg.js",
 )
 
+# webassembly.js _is_ in the common externs.zip, but not in the version of
+# com_google_javascript_closure_compiler which we depend on yet.
 alias(
     name = "webassembly.js",
-    actual = "@com_google_closure_compiler//:contrib/externs/webassembly.js",
+    actual = "@com_google_closure_compiler//:externs/browser/webassembly.js",
 )
 
 alias(
