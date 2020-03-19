@@ -100,9 +100,9 @@ If you want to modify and/or build the last version on your own, follow the inst
 
 - Install [Bazel](https://bazel.build/versions/master/docs/install.html).
 - clone this repository with git: `git clone https://github.com/google/elemental2.git`
-- Inside the repository, run the script `release_elemental.sh`:
+- Inside the repository, run the script `maven/release_elemental.sh`:
 
-      $ ./release_elemental.sh --version local --no-deploy
+      $ ./maven/release_elemental.sh --version local --no-deploy
 
 The script will output the directory containing the generated jar files that
 can be used with maven.
