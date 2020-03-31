@@ -244,9 +244,12 @@ alias(
     actual = "@com_google_closure_compiler//:contrib/externs/svg.js",
 )
 
+# TODO(dramaix): This file will be included in the extern files of closure compiler
+# release. When we update to a newer version of closure compiler, change alias rule
+# to an extern rule.
 alias(
     name = "webassembly.js",
-    actual = "@com_google_closure_compiler//:contrib/externs/webassembly.js",
+    actual = "@com_google_closure_compiler//:externs/browser/webassembly.js",
 )
 
 alias(
