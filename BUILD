@@ -4,14 +4,28 @@
 #
 
 load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
 
 package(
     default_visibility = ["//visibility:public"],
-    # Apache2
     licenses = ["notice"],
 )
 
 exports_files(["LICENSE"])
+
+build_test(
+    name = "rule_test",
+    targets = [
+        ":elemental2-core",
+        ":elemental2-promise",
+        ":elemental2-dom",
+        ":elemental2-svg",
+        ":elemental2-webgl",
+        ":elemental2-media",
+        ":elemental2-webstorage",
+        ":elemental2-indexeddb",
+    ],
+)
 
 # Core of Elemental containing basic javascript types definitions
 jsinterop_generator(
