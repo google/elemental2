@@ -71,7 +71,7 @@ fi
 
 bazel_root=$(pwd)
 
-deploy_target='@com_google_j2cl//:deploy'
+deploy_target='@com_google_j2cl//maven:deploy'
 license_header="${bazel_root}/maven/license.txt"
 group_id="com.google.elemental2"
 gpg_flag=""
