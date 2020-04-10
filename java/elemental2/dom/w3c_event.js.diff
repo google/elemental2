@@ -1,8 +1,8 @@
 36c36
-<  * @param {EventListener|function(this:THIS, !Event):*} listener
+<  * @param {EventListener|function(!Event):*} listener
 ---
 >  * @param {EventListener} listener
-48c48
-<  * @param {EventListener|function(this:THIS, !Event):*} listener
+46c46
+<  * @param {EventListener|function(!Event):*} listener
 ---
 >  * @param {EventListener} listener
