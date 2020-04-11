@@ -249,7 +249,7 @@ alias(
 # to an extern rule.
 alias(
     name = "webassembly.js",
-    actual = "@com_google_closure_compiler//:externs/browser/webassembly.js",
+    actual = "@com_google_closure_compiler//:contrib/externs/webassembly.js",
 )
 
 alias(
