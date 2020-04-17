@@ -171,7 +171,6 @@ elemental2.dom.FileReader.EMPTY
 elemental2.dom.FileReader.LOADING
 elemental2.dom.Geolocation.clearWatch.watchId
 elemental2.dom.Geolocation.watchPosition
-elemental2.dom.History.back.distance
 elemental2.dom.History.go.delta
 elemental2.dom.History.length
 elemental2.dom.HTMLAnchorElement.tabIndex
