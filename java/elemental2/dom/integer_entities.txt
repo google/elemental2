@@ -254,6 +254,10 @@ elemental2.dom.ImageBitmap.getHeight
 elemental2.dom.ImageBitmap.getWidth
 elemental2.dom.ImageData.height
 elemental2.dom.ImageData.width
+elemental2.dom.KeyboardEvent.DOM_KEY_LOCATION_LEFT
+elemental2.dom.KeyboardEvent.DOM_KEY_LOCATION_NUMPAD
+elemental2.dom.KeyboardEvent.DOM_KEY_LOCATION_RIGHT
+elemental2.dom.KeyboardEvent.DOM_KEY_LOCATION_STANDARD
 elemental2.dom.KeyboardEvent.initKeyboardEvent.keyLocationArg
 elemental2.dom.KeyboardEvent.location
 elemental2.dom.KeyboardEventInit.getLocation
