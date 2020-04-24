@@ -364,6 +364,10 @@ elemental2.dom.RTCDataChannel.setBufferedAmount.bufferedAmount
 elemental2.dom.RTCIceCandidate.sdpMLineIndex
 elemental2.dom.RTCIceCandidateInit.getSdpMLineIndex
 elemental2.dom.RTCIceCandidateInit.setSdpMLineIndex.sdpMLineIndex
+elemental2.dom.RTCRtpCodecCapability.getChannels
+elemental2.dom.RTCRtpCodecCapability.getClockRate
+elemental2.dom.RTCRtpCodecCapability.setChannels.channels
+elemental2.dom.RTCRtpCodecCapability.setClockRate.clockRate
 elemental2.dom.Screen.availHeight
 elemental2.dom.Screen.availWidth
 elemental2.dom.Screen.colorDepth
