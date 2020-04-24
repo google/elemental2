@@ -34,21 +34,11 @@ patch_extern_file(
     patch_file = "window.js.diff",
 )
 
-# Patch for w3c_event.js: Simplify addEventListener/removeEventListener by removing the
-# Eventlistener function that returns a boolean. User can use event.preventDefault().
-# TODO(b/36591631): Add a mechanism in the jsinterop generator that modifies method overloading
-# (or modifies somehow the closure ast), so that we don't have to patch the extern file
-patch_extern_file(
-    name = "w3c_event_patched",
-    src = "//third_party:w3c_event.js",
-    patch_file = "w3c_event.js.diff",
-)
-
 filegroup(
     name = "externs",
     srcs = [
         # file order matters.
-        ":w3c_event_patched",
+        "//third_party:w3c_event.js",
         "//third_party:w3c_event3.js",
         "//third_party:w3c_device_sensor_event.js",
         "//third_party:w3c_touch_event.js",
@@ -90,15 +80,31 @@ filegroup(
     ],
 )
 
+java_library(
+    name = "EventListenerCleaner",
+    srcs = ["EventListenerCleaner.java"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//third_party:guava",
+        "@com_google_jsinterop_generator//java/jsinterop/generator/model",
+    ],
+)
+
 # Dom part of elemental
 # order of files in srcs attributes matters!
 jsinterop_generator(
     name = "dom",
     srcs = [":externs"],
+    custom_preprocessing_pass = [
+        "elemental2.dom.EventListenerCleaner",
+    ],
     integer_entities_files = ["integer_entities.txt"],
     # override auto generated js_deps since modified externs cause conflicts
     j2cl_js_deps = [],
     name_mapping_files = ["name_mappings.txt"],
+    runtime_deps = [
+        ":EventListenerCleaner",
+    ],
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/promise",

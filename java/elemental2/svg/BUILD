@@ -19,7 +19,13 @@ filegroup(
 jsinterop_generator(
     name = "svg",
     srcs = [":externs"],
+    custom_preprocessing_pass = [
+        "elemental2.dom.EventListenerCleaner",
+    ],
     integer_entities_files = ["integer_entities.txt"],
+    runtime_deps = [
+        "//java/elemental2/dom:EventListenerCleaner",
+    ],
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/dom",

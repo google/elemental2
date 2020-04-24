@@ -21,10 +21,16 @@ filegroup(
 jsinterop_generator(
     name = "media",
     srcs = [":externs"],
+    custom_preprocessing_pass = [
+        "elemental2.dom.EventListenerCleaner",
+    ],
     integer_entities_files = ["integer_entities.txt"],
     # override auto generated js_deps in order not to provide extern files
     # Common extern file are included by default.
     j2cl_js_deps = [],
+    runtime_deps = [
+        "//java/elemental2/dom:EventListenerCleaner",
+    ],
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/dom",
