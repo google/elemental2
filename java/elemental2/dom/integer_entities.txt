@@ -394,6 +394,11 @@ elemental2.dom.RTCSentRtpStreamStats.getFecPacketsSent
 elemental2.dom.RTCSentRtpStreamStats.getPacketsDiscardedOnSend
 elemental2.dom.RTCSentRtpStreamStats.getPacketsSent
 elemental2.dom.RTCTransportStats.getSelectedCandidatePairChanges
+elemental2.dom.RTCVideoSourceStats.getBitDepth
+elemental2.dom.RTCVideoSourceStats.getFrames
+elemental2.dom.RTCVideoSourceStats.getFramesPerSecond
+elemental2.dom.RTCVideoSourceStats.getHeight
+elemental2.dom.RTCVideoSourceStats.getWidth
 elemental2.dom.Screen.availHeight
 elemental2.dom.Screen.availWidth
 elemental2.dom.Screen.colorDepth
