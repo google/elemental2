@@ -239,8 +239,11 @@ elemental2.dom.HTMLTableRowElement.sectionRowIndex
 elemental2.dom.HTMLTableSectionElement.deleteRow.index
 elemental2.dom.HTMLTableSectionElement.insertRow.index
 elemental2.dom.HTMLTextAreaElement.cols
+elemental2.dom.HTMLTextAreaElement.maxLength
+elemental2.dom.HTMLTextAreaElement.minLength
 elemental2.dom.HTMLTextAreaElement.rows
 elemental2.dom.HTMLTextAreaElement.tabIndex
+elemental2.dom.HTMLTextAreaElement.textLength
 elemental2.dom.HTMLTrackElement.readyState
 elemental2.dom.HTMLVideoElement.height
 elemental2.dom.HTMLVideoElement.videoHeight
