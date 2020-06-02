@@ -15,6 +15,7 @@ filegroup(
     srcs = [
         "//third_party:mediakeys.js",
         "//third_party:w3c_audio.js",
+        "//third_party:w3c_worklets.js",
     ],
 )
 
