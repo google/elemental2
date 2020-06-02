@@ -60,5 +60,10 @@
       <artifactId>elemental2-promise</artifactId>
       <version>__VERSION__</version>
     </dependency>
+    <dependency>
+      <groupId>__GROUP_ID__</groupId>
+      <artifactId>elemental2-dom</artifactId>
+      <version>__VERSION__</version>
+    </dependency>
   </dependencies>
 </project>
