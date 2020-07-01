@@ -7,7 +7,7 @@ that is both implemented in GWT and J2CL.
 
 Bazel dependencies
 ------------------
-If your project use [Bazel](https://bazel.build), add this repository as an
+If your project uses [Bazel](https://bazel.build), add this repository as an
 external dependency in your `WORKSPACE` file:
 
 ```
@@ -43,7 +43,8 @@ Following are the different elemental2 modules and their target names:
 
 Maven dependencies
 ------------------
-If your project use [Maven](https://maven.apache.org), add maven dependencies in your `pom.xml`:
+If your project uses [Maven](https://maven.apache.org), add the following maven
+dependencies in your `pom.xml`:
 
     <dependency>
       <groupId>com.google.elemental2</groupId>
@@ -101,11 +102,21 @@ Build GWT compatible maven jar files
 ------------------------------------
 If you want to modify and/or build the last version on your own, follow the instructions below:
 
-- Install [Bazel](https://bazel.build/versions/master/docs/install.html).
-- clone this repository with git: `git clone https://github.com/google/elemental2.git`
-- Inside the repository, run the script `maven/release_elemental.sh`:
+- Install [Bazelisk](https://github.com/bazelbuild/bazelisk):
 
+```shell
+    $ npm install -g @bazel/bazelisk
+    $ alias bazel=bazelisk
+```
+- Clone this git repository:
+  ```shell
+  $ git clone https://github.com/google/elemental2.git
+  ```
+- Run the release script:
+  ```shell
+      $ cd elemental2
       $ ./maven/release_elemental.sh --version local --no-deploy
+  ```
 
 The script will output the directory containing the generated jar files that
 can be used with maven.
