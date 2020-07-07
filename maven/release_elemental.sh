@@ -30,10 +30,13 @@ usage() {
     echo "        Maven version to use for deploying to sonatype."
     echo "    --no-deploy"
     echo "        Skip the deployment part but build all artifacts."
+    echo "    --no-git-tag"
+    echo "        Skip the creation of git tag."
     echo ""
 }
 
 deploy=true
+git_tag=true
 
 while [[ "$1" != "" ]]; do
   case $1 in
@@ -46,6 +49,8 @@ while [[ "$1" != "" ]]; do
                    lib_version=$1
                    ;;
     --no-deploy )  deploy=false
+                   ;;
+    --no-git-tag ) git_tag=false
                    ;;
     --help )       usage
                    exit 1
@@ -117,3 +122,8 @@ for artifact in ${elemental_artifacts}; do
     --group-id ${group_id}
 
 done
+
+if [[ ${git_tag} == true ]]; then
+  git tag -a v${lib_version} -m "${lib_version} release"
+  git push origin v${lib_version}
+fi
