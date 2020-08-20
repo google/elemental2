@@ -237,24 +237,20 @@ extern(
     path = "browser/w3c_selection.js",
 )
 
-# svg.js and webassembly.js are not part of the common externs provided by the
-# js-compiler binary.
+# svg.js is not part of the common externs provided by the js-compiler binary.
 alias(
     name = "svg.js",
     actual = "@com_google_closure_compiler//:contrib/externs/svg.js",
 )
 
-# TODO(dramaix): This file will be included in the extern files of closure compiler
-# release. When we update to a newer version of closure compiler, change alias rule
-# to an extern rule.
-alias(
+extern(
     name = "webassembly.js",
-    actual = "@com_google_closure_compiler//:externs/browser/webassembly.js",
+    path = "browser/webassembly.js",
 )
 
-alias(
+extern(
     name = "w3c_worklets.js",
-    actual = "@com_google_closure_compiler//:externs/browser/w3c_worklets.js",
+    path = "browser/w3c_worklets.js",
 )
 
 alias(
