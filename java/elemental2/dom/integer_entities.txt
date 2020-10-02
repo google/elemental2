@@ -196,6 +196,8 @@ elemental2.dom.HTMLImageElement.width
 elemental2.dom.HTMLInputElement.maxLength
 elemental2.dom.HTMLInputElement.selectionEnd
 elemental2.dom.HTMLInputElement.selectionStart
+elemental2.dom.HTMLInputElement.setRangeText.end
+elemental2.dom.HTMLInputElement.setRangeText.start
 elemental2.dom.HTMLInputElement.setSelectionRange.end
 elemental2.dom.HTMLInputElement.setSelectionRange.start
 elemental2.dom.HTMLInputElement.size
