@@ -1,8 +1,8 @@
-148c148
+147c147
 <  * @param {Function|!TrustedScript|string} callback
 ---
 >  * @param {function(...?):undefined|!TrustedScript|string} callback
-158c158
+157c157
 <  * @param {Function|!TrustedScript|string} callback
 ---
 >  * @param {function(...?):undefined|!TrustedScript|string} callback
