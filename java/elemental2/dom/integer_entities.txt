@@ -265,7 +265,7 @@ elemental2.dom.KeyboardEvent.DOM_KEY_LOCATION_LEFT
 elemental2.dom.KeyboardEvent.DOM_KEY_LOCATION_NUMPAD
 elemental2.dom.KeyboardEvent.DOM_KEY_LOCATION_RIGHT
 elemental2.dom.KeyboardEvent.DOM_KEY_LOCATION_STANDARD
-elemental2.dom.KeyboardEvent.initKeyboardEvent.keyLocationArg
+elemental2.dom.KeyboardEvent.initKeyboardEvent.locationArg
 elemental2.dom.KeyboardEvent.location
 elemental2.dom.KeyboardEventInit.getLocation
 elemental2.dom.KeyboardEventInit.setLocation.location
