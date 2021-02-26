@@ -395,6 +395,9 @@ elemental2.dom.RTCOutboundRtpStreamStats.getPliCount
 elemental2.dom.RTCOutboundRtpStreamStats.getSliCount
 elemental2.dom.RTCReceivedRtpStreamStats.getBurstLossCount
 elemental2.dom.RTCReceivedRtpStreamStats.getBurstDiscardCount
+elemental2.dom.RTCReceivedRtpStreamStats.getFramesDropped
+elemental2.dom.RTCReceivedRtpStreamStats.getFullFramesLost
+elemental2.dom.RTCReceivedRtpStreamStats.getPartialFramesLost
 elemental2.dom.RTCRtpCodecCapability.getChannels
 elemental2.dom.RTCRtpCodecCapability.getClockRate
 elemental2.dom.RTCRtpCodecCapability.setChannels.channels
