@@ -32,5 +32,6 @@ jsinterop_generator(
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/dom",
+        "//java/elemental2/promise",
     ],
 )
