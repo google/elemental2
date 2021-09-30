@@ -420,6 +420,15 @@ elemental2.dom.Screen.colorDepth
 elemental2.dom.Screen.height
 elemental2.dom.Screen.pixelDepth
 elemental2.dom.Screen.width
+elemental2.dom.SecurityPolicyViolationEvent.columnNumber
+elemental2.dom.SecurityPolicyViolationEvent.lineNumber
+elemental2.dom.SecurityPolicyViolationEvent.statusCode
+elemental2.dom.SecurityPolicyViolationEventInit.getColumnNumber
+elemental2.dom.SecurityPolicyViolationEventInit.getLineNumber
+elemental2.dom.SecurityPolicyViolationEventInit.getStatusCode
+elemental2.dom.SecurityPolicyViolationEventInit.setColumnNumber.columnNumber
+elemental2.dom.SecurityPolicyViolationEventInit.setLineNumber.lineNumber
+elemental2.dom.SecurityPolicyViolationEventInit.setStatusCode.statusCode
 elemental2.dom.Selection.anchorOffset
 elemental2.dom.Selection.collapse.offset
 elemental2.dom.Selection.extend.offset
