@@ -1,8 +1,8 @@
+load(":extern.bzl", "extern")
+
 package(default_visibility = [
     "//:__subpackages__",
 ])
-
-load(":extern.bzl", "extern")
 
 licenses(["notice"])  # Apache2
 
@@ -251,16 +251,6 @@ extern(
 extern(
     name = "w3c_worklets.js",
     path = "browser/w3c_worklets.js",
-)
-
-alias(
-    name = "jsinterop-annotations",
-    actual = "@com_google_j2cl//:jsinterop-annotations-j2cl",
-)
-
-alias(
-    name = "jsinterop-base",
-    actual = "@com_google_jsinterop_base//:jsinterop-base-j2cl",
 )
 
 java_library(

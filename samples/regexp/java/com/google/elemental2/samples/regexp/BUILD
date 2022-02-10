@@ -17,8 +17,8 @@ j2cl_library(
     deps = [
         "//:elemental2-core-j2cl",
         "//:elemental2-dom-j2cl",
-        "//third_party:jsinterop-annotations",
-        "//third_party:jsinterop-base",
+        "@com_google_j2cl//:jsinterop-annotations-j2cl",
+        "@com_google_jsinterop_base//:jsinterop-base-j2cl",
     ],
 )
 
