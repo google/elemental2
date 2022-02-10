@@ -3,7 +3,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 _JSINTEROP_GENERATOR_VERSION = "master"
-_CLOSURE_COMPILER_VERSION = "master"
+_CLOSURE_COMPILER_VERSION = "f4e77b5d65027720e85e619d7b46dc37258e0911"
 
 def load_elemental2_repo_deps():
     http_archive(
