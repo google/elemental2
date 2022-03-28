@@ -237,10 +237,9 @@ extern(
     path = "browser/w3c_selection.js",
 )
 
-# svg.js is not part of the common externs provided by the js-compiler binary.
-alias(
+extern(
     name = "svg.js",
-    actual = "@com_google_closure_compiler//:contrib/externs/svg.js",
+    path = "browser/svg.js",
 )
 
 extern(
