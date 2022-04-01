@@ -16,12 +16,17 @@
 package elemental2.core;
 
 import static com.google.common.base.Preconditions.checkState;
+import static java.util.stream.Collectors.toCollection;
 import static jsinterop.generator.model.PredefinedTypeReference.ARRAY_STAMPER;
 import static jsinterop.generator.model.PredefinedTypeReference.JS;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.MoreCollectors;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 import jsinterop.generator.helper.ModelHelper;
 import jsinterop.generator.model.AbstractRewriter;
 import jsinterop.generator.model.AbstractVisitor;
@@ -67,10 +72,17 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
           @Override
           public void exitType(Type type) {
             String nativeFqn = type.getNativeFqn();
-            if ("Array".equals(nativeFqn)) {
+            if ("ReadonlyArray".equals(nativeFqn)) {
+              cleanCommonArrayMethods(type);
+              // Remove the length field. The field will be converted to a getLength method and will
+              // conflict with the JsOverlay method defined on JsArrayLike.
+              type.removeField(
+                  type.getFields().stream()
+                      .filter(f -> "length".equals(f.getName()))
+                      .collect(MoreCollectors.onlyElement()));
+            } else if ("Array".equals(nativeFqn)) {
               cleanArrayType(type);
               addJavaArrayHelperMethods(type);
-
             } else if (OBJECT.equals(nativeFqn)) {
               // JsCompiler uses a hardcoded definition for the Object type, one with two type
               // parameters (from IObject). That makes the resulting java type to be generated as
@@ -158,9 +170,7 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
   }
 
   private static void cleanArrayType(Type arrayType) {
-    Collection<TypeReference> typeParameters = arrayType.getTypeParameters();
-    checkState(typeParameters.size() == 1, "Unexpected array definitions from JsCompiler");
-    TypeReference arrayValueTypeParameter = typeParameters.iterator().next();
+    TypeReference arrayValueTypeParameter = getArrayValueTypeParameter(arrayType);
 
     // 1. Improve the typing of the Array constructor. Array constructor should be parameterized by
     // T (not Object).
@@ -174,8 +184,85 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
     checkState(unshiftMethod.isPresent());
     improveArrayMethodTyping(unshiftMethod.get(), arrayValueTypeParameter);
 
-    // 3. Improve the typing of Array.concat. It must accept items of type T (not Object) and
-    // return an array of type JsArray<T> (not JsArray<Object>).
+    // 3. Clean methods defined on Array and ReadonlyArray.
+    cleanCommonArrayMethods(arrayType);
+  }
+
+  // TODO(dramaix): Add a logic to detect method that have a callback with an array as last
+  //  parameter.
+  private static final ImmutableList<String> METHOD_WITH_CLEANABLE_CALLBACKS =
+      ImmutableList.of("filter", "forEach", "reduce", "map", "reduceRight", "every", "some");
+
+  private static void cleanCommonArrayMethods(Type arrayType) {
+    // 1. Change concat() method to accept items of type T and not Object and return an array of T.
+    cleanArrayConcatMethod(arrayType);
+
+    // 2. Fix some callback definition to remove the last parameter that represent the array itself.
+    // This parameter causes inheritance issue between ReadOnlyArray and Array as the type of this
+    // parameter is redefined to match the enclosing type. Java developers can easily capture the
+    // array the method is applied on and do not need this parameter.
+    Set<String> cleanableCallbackTypes =
+        METHOD_WITH_CLEANABLE_CALLBACKS.stream()
+            .map(m -> getCallBackParameterType(m, arrayType))
+            .collect(toCollection(HashSet::new));
+
+    for (Type callbackType : arrayType.getInnerTypes()) {
+      if (cleanableCallbackTypes.remove(callbackType.getJavaFqn())) {
+        checkState(
+            callbackType.isInterface() && callbackType.getMethods().size() == 1,
+            "Invalid callback found %s",
+            callbackType.getJavaFqn());
+        Method callbackMethod = callbackType.getMethods().get(0);
+
+        checkState(
+            Iterables.getLast(callbackMethod.getParameters())
+                .getType()
+                .getJavaTypeFqn()
+                .equals(arrayType.getJavaFqn()),
+            "Invalid callback found %s",
+            callbackType.getJavaFqn());
+
+        callbackMethod.getParameters().remove(callbackMethod.getParameters().size() - 1);
+
+        // clean the native fqn (closure js doc) of the callback because this will be used later in
+        // DuplicatedTypesUnifier to identify the callback.
+        String callbackNativeFqn = callbackType.getNativeFqn();
+        checkState(callbackNativeFqn != null && callbackNativeFqn.startsWith("function("));
+
+        callbackType.setNativeFqn(
+            callbackNativeFqn.substring(0, callbackNativeFqn.lastIndexOf(','))
+                + callbackNativeFqn.substring(callbackNativeFqn.indexOf(')')));
+      }
+    }
+
+    checkState(
+        cleanableCallbackTypes.isEmpty(),
+        "The following callbacks %s are not been found.",
+        cleanableCallbackTypes);
+  }
+
+  private static String getCallBackParameterType(String methodName, Type enclosingType) {
+    Optional<Method> methodOptional =
+        enclosingType.getMethods().stream().filter(m -> methodName.equals(m.getName())).findAny();
+    checkState(methodOptional.isPresent());
+    Method methodWithCallback = methodOptional.get();
+
+    for (Parameter p : methodWithCallback.getParameters()) {
+      if ("callback".equals(p.getName())) {
+        return p.getType().getJavaTypeFqn();
+      }
+    }
+
+    throw new IllegalStateException(
+        "Callback parameter not found on " + enclosingType.getName() + "." + methodName);
+  }
+  /**
+   * Improve the typing of Array.concat. It must accept items of type T (not Object) and return an
+   * array of T.
+   */
+  private static void cleanArrayConcatMethod(Type arrayType) {
+    TypeReference arrayValueTypeParameter = getArrayValueTypeParameter(arrayType);
+
     Optional<Method> concatMethodOptional =
         arrayType.getMethods().stream().filter(m -> "concat".equals(m.getName())).findAny();
     checkState(concatMethodOptional.isPresent());
@@ -200,11 +287,16 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
    * the Array) instead of Object.
    */
   private static void improveArrayMethodTyping(Method m, TypeReference arrayTypeParameter) {
-    checkState("Array".equals(m.getEnclosingType().getNativeFqn()));
     checkState(m.getParameters().size() == 1);
     Parameter firstParameter = m.getParameters().get(0);
     checkState(PredefinedTypeReference.OBJECT.equals(firstParameter.getType()));
     m.getParameters()
         .set(0, firstParameter.toBuilder().setName("items").setType(arrayTypeParameter).build());
+  }
+
+  private static TypeReference getArrayValueTypeParameter(Type arrayType) {
+    Collection<TypeReference> typeParameters = arrayType.getTypeParameters();
+    checkState(typeParameters.size() == 1, "Unexpected array definitions from JsCompiler");
+    return typeParameters.iterator().next();
   }
 }
