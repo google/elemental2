@@ -8,6 +8,7 @@ elemental2.webassembly.TableDescriptor.setInitial.initial
 elemental2.webassembly.TableDescriptor.setMaximum.maximum
 elemental2.webassembly.webassembly.Memory.grow
 elemental2.webassembly.webassembly.Memory.grow.delta
+elemental2.webassembly.webassembly.RuntimeError.constructor.lineNumber
 elemental2.webassembly.webassembly.Table.get.index
 elemental2.webassembly.webassembly.Table.grow
 elemental2.webassembly.webassembly.Table.grow.delta

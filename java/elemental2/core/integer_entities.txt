@@ -161,6 +161,7 @@ elemental2.core.JsMath.trunc
 elemental2.core.JsNumber.parseInt
 elemental2.core.JsNumber.parseInt.radix
 elemental2.core.JsNumber.toString.radix
+elemental2.core.JsString.at.index
 elemental2.core.JsString.fromCharCode.var_args
 elemental2.core.JsString.fromCodePoint.codePoint
 elemental2.core.JsString.fromCodePoint.var_args
@@ -206,6 +207,7 @@ elemental2.core.ReadonlyArray.MapCallbackFn.onInvoke.p1
 elemental2.core.ReadonlyArray.ReduceCallbackFn.onInvoke.p2
 elemental2.core.ReadonlyArray.ReduceRightCallbackFn.onInvoke.p2
 elemental2.core.ReadonlyArray.SomeCallbackFn.onInvoke.p1
+elemental2.core.TypedArray.at.index
 elemental2.core.TypedArray.BYTES_PER_ELEMENT
 elemental2.core.TypedArray.length
 elemental2.core.TypedArray.copyWithin.target
