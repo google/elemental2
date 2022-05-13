@@ -364,6 +364,7 @@ elemental2.dom.ReadableStreamDefaultController.setDesiredSize.desiredSize
 elemental2.dom.ReadableStreamSource.getAutoAllocateChunkSize
 elemental2.dom.ReadableStreamSource.setAutoAllocateChunkSize.autoAllocateChunkSize
 elemental2.dom.Response.status
+elemental2.dom.Response.redirect.status
 elemental2.dom.ResponseInit.getStatus
 elemental2.dom.ResponseInit.setStatus.status
 elemental2.dom.RTCDataChannel.getBufferedAmount
