@@ -15,6 +15,7 @@ elemental2.svg.SVGAnimatedEnumeration.animVal
 elemental2.svg.SVGAnimatedEnumeration.baseVal
 elemental2.svg.SVGAnimatedInteger.animVal
 elemental2.svg.SVGAnimatedInteger.baseVal
+elemental2.svg.SVGElement.tabIndex
 elemental2.svg.SVGElementInstanceList.length
 elemental2.svg.SVGElementInstanceList.item.index
 elemental2.svg.SVGLength.convertToSpecifiedUnits.unitType
