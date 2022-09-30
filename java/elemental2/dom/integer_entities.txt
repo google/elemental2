@@ -368,7 +368,6 @@ elemental2.dom.Response.redirect.status
 elemental2.dom.ResponseInit.getStatus
 elemental2.dom.ResponseInit.setStatus.status
 elemental2.dom.RTCDataChannel.getBufferedAmount
-elemental2.dom.RTCDataChannel.setBufferedAmount.bufferedAmount
 elemental2.dom.RTCError.getHttpRequestStatusCode
 elemental2.dom.RTCError.getReceivedAlert
 elemental2.dom.RTCError.getSctpCauseCode
