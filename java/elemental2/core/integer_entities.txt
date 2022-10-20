@@ -5,6 +5,7 @@ elemental2.core.Atomics.compareExchange.index
 elemental2.core.Atomics.exchange.index
 elemental2.core.Atomics.isLockFree.size
 elemental2.core.Atomics.load.index
+elemental2.core.Atomics.notify.index
 elemental2.core.Atomics.or.index
 elemental2.core.Atomics.store.index
 elemental2.core.Atomics.sub.index
