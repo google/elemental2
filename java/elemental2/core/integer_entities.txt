@@ -195,6 +195,8 @@ elemental2.core.JsString.substring.end
 elemental2.core.JsMap.size
 elemental2.core.JsRegExp.lastIndex
 elemental2.core.JsSet.size
+elemental2.core.ReadonlyArray.findIndex
+elemental2.core.ReadonlyArray.includes.fromIndex
 elemental2.core.ReadonlyArray.indexOf
 elemental2.core.ReadonlyArray.indexOf.fromIndex
 elemental2.core.ReadonlyArray.lastIndexOf
