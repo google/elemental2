@@ -21,6 +21,7 @@ import static jsinterop.generator.model.PredefinedTypeReference.ARRAY_STAMPER;
 import static jsinterop.generator.model.PredefinedTypeReference.JS;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.MoreCollectors;
 import java.util.Collection;
@@ -193,6 +194,9 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
   private static final ImmutableList<String> METHOD_WITH_CLEANABLE_CALLBACKS =
       ImmutableList.of("filter", "forEach", "reduce", "map", "reduceRight", "every", "some");
 
+  private static final ImmutableSet<String> METHODS_WITH_SINGULAR_VALUE_IN_FIRST_PARAMETER =
+      ImmutableSet.of("indexOf", "lastIndexOf", "includes");
+
   private static void cleanCommonArrayMethods(Type arrayType) {
     // 1. Change concat() method to accept items of type T and not Object and return an array of T.
     cleanArrayConcatMethod(arrayType);
@@ -239,6 +243,14 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
         cleanableCallbackTypes.isEmpty(),
         "The following callbacks %s are not been found.",
         cleanableCallbackTypes);
+
+    // Ensure that indexOf-like methods accept a typed value in their first argument, which is not
+    // the case for ReadonlyArray.
+    for (Method method : arrayType.getMethods()) {
+      if (METHODS_WITH_SINGULAR_VALUE_IN_FIRST_PARAMETER.contains(method.getName())) {
+        method.getParameters().get(0).setType(getArrayValueTypeParameter(arrayType));
+      }
+    }
   }
 
   private static String getCallBackParameterType(String methodName, Type enclosingType) {
