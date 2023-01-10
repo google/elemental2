@@ -15,7 +15,7 @@
 
 #
 # The script generates the open source artifacts for elemental and
-# upload them to sonatype.
+# uploads them to sonatype.
 #
 set -e
 
@@ -27,7 +27,7 @@ usage() {
     echo "    --help"
     echo "        Print this help output and exit."
     echo "    --version <version>"
-    echo "        Maven version to use for deploying to sonatype."
+    echo "        Maven version of the library to use for deploying to sonatype."
     echo "    --no-deploy"
     echo "        Skip the deployment part but build all artifacts."
     echo "    --no-git-tag"
