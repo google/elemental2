@@ -5,10 +5,17 @@
 
 load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
+load("@rules_license//rules:license.bzl", "license")
 
 package(
+    default_applicable_licenses = ["//:license"],
     default_visibility = ["//visibility:public"],
     licenses = ["notice"],
+)
+
+license(
+    name = "license",
+    package_name = "elemental2",
 )
 
 exports_files(["LICENSE"])
