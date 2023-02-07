@@ -103,10 +103,12 @@ for artifact in ${elemental_artifacts}; do
   artifact_bazel_path=//java/elemental2/${artifact}
   jar_file=lib${artifact}.jar
   src_jar=lib${artifact}-src.jar
+  javadoc_jar=${artifact}-javadoc.jar
 
   # ask bazel to explicitly build both jar files
   bazel build ${artifact_bazel_path}:${jar_file}
   bazel build ${artifact_bazel_path}:${src_jar}
+  bazel build ${artifact_bazel_path}:${javadoc_jar}
 
   pom_template=${bazel_root}/maven/pom-${artifact}.xml
   maven_artifact="elemental2-${artifact}"
@@ -116,6 +118,7 @@ for artifact in ${elemental_artifacts}; do
     --artifact ${maven_artifact} \
     --jar-file  ${artifact_path}/${jar_file} \
     --src-jar ${artifact_path}/${src_jar} \
+    --javadoc-jar ${artifact_path}/${javadoc_jar} \
     --license-header ${license_header} \
     --pom-template ${pom_template} \
     --lib-version ${lib_version} \
