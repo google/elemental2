@@ -6,6 +6,7 @@ load("@bazel_common_javadoc//:javadoc.bzl", "javadoc_library")
 load("@com_google_jsinterop_generator//:jsinterop_generator_import.bzl", "jsinterop_generator_import")
 
 package(
+    default_applicable_licenses = ["//:license"],
     default_visibility = [
         "//:__subpackages__",
     ],

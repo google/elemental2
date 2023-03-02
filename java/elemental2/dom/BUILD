@@ -7,6 +7,7 @@ load(
 load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 package(
+    default_applicable_licenses = ["//:license"],
     default_visibility = [
         "//:__subpackages__",
     ],
