@@ -65,7 +65,7 @@ public class PromiseSample {
     Element section = document.createElement("section");
 
     Element logs = document.createElement("div");
-    logs.setAttribute("id", "logs");
+    logs.id = "logs";
 
     section.appendChild(logs);
 
