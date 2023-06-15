@@ -26,6 +26,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.MoreCollectors;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import jsinterop.generator.helper.ModelHelper;
@@ -73,7 +74,9 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
           @Override
           public void exitType(Type type) {
             String nativeFqn = type.getNativeFqn();
-            if ("ReadonlyArray".equals(nativeFqn)) {
+            if (Objects.equals(nativeFqn, "ReadonlyMap") || Objects.equals(nativeFqn, "Map")) {
+              cleanCommonMapMethods(type);
+            } else if (Objects.equals(nativeFqn, "ReadonlyArray")) {
               cleanCommonArrayMethods(type);
               // Remove the length field. The field will be converted to a getLength method and will
               // conflict with the JsOverlay method defined on JsArrayLike.
@@ -191,8 +194,11 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
 
   // TODO(dramaix): Add a logic to detect method that have a callback with an array as last
   //  parameter.
-  private static final ImmutableList<String> METHOD_WITH_CLEANABLE_CALLBACKS =
+  private static final ImmutableList<String> ARRAY_METHODS_WITH_CLEANABLE_CALLBACKS =
       ImmutableList.of("filter", "forEach", "reduce", "map", "reduceRight", "every", "some");
+
+  private static final ImmutableList<String> MAP_METHODS_WITH_CLEANABLE_CALLBACKS =
+      ImmutableList.of("forEach");
 
   private static final ImmutableSet<String> METHODS_WITH_SINGULAR_VALUE_IN_FIRST_PARAMETER =
       ImmutableSet.of("indexOf", "lastIndexOf", "includes");
@@ -205,24 +211,48 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
     // This parameter causes inheritance issue between ReadOnlyArray and Array as the type of this
     // parameter is redefined to match the enclosing type. Java developers can easily capture the
     // array the method is applied on and do not need this parameter.
-    Set<String> cleanableCallbackTypes =
-        METHOD_WITH_CLEANABLE_CALLBACKS.stream()
+    cleanCallbacks(
+        arrayType,
+        ARRAY_METHODS_WITH_CLEANABLE_CALLBACKS.stream()
             .map(m -> getCallBackParameterType(m, arrayType))
-            .collect(toCollection(HashSet::new));
+            .collect(toCollection(HashSet::new)));
 
-    for (Type callbackType : arrayType.getInnerTypes()) {
+    // Ensure that indexOf-like methods accept a typed value in their first argument, which is not
+    // the case for ReadonlyArray.
+    for (Method method : arrayType.getMethods()) {
+      if (METHODS_WITH_SINGULAR_VALUE_IN_FIRST_PARAMETER.contains(method.getName())) {
+        method.getParameters().get(0).setType(getArrayValueTypeParameter(arrayType));
+      }
+    }
+  }
+
+  private static void cleanCommonMapMethods(Type mapType) {
+    // Fix some callback definition to remove the last parameter that represent the map itself.
+    //
+    // This parameter causes inheritance issue between ReadonlyMap and Map as the type of this
+    // parameter is redefined to match the enclosing type. Java developers can easily capture the
+    // array the method is applied on and do not need this parameter.
+    cleanCallbacks(
+        mapType,
+        MAP_METHODS_WITH_CLEANABLE_CALLBACKS.stream()
+            .map(m -> getCallBackParameterType(m, mapType))
+            .collect(toCollection(HashSet::new)));
+  }
+
+  private static void cleanCallbacks(Type type, Set<String> cleanableCallbackTypes) {
+    for (Type callbackType : type.getInnerTypes()) {
       if (cleanableCallbackTypes.remove(callbackType.getJavaFqn())) {
-        checkState(
-            callbackType.isInterface() && callbackType.getMethods().size() == 1,
-            "Invalid callback found %s",
-            callbackType.getJavaFqn());
         Method callbackMethod = callbackType.getMethods().get(0);
-
         checkState(
             Iterables.getLast(callbackMethod.getParameters())
                 .getType()
                 .getJavaTypeFqn()
-                .equals(arrayType.getJavaFqn()),
+                .equals(type.getJavaFqn()),
+            "Invalid callback found %s",
+            callbackType.getJavaFqn());
+
+        checkState(
+            callbackType.isInterface() && callbackType.getMethods().size() == 1,
             "Invalid callback found %s",
             callbackType.getJavaFqn());
 
@@ -232,7 +262,6 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
         // DuplicatedTypesUnifier to identify the callback.
         String callbackNativeFqn = callbackType.getNativeFqn();
         checkState(callbackNativeFqn != null && callbackNativeFqn.startsWith("function("));
-
         callbackType.setNativeFqn(
             callbackNativeFqn.substring(0, callbackNativeFqn.lastIndexOf(','))
                 + callbackNativeFqn.substring(callbackNativeFqn.indexOf(')')));
@@ -243,14 +272,6 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
         cleanableCallbackTypes.isEmpty(),
         "The following callbacks %s are not been found.",
         cleanableCallbackTypes);
-
-    // Ensure that indexOf-like methods accept a typed value in their first argument, which is not
-    // the case for ReadonlyArray.
-    for (Method method : arrayType.getMethods()) {
-      if (METHODS_WITH_SINGULAR_VALUE_IN_FIRST_PARAMETER.contains(method.getName())) {
-        method.getParameters().get(0).setType(getArrayValueTypeParameter(arrayType));
-      }
-    }
   }
 
   private static String getCallBackParameterType(String methodName, Type enclosingType) {
