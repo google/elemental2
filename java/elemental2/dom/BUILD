@@ -35,15 +35,6 @@ patch_extern_file(
     patch_file = "window.js.diff",
 )
 
-# Patch for w3c_rtc.js:
-#   - Remove dependency to w3c_webcrypto.js
-#  TODO(b/288249420): remove when namespaced type definitions are supported.
-patch_extern_file(
-    name = "w3c_rtc_patched",
-    src = "//third_party:w3c_rtc.js",
-    patch_file = "w3c_rtc.js.diff",
-)
-
 filegroup(
     name = "externs",
     srcs = [
@@ -60,7 +51,9 @@ filegroup(
         "//third_party:w3c_batterystatus.js",
         "//third_party:w3c_fileapi.js",
         "//third_party:page_visibility.js",
-        ":w3c_rtc_patched",
+        # TODO(b/289527859): Use the patched version of w3c_rtc.js when the closure compiler is
+        #  updated to a new release.
+        "//third_party:w3c_rtc.js",
         "//third_party:html5.js",
         ":window_patched",
         "//third_party:w3c_range.js",
