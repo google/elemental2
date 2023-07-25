@@ -127,6 +127,6 @@ for artifact in ${elemental_artifacts}; do
 done
 
 if [[ ${git_tag} == true ]]; then
-  git tag -a v${lib_version} -m "${lib_version} release"
-  git push origin v${lib_version}
+  git tag -a ${lib_version} -m "${lib_version} release"
+  git push origin ${lib_version}
 fi
