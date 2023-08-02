@@ -42,7 +42,7 @@
   <dependencies>
     <dependency>
       <groupId>com.google.jsinterop</groupId>
-      <artifactId>553265427</artifactId>
+      <artifactId>jsinterop-annotations</artifactId>
       <version>2.0.2</version>
     </dependency>
     <dependency>
