@@ -15,8 +15,8 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "com_google_elemental2",
-    strip_prefix = "elemental2-1.1.0",
-    url = "https://github.com/google/elemental2/archive/1.1.0.zip",
+    strip_prefix = "elemental2-1.2.1",
+    url = "https://github.com/google/elemental2/archive/1.2.1.zip",
 )
 
 load("@com_google_elemental2//build_defs:repository.bzl", "load_elemental2_repo_deps")
@@ -49,7 +49,7 @@ dependencies in your `pom.xml`:
     <dependency>
       <groupId>com.google.elemental2</groupId>
       <artifactId>${artifact-id}</artifactId>
-      <version>1.1.0</version>
+      <version>1.2.1</version>
     </dependency>
 
 
@@ -70,14 +70,14 @@ You can also download manually the jars files.
 
  module | jar file
  ------ | --------
- core | [elemental2-core.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-core/1.1.0/elemental2-core-1.1.0.jar)
- dom | [elemental2-dom.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-dom/1.1.0/elemental2-dom-1.1.0.jar)
- promise | [elemental2-promise.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-promise/1.1.0/elemental2-promise-1.1.0.jar)
- indexeddb | [elemental2-indexeddb.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-indexeddb/1.1.0/elemental2-indexeddb-1.1.0.jar)
- svg | [elemental2-svg.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-svg/1.1.0/elemental2-svg-1.1.0.jar)
- webgl | [elemental2-webgl.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webgl/1.1.0/elemental2-webgl-1.1.0.jar)
- media | [elemental2-media.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-media/1.1.0/elemental2-media-1.1.0.jar)
- webstorage | [elemental2-webstorage.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webstorage/1.1.0/elemental2-webstorage-1.1.0.jar)
+ core | [elemental2-core.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-core/1.2.1/elemental2-core-1.2.1.jar)
+ dom | [elemental2-dom.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-dom/1.2.1/elemental2-dom-1.2.1.jar)
+ promise | [elemental2-promise.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-promise/1.2.1/elemental2-promise-1.2.1.jar)
+ indexeddb | [elemental2-indexeddb.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-indexeddb/1.2.1/elemental2-indexeddb-1.2.1.jar)
+ svg | [elemental2-svg.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-svg/1.2.1/elemental2-svg-1.2.1.jar)
+ webgl | [elemental2-webgl.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webgl/1.2.1/elemental2-webgl-1.2.1.jar)
+ media | [elemental2-media.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-media/1.2.1/elemental2-media-1.2.1.jar)
+ webstorage | [elemental2-webstorage.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webstorage/1.2.1/elemental2-webstorage-1.2.1.jar)
 
 GWT
 ---
