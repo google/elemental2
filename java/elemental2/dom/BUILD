@@ -101,9 +101,9 @@ jsinterop_generator(
     custom_preprocessing_pass = [
         "elemental2.dom.EventListenerCleaner",
     ],
-    integer_entities_files = ["integer_entities.txt"],
     # override auto generated js_deps since modified externs cause conflicts
-    j2cl_js_deps = [],
+    externs_deps = [],
+    integer_entities_files = ["integer_entities.txt"],
     name_mapping_files = ["name_mappings.txt"],
     runtime_deps = [
         ":EventListenerCleaner",

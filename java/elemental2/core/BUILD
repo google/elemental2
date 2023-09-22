@@ -54,13 +54,13 @@ jsinterop_generator(
     custom_preprocessing_pass = [
         "elemental2.core.BuiltInClosureTypeCleaner",
     ],
+    # override auto generated js_deps since modified externs cause conflicts
+    externs_deps = [],
     global_scope_class_name = "Global",
     gwt_java_deps = [
         "//third_party:gwt-array-stamper",
     ],
     integer_entities_files = ["integer_entities.txt"],
-    # override auto generated js_deps since modified externs cause conflicts
-    j2cl_js_deps = [],
     name_mapping_files = ["name_mappings.txt"],
     wildcard_types_files = ["wildcard_types.txt"],
     runtime_deps = [

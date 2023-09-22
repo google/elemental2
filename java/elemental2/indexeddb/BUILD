@@ -23,10 +23,10 @@ jsinterop_generator(
         "elemental2.dom.EventListenerCleaner",
     ],
     extension_type_prefix = "IndexedDb",
-    integer_entities_files = ["integer_entities.txt"],
     # override auto generated js_deps in order not to provide extern files
     # Common extern file are included by default.
-    j2cl_js_deps = [],
+    externs_deps = [],
+    integer_entities_files = ["integer_entities.txt"],
     runtime_deps = [
         "//java/elemental2/dom:EventListenerCleaner",
     ],

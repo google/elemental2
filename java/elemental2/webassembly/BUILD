@@ -20,10 +20,10 @@ jsinterop_generator(
     name = "webassembly",
     srcs = [":externs"],
     extension_type_prefix = "WebAssembly",
-    integer_entities_files = ["integer_entities.txt"],
     # override auto generated js_deps in order not to provide extern files
     # Common extern file are included by default.
-    j2cl_js_deps = [],
+    externs_deps = [],
+    integer_entities_files = ["integer_entities.txt"],
     name_mapping_files = ["name_mappings.txt"],
     deps = [
         "//java/elemental2/core",
