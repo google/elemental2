@@ -380,6 +380,7 @@ elemental2.dom.RTCInboundRtpStreamStats.getFrameHeight
 elemental2.dom.RTCInboundRtpStreamStats.getFramesDecoded
 elemental2.dom.RTCInboundRtpStreamStats.getFramesReceived
 elemental2.dom.RTCInboundRtpStreamStats.getFrameWidth
+elemental2.dom.RTCInboundRtpStreamStats.getFreezeCount
 elemental2.dom.RTCInboundRtpStreamStats.getFirCount
 elemental2.dom.RTCInboundRtpStreamStats.getKeyFramesDecoded
 elemental2.dom.RTCInboundRtpStreamStats.getNackCount
