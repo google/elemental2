@@ -20,6 +20,7 @@ elemental2.core.JsArray.copyWithin.end
 elemental2.core.JsArray.fill.begin
 elemental2.core.JsArray.fill.end
 elemental2.core.JsArray.findIndex
+elemental2.core.JsArray.findLastIndex
 elemental2.core.JsArray.includes.fromIndex
 elemental2.core.JsArray.indexOf
 elemental2.core.JsArray.indexOf.fromIndex
@@ -196,6 +197,7 @@ elemental2.core.JsMap.size
 elemental2.core.JsRegExp.lastIndex
 elemental2.core.JsSet.size
 elemental2.core.ReadonlyArray.findIndex
+elemental2.core.ReadonlyArray.findLastIndex
 elemental2.core.ReadonlyArray.includes.fromIndex
 elemental2.core.ReadonlyArray.indexOf
 elemental2.core.ReadonlyArray.indexOf.fromIndex
@@ -221,6 +223,7 @@ elemental2.core.TypedArray.copyWithin.end
 elemental2.core.TypedArray.fill.begin
 elemental2.core.TypedArray.fill.end
 elemental2.core.TypedArray.findIndex
+elemental2.core.TypedArray.findLastIndex
 elemental2.core.TypedArray.includes.fromIndex
 elemental2.core.TypedArray.indexOf
 elemental2.core.TypedArray.indexOf.fromIndex
