@@ -163,6 +163,11 @@ extern(
 )
 
 extern(
+    name = "w3c_clipboard",
+    path = "browser/w3c_clipboard.js",
+)
+
+extern(
     name = "w3c_clipboardevent",
     path = "browser/w3c_clipboardevent.js",
 )
