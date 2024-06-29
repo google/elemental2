@@ -257,6 +257,21 @@ extern(
     path = "browser/w3c_worklets.js",
 )
 
+extern(
+    name = "es6_proxy.js",
+    path = "browser/es6_proxy.js",
+)
+
+extern(
+    name = "w3c_pointerlock.js",
+    path = "browser/w3c_pointerlock.js",
+)
+
+extern(
+    name = "w3c_gamepad.js",
+    path = "browser/w3c_gamepad.js",
+)
+
 java_library(
     name = "gwt-array-stamper",
     srcs = [

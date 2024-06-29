@@ -17,6 +17,7 @@ filegroup(
         "//third_party:mediakeys.js",
         "//third_party:w3c_audio.js",
         "//third_party:w3c_worklets.js",
+        "//third_party:w3c_gamepad.js",
     ],
 )
 
