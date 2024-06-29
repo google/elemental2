@@ -33,6 +33,7 @@ filegroup(
         "//third_party:es5.js",
         "//third_party:es6.js",
         "//third_party:es6_collections.js",
+        "//third_party:es6_proxy.js",
     ],
 )
 
