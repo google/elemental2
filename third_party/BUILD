@@ -272,6 +272,12 @@ extern(
     path = "browser/webassembly.js",
 )
 
+extern(
+    name = "wicg_resizeobserver.js",
+    path = "browser/wicg_resizeobserver.js",
+)
+
+
 java_library(
     name = "gwt-array-stamper",
     srcs = [
