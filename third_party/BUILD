@@ -23,6 +23,11 @@ extern(
 )
 
 extern(
+    name = "es6_proxy.js",
+    path = "browser/es6_proxy.js",
+)
+
+extern(
     name = "w3c_event",
     path = "browser/w3c_event.js",
 )
@@ -203,6 +208,21 @@ extern(
 )
 
 extern(
+    name = "w3c_gamepad.js",
+    path = "browser/w3c_gamepad.js",
+)
+
+extern(
+    name = "w3c_pointerlock.js",
+    path = "browser/w3c_pointerlock.js",
+)
+
+extern(
+    name = "w3c_worklets.js",
+    path = "browser/w3c_worklets.js",
+)
+
+extern(
     name = "webgl",
     path = "browser/webgl.js",
 )
@@ -250,11 +270,6 @@ extern(
 extern(
     name = "webassembly.js",
     path = "browser/webassembly.js",
-)
-
-extern(
-    name = "w3c_worklets.js",
-    path = "browser/w3c_worklets.js",
 )
 
 java_library(
