@@ -89,6 +89,7 @@ filegroup(
         "//third_party:w3c_geolocation.js",
         "//third_party:w3c_requestidlecallback.js",
         "//third_party:w3c_pointerlock.js",
+        "//third_party:wicg_resizeobserver.js",
     ],
 )
 

@@ -218,6 +218,11 @@ extern(
 )
 
 extern(
+    name = "wicg_resizeobserver.js",
+    path = "browser/wicg_resizeobserver.js",
+)
+
+extern(
     name = "w3c_worklets.js",
     path = "browser/w3c_worklets.js",
 )
