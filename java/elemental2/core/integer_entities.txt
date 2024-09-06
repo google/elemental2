@@ -12,6 +12,7 @@ elemental2.core.Atomics.sub.index
 elemental2.core.Atomics.wait.index
 elemental2.core.Atomics.wake.index
 elemental2.core.Atomics.xor.index
+elemental2.core.JsArray.at.index
 elemental2.core.JsArray.index
 elemental2.core.JsArray.length
 elemental2.core.JsArray.copyWithin.target
@@ -19,6 +20,7 @@ elemental2.core.JsArray.copyWithin.start
 elemental2.core.JsArray.copyWithin.end
 elemental2.core.JsArray.fill.begin
 elemental2.core.JsArray.fill.end
+elemental2.core.JsArray.flat.depth
 elemental2.core.JsArray.findIndex
 elemental2.core.JsArray.findLastIndex
 elemental2.core.JsArray.includes.fromIndex
@@ -197,8 +199,10 @@ elemental2.core.JsString.substring.end
 elemental2.core.JsMap.size
 elemental2.core.JsRegExp.lastIndex
 elemental2.core.JsSet.size
+elemental2.core.ReadonlyArray.at.index
 elemental2.core.ReadonlyArray.findIndex
 elemental2.core.ReadonlyArray.findLastIndex
+elemental2.core.ReadonlyArray.flat.depth
 elemental2.core.ReadonlyArray.includes.fromIndex
 elemental2.core.ReadonlyArray.indexOf
 elemental2.core.ReadonlyArray.indexOf.fromIndex
