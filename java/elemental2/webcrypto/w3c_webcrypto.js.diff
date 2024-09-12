@@ -1,0 +1,92 @@
+299c299
+< webCrypto.RsaKeyGenParams;
+---
+> webCrypto.RsaKeyGenParams = function() {};
+315c315
+< webCrypto.RsaHashedKeyGenParams;
+---
+> webCrypto.RsaHashedKeyGenParams = function() {};
+327c327
+< webCrypto.RsaKeyAlgorithm;
+---
+> webCrypto.RsaKeyAlgorithm = function() {};
+343c343
+< webCrypto.RsaHashedKeyAlgorithm;
+---
+> webCrypto.RsaHashedKeyAlgorithm = function() {};
+355c355
+< webCrypto.RsaHashedImportParams;
+---
+> webCrypto.RsaHashedImportParams = function() {};
+367c367
+< webCrypto.RsaPssParams;
+---
+> webCrypto.RsaPssParams = function() {};
+379c379
+< webCrypto.RsaOaepParams;
+---
+> webCrypto.RsaOaepParams = function() {};
+391c391
+< webCrypto.EcdsaParams;
+---
+> webCrypto.EcdsaParams = function() {};
+410c410
+< webCrypto.EcKeyGenParams;
+---
+> webCrypto.EcKeyGenParams = function() {};
+422c422
+< webCrypto.EcKeyAlgorithm;
+---
+> webCrypto.EcKeyAlgorithm = function() {};
+434c434
+< webCrypto.EcKeyImportParams;
+---
+> webCrypto.EcKeyImportParams = function() {};
+446c446
+< webCrypto.EcKeyDeriveParams;
+---
+> webCrypto.EcKeyDeriveParams = function() {};
+458c458
+< webCrypto.AesCtrParams;
+---
+> webCrypto.AesCtrParams = function() {};
+474c474
+< webCrypto.AesKeyAlgorithm;
+---
+> webCrypto.AesKeyAlgorithm = function() {};
+486c486
+< webCrypto.AesKeyGenParams;
+---
+> webCrypto.AesKeyGenParams = function() {};
+498c498
+< webCrypto.AesDerivedKeyParams;
+---
+> webCrypto.AesDerivedKeyParams = function() {};
+510c510
+< webCrypto.AesCbcParams;
+---
+> webCrypto.AesCbcParams = function() {};
+522c522
+< webCrypto.AesGcmParams;
+---
+> webCrypto.AesGcmParams = function() {};
+542c542
+< webCrypto.HmacImportParams;
+---
+> webCrypto.HmacImportParams = function() {};
+558c558
+< webCrypto.HmacKeyAlgorithm;
+---
+> webCrypto.HmacKeyAlgorithm = function() {};
+574c574
+< webCrypto.HmacKeyGenParams;
+---
+> webCrypto.HmacKeyGenParams = function() {};
+590c590
+< webCrypto.HkdfParams;
+---
+> webCrypto.HkdfParams = function() {};
+610c610
+< webCrypto.Pbkdf2Params;
+---
+> webCrypto.Pbkdf2Params = function() {};

@@ -228,6 +228,11 @@ extern(
 )
 
 extern(
+    name = "w3c_webcrypto.js",
+    path = "browser/w3c_webcrypto.js",
+)
+
+extern(
     name = "webgl",
     path = "browser/webgl.js",
 )

@@ -87,3 +87,8 @@ jsinterop_generator(
     name = "elemental2-indexeddb",
     exports = ["//java/elemental2/indexeddb"],
 )
+
+jsinterop_generator(
+    name = "elemental2-webcrypto",
+    exports = ["//java/elemental2/webcrypto"],
+)
