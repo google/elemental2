@@ -282,6 +282,11 @@ extern(
     path = "browser/webassembly.js",
 )
 
+extern(
+    name = "whatwg_encoding.js",
+    path = "browser/whatwg_encoding.js",
+)
+
 java_library(
     name = "gwt-array-stamper",
     srcs = [

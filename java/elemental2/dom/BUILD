@@ -78,6 +78,7 @@ filegroup(
         "//third_party:w3c_abort.js",
         "//third_party:fetchapi.js",
         "//third_party:whatwg_console.js",
+        "//third_party:whatwg_encoding.js",
         "//third_party:w3c_serviceworker.js",
         "//third_party:w3c_navigation_timing.js",
         "//third_party:w3c_clipboardevent.js",
