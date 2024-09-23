@@ -4,6 +4,7 @@ load(
     "//build_defs/internal_do_not_use:elemental_utils.bzl",
     "patch_extern_file",
 )
+load("@rules_java//java:defs.bzl", "java_library")
 load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 package(
