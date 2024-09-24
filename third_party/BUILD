@@ -173,6 +173,11 @@ extern(
 )
 
 extern(
+    name = "w3c_composition_event.js",
+    path = "browser/w3c_composition_event.js",
+)
+
+extern(
     name = "w3c_clipboardevent",
     path = "browser/w3c_clipboardevent.js",
 )
@@ -213,8 +218,18 @@ extern(
 )
 
 extern(
+    name = "w3c_permissions.js",
+    path = "browser/w3c_permissions.js",
+)
+
+extern(
     name = "w3c_pointerlock.js",
     path = "browser/w3c_pointerlock.js",
+)
+
+extern(
+    name = "w3c_pointer_events.js",
+    path = "browser/w3c_pointer_events.js",
 )
 
 extern(

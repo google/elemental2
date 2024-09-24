@@ -146,6 +146,9 @@ elemental2.dom.Element.clientHeight
 elemental2.dom.Element.clientLeft
 elemental2.dom.Element.clientTop
 elemental2.dom.Element.clientWidth
+elemental2.dom.Element.hasPointerCapture.pointerId
+elemental2.dom.Element.releasePointerCapture.pointerId
+elemental2.dom.Element.setPointerCapture.pointerId
 elemental2.dom.Element.scrollHeight
 elemental2.dom.Element.scrollWidth
 elemental2.dom.Element.webkitRequestFullScreen.allowKeyboardInput
@@ -315,6 +318,7 @@ elemental2.dom.MutationEvent.initMutationEvent.attrChangeArg
 elemental2.dom.NamedNodeMap.length
 elemental2.dom.NamedNodeMap.item.index
 elemental2.dom.Navigator.hardwareConcurrency
+elemental2.dom.Navigator.maxTouchPoints
 elemental2.dom.Node.compareDocumentPosition
 elemental2.dom.Node.nodeType
 elemental2.dom.Node.ATTRIBUTE_NODE
@@ -347,6 +351,15 @@ elemental2.dom.PerformanceResourceTiming.transferSize
 elemental2.dom.Plugin.length
 elemental2.dom.PluginArray.length
 elemental2.dom.PluginArray.item.index
+elemental2.dom.PointerEvent.pointerId
+elemental2.dom.PointerEvent.tiltX
+elemental2.dom.PointerEvent.tiltY
+elemental2.dom.PointerEventInit.getPointerId
+elemental2.dom.PointerEventInit.setPointerId.pointerId
+elemental2.dom.PointerEventInit.getTiltX
+elemental2.dom.PointerEventInit.setTiltX.tiltX
+elemental2.dom.PointerEventInit.getTiltY
+elemental2.dom.PointerEventInit.setTiltY.tiltY
 elemental2.dom.Range.compareBoundaryPoints
 elemental2.dom.Range.compareBoundaryPoints.how
 elemental2.dom.Range.endOffset
