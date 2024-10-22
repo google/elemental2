@@ -17,8 +17,9 @@ package elemental2.core;
 
 import static com.google.common.base.Preconditions.checkState;
 import static java.util.stream.Collectors.toCollection;
-import static jsinterop.generator.model.PredefinedTypeReference.ARRAY_STAMPER;
-import static jsinterop.generator.model.PredefinedTypeReference.JS;
+import static jsinterop.generator.model.PredefinedTypes.ARRAY_STAMPER;
+import static jsinterop.generator.model.PredefinedTypes.JS;
+import static jsinterop.generator.model.PredefinedTypes.OBJECT;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
@@ -44,7 +45,6 @@ import jsinterop.generator.model.MethodInvocation;
 import jsinterop.generator.model.ModelVisitor;
 import jsinterop.generator.model.Parameter;
 import jsinterop.generator.model.ParametrizedTypeReference;
-import jsinterop.generator.model.PredefinedTypeReference;
 import jsinterop.generator.model.Program;
 import jsinterop.generator.model.ReturnStatement;
 import jsinterop.generator.model.Type;
@@ -65,8 +65,6 @@ import jsinterop.generator.model.TypeVariableReference;
  * </ul>
  */
 public class BuiltInClosureTypeCleaner implements ModelVisitor {
-  private static final String OBJECT = "Object";
-
   @Override
   public void applyTo(Program program) {
     program.accept(
@@ -84,10 +82,10 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
                   type.getFields().stream()
                       .filter(f -> "length".equals(f.getName()))
                       .collect(MoreCollectors.onlyElement()));
-            } else if ("Array".equals(nativeFqn)) {
+            } else if (Objects.equals(nativeFqn, "Array")) {
               cleanArrayType(type);
               addJavaArrayHelperMethods(type);
-            } else if (OBJECT.equals(nativeFqn)) {
+            } else if (Objects.equals(nativeFqn, "Object")) {
               // JsCompiler uses a hardcoded definition for the Object type, one with two type
               // parameters (from IObject). That makes the resulting java type to be generated as
               // the following parametrized type:
@@ -138,10 +136,9 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
     asArray.setBody(
         new ReturnStatement(
             MethodInvocation.builder()
-                .setInvocationTarget(new TypeQualifier(ARRAY_STAMPER))
+                .setInvocationTarget(new TypeQualifier(ARRAY_STAMPER.getReference()))
                 .setMethodName("stampJavaTypeInfo")
-                .setArgumentTypes(
-                    PredefinedTypeReference.OBJECT, new ArrayTypeReference(arrayTypeParameter))
+                .setArgumentTypes(OBJECT.getReference(), new ArrayTypeReference(arrayTypeParameter))
                 .setArguments(new LiteralExpression("this"), new LiteralExpression("reference"))
                 .build()));
     jsArrayType.addMethod(asArray);
@@ -165,9 +162,9 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
     from.setBody(
         new ReturnStatement(
             MethodInvocation.builder()
-                .setInvocationTarget(new TypeQualifier(JS))
+                .setInvocationTarget(new TypeQualifier(JS.getReference()))
                 .setMethodName("uncheckedCast")
-                .setArgumentTypes(PredefinedTypeReference.OBJECT)
+                .setArgumentTypes(OBJECT.getReference())
                 .setArguments(new LiteralExpression("array"))
                 .build()));
     jsArrayType.addMethod(from);
@@ -308,8 +305,7 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
         (ParametrizedTypeReference) concatMethod.getReturnType();
     checkState(
         concatReturnType.getActualTypeArguments().size() == 1
-            && PredefinedTypeReference.OBJECT.equals(
-                concatReturnType.getActualTypeArguments().get(0)));
+            && concatReturnType.getActualTypeArguments().get(0).isReferenceTo(OBJECT));
     concatMethod.setReturnType(
         new ParametrizedTypeReference(
             concatReturnType.getMainType(), ImmutableList.of(arrayValueTypeParameter)));
@@ -322,7 +318,7 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
   private static void improveArrayMethodTyping(Method m, TypeReference arrayTypeParameter) {
     checkState(m.getParameters().size() == 1);
     Parameter firstParameter = m.getParameters().get(0);
-    checkState(PredefinedTypeReference.OBJECT.equals(firstParameter.getType()));
+    checkState(firstParameter.getType().isReferenceTo(OBJECT));
     m.getParameters()
         .set(0, firstParameter.toBuilder().setName("items").setType(arrayTypeParameter).build());
   }
