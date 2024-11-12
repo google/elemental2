@@ -9,6 +9,6 @@ def extern(name, path = None):
         name = name,
         srcs = ["@com_google_javascript_closure_compiler//:externs"],
         outs = ["%s.js" % name],
-        tools = ["@bazel_tools//tools/jdk:jar"],
-        cmd = "$(location @bazel_tools//tools/jdk:jar) -xf  $(location @com_google_javascript_closure_compiler//:externs) %s; mv %s $@" % (path, path),
+        tools = ["@bazel_tools//tools/zip:zipper"],
+        cmd = "$(location @bazel_tools//tools/zip:zipper) x  $(location @com_google_javascript_closure_compiler//:externs) %s; mv %s $@" % (path, path),
     )
