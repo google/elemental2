@@ -136,9 +136,10 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
     asArray.setBody(
         new ReturnStatement(
             MethodInvocation.builder()
-                .setInvocationTarget(new TypeQualifier(ARRAY_STAMPER.getReference()))
+                .setInvocationTarget(new TypeQualifier(ARRAY_STAMPER.getReference(false)))
                 .setMethodName("stampJavaTypeInfo")
-                .setArgumentTypes(OBJECT.getReference(), new ArrayTypeReference(arrayTypeParameter))
+                .setArgumentTypes(
+                    OBJECT.getReference(false), new ArrayTypeReference(arrayTypeParameter))
                 .setArguments(new LiteralExpression("this"), new LiteralExpression("reference"))
                 .build()));
     jsArrayType.addMethod(asArray);
@@ -162,9 +163,9 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
     from.setBody(
         new ReturnStatement(
             MethodInvocation.builder()
-                .setInvocationTarget(new TypeQualifier(JS.getReference()))
+                .setInvocationTarget(new TypeQualifier(JS.getReference(false)))
                 .setMethodName("uncheckedCast")
-                .setArgumentTypes(OBJECT.getReference())
+                .setArgumentTypes(OBJECT.getReference(false))
                 .setArguments(new LiteralExpression("array"))
                 .build()));
     jsArrayType.addMethod(from);
