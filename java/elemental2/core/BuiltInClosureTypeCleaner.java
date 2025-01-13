@@ -27,6 +27,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.MoreCollectors;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -65,6 +66,22 @@ import jsinterop.generator.model.TypeVariableReference;
  * </ul>
  */
 public class BuiltInClosureTypeCleaner implements ModelVisitor {
+  private static final ImmutableSet<String> TYPED_ARRAY_TYPES =
+      ImmutableSet.of(
+          "ArrayBufferView",
+          "TypedArray",
+          "Int8Array",
+          "Uint8Array",
+          "Uint8ClampedArray",
+          "Int16Array",
+          "Uint16Array",
+          "Int32Array",
+          "Uint32Array",
+          "Float32Array",
+          "Float64Array",
+          "BigInt64Array",
+          "BigUint64Array");
+
   @Override
   public void applyTo(Program program) {
     program.accept(
@@ -99,6 +116,53 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
 
               type.getTypeParameters().clear();
             }
+          }
+        });
+
+    // To mirror the type definitions in TypeScript, Typed Array in closure are parametrized with a
+    // type parameter that is unused. To avoid parameterization in our generated Java code, we will
+    // simply remove the type parameter.
+    program.accept(
+        new AbstractRewriter() {
+          @Override
+          public boolean shouldProcessType(Type type) {
+            return TYPED_ARRAY_TYPES.contains(type.getNativeFqn());
+          }
+
+          @Override
+          public Entity rewriteType(Type type) {
+            if (TYPED_ARRAY_TYPES.contains(type.getNativeFqn())) {
+              Collection<TypeReference> typeParameters = type.getTypeParameters();
+
+              checkState(
+                  typeParameters.isEmpty()
+                      || (typeParameters.size() == 1
+                          && typeParameters
+                              .iterator()
+                              .next()
+                              .getTypeName()
+                              .equals("TArrayBuffer")));
+
+              type.getTypeParameters().clear();
+            }
+            return type;
+          }
+
+          @Override
+          public TypeReference rewriteParametrizedTypeReference(
+              ParametrizedTypeReference typeReference) {
+            if (TYPED_ARRAY_TYPES.contains(
+                typeReference.getMainType().getJsDocAnnotationString())) {
+              // Some typed array instance functions are defined as returning the special `THIS`
+              // template type. That will create some type reference to the enclosing type that are
+              // automatically parametrized with the type parameter we removed above.
+              List<TypeReference> typeArgument = typeReference.getActualTypeArguments();
+              checkState(
+                  typeArgument.size() == 1
+                      && typeArgument.get(0).getTypeName().equals("TArrayBuffer"));
+              return typeReference.getMainType();
+            }
+            return typeReference;
           }
         });
 
