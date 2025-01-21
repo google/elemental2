@@ -22,6 +22,8 @@ import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 import jsinterop.base.Js;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * The Promise object is used for asynchronous computations. A Promise represents a value which may
@@ -31,53 +33,54 @@ import jsinterop.base.Js;
  *     href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>
  */
 @JsType(isNative = true, namespace = JsPackage.GLOBAL)
-public class Promise<T> implements IThenable<T> {
+@NullMarked
+public class Promise<T extends @Nullable Object> implements IThenable<T> {
   @JsFunction
   public interface FinallyOnFinallyCallbackFn {
     void onInvoke();
   }
 
   @JsFunction
-  public interface CatchOnRejectedCallbackFn<V> {
-    IThenable<V> onInvoke(Object error);
+  public interface CatchOnRejectedCallbackFn<V extends @Nullable Object> {
+    @Nullable IThenable<V> onInvoke(Object error);
   }
 
   @JsFunction
-  public interface PromiseExecutorCallbackFn<T> {
+  public interface PromiseExecutorCallbackFn<T extends @Nullable Object> {
     @JsFunction
     interface RejectCallbackFn {
       void onInvoke(Object error);
     }
 
     @JsFunction
-    interface ResolveCallbackFn<T> {
+    interface ResolveCallbackFn<T extends @Nullable Object> {
       @JsType(isNative = true, name = "?", namespace = JsPackage.GLOBAL)
-      interface ResolveUnionType<T> {
+      interface ResolveUnionType<T extends @Nullable Object> {
         @JsOverlay
-        static ResolveUnionType<?> of(Object o) {
+        static @Nullable ResolveUnionType<?> of(@Nullable Object o) {
           return Js.cast(o);
         }
 
         @JsOverlay
-        default IThenable<T> asIThenable() {
+        default @Nullable IThenable<T> asIThenable() {
           return Js.cast(this);
         }
 
         @JsOverlay
-        default T asT() {
+        default @Nullable T asT() {
           return Js.cast(this);
         }
       }
 
       @JsOverlay
-      default void onInvoke(IThenable<T> value) {
+      default void onInvoke(@Nullable IThenable<T> value) {
         onInvoke(Js.<ResolveUnionType<T>>uncheckedCast(value));
       }
 
-      void onInvoke(ResolveUnionType<T> p0);
+      void onInvoke(@Nullable ResolveUnionType<T> p0);
 
       @JsOverlay
-      default void onInvoke(T value) {
+      default void onInvoke(@Nullable T value) {
         onInvoke(Js.<ResolveUnionType<T>>uncheckedCast(value));
       }
     }
@@ -86,65 +89,71 @@ public class Promise<T> implements IThenable<T> {
   }
 
   @JsType(isNative = true, name = "?", namespace = JsPackage.GLOBAL)
-  public interface ResolveValueUnionType<V> {
+  public interface ResolveValueUnionType<V extends @Nullable Object> {
     @JsOverlay
-    static ResolveValueUnionType<?> of(Object o) {
+    static @Nullable ResolveValueUnionType<?> of(@Nullable Object o) {
       return Js.cast(o);
     }
 
     @JsOverlay
-    default IThenable<V> asIThenable() {
+    default @Nullable IThenable<V> asIThenable() {
       return Js.cast(this);
     }
 
     @JsOverlay
-    default V asV() {
+    default @Nullable V asV() {
       return Js.cast(this);
     }
   }
 
   @JsOverlay
-  public static <V> Promise<V[]> all(IThenable<? extends V>... promises) {
+  public static <V extends @Nullable Object> Promise<V[]> all(IThenable<? extends V>... promises) {
     return allInternal(promises);
   }
 
   @JsMethod(name = "all")
-  private static native <V> Promise<V[]> allInternal(IThenable<? extends V>[] promises);
+  private static native <V extends @Nullable Object> Promise<V[]> allInternal(
+      IThenable<? extends V>[] promises);
 
   @JsOverlay
-  public static <V> Promise<V> race(IThenable<? extends V>... promises) {
+  public static <V extends @Nullable Object> Promise<V> race(IThenable<? extends V>... promises) {
     return raceInternal(promises);
   }
 
   @JsMethod(name = "race")
-  private static native <V> Promise<V> raceInternal(IThenable<? extends V>[] promises);
+  private static native <V extends @Nullable Object> Promise<V> raceInternal(
+      IThenable<? extends V>[] promises);
 
-  public static native <V> Promise<V> reject(Object error);
+  public static native <V extends @Nullable Object> Promise<V> reject(@Nullable Object error);
 
   @JsOverlay
-  public static final <V> Promise<V> resolve(IThenable<V> value) {
+  public static final <V extends @Nullable Object> Promise<V> resolve(
+      @Nullable IThenable<V> value) {
     return resolve(Js.<ResolveValueUnionType<V>>uncheckedCast(value));
   }
 
-  public static native <V> Promise<V> resolve(ResolveValueUnionType<V> value);
+  public static native <V extends @Nullable Object> Promise<V> resolve(
+      @Nullable ResolveValueUnionType<V> value);
 
   @JsOverlay
-  public static final <V> Promise<V> resolve(V value) {
+  public static final <V extends @Nullable Object> Promise<V> resolve(@Nullable V value) {
     return resolve(Js.<ResolveValueUnionType<V>>uncheckedCast(value));
   }
 
   public Promise(PromiseExecutorCallbackFn<T> executor) {}
 
   @JsMethod(name = "catch")
-  public native <V> Promise<V> catch_(CatchOnRejectedCallbackFn<? extends V> onRejected);
+  public native <V extends @Nullable Object> Promise<V> catch_(
+      CatchOnRejectedCallbackFn<? extends V> onRejected);
 
   @Override
-  public native <V> Promise<V> then(
-      ThenOnFulfilledCallbackFn<? super T, ? extends V> onFulfilled,
-      ThenOnRejectedCallbackFn<? extends V> onRejected);
+  public native <V extends @Nullable Object> Promise<V> then(
+      @Nullable ThenOnFulfilledCallbackFn<? super T, ? extends V> onFulfilled,
+      @Nullable ThenOnRejectedCallbackFn<? extends V> onRejected);
 
   @Override
-  public native <V> Promise<V> then(ThenOnFulfilledCallbackFn<? super T, ? extends V> onFulfilled);
+  public native <V extends @Nullable Object> Promise<V> then(
+      @Nullable ThenOnFulfilledCallbackFn<? super T, ? extends V> onFulfilled);
 
   @JsMethod(name = "finally")
   public native Promise<T> finally_(FinallyOnFinallyCallbackFn onFinally);

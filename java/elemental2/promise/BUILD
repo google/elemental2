@@ -17,6 +17,7 @@ package(
 jsinterop_generator_import(
     name = "promise",
     srcs = glob(["*.java"]),
+    enable_jspecify_support = True,
     gwt_module_name = "elemental2.promise.Promise",
     gwt_xml = "Promise.gwt.xml",
     types_mapping_files = ["promise.types"],
@@ -32,5 +33,6 @@ javadoc_library(
     deps = [
         "@com_google_j2cl//:jsinterop-annotations",
         "@com_google_jsinterop_base//:jsinterop-base",
+        "@com_google_jsinterop_generator//third_party:jspecify_annotations",
     ],
 )
