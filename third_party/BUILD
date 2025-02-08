@@ -311,5 +311,5 @@ java_library(
 
 java_library(
     name = "guava",
-    exports = ["@com_google_guava"],
+    exports = ["@google_bazel_common//third_party/java/guava"],
 )

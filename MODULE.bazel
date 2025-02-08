@@ -1,0 +1,122 @@
+module(
+    name = "com_google_elemental2",
+    bazel_compatibility = [">=8.0.1"],
+)
+
+bazel_dep(name = "com_google_j2cl")
+
+# j2cl is not available in BCR.
+archive_override(
+    module_name = "com_google_j2cl",
+    strip_prefix = "j2cl-master",
+    urls = ["https://github.com/google/j2cl/archive/master.zip"],
+)
+
+bazel_dep(name = "com_google_jsinterop_generator")
+
+# jsinterop-generator is not available in BCR.
+archive_override(
+    module_name = "com_google_jsinterop_generator",
+    strip_prefix = "jsinterop-generator-master",
+    urls = ["https://github.com/google/jsinterop-generator/archive/master.zip"],
+)
+
+bazel_dep(name = "com_google_jsinterop_base")
+
+# jsinterop-base is not available in BCR.
+archive_override(
+    module_name = "com_google_jsinterop_base",
+    strip_prefix = "jsinterop-base-master",
+    urls = ["https://github.com/google/jsinterop-base/archive/master.zip"],
+)
+
+bazel_dep(name = "google_bazel_common")
+
+# google_bazel_common is not available in BCR.
+git_override(
+    module_name = "google_bazel_common",
+    commit = "34102e4cf748e2922697f28f629ecea687345254",
+    remote = "https://github.com/google/bazel-common",
+)
+
+# rules_closure is not available in BCR.
+git_override(
+    module_name = "io_bazel_rules_closure",
+    commit = "a8f1d2d110b565f0cf47ed86a29ff1e94a826ab4",
+    remote = "https://github.com/bazelbuild/rules_closure",
+)
+
+# rules_webtesting is not available in BCR.
+git_override(
+    module_name = "rules_webtesting",
+    commit = "46b744fa916b5cefce6f0f84252f4ec89128a01b",
+    remote = "https://github.com/bazelbuild/rules_webtesting",
+)
+
+# rules_scala is not available in BCR.
+# The root module has to declare the same override as rules_webtesting.
+git_override(
+    module_name = "rules_scala",
+    commit = "031fb0d3a63467d87f25397eb8e23faa57d1d3a6",
+    remote = "https://github.com/mbland/rules_scala",
+)
+
+bazel_dep(
+    name = "rules_license",
+    version = "1.0.0",
+)
+
+bazel_dep(
+    name = "bazel_skylib",
+    version = "1.7.1",
+)
+
+bazel_dep(
+    name = "rules_java",
+    version = "8.6.1",
+)
+
+bazel_dep(
+    name = "rules_jvm_external",
+    version = "6.6",
+)
+
+
+# Works around https://github.com/bazelbuild/rules_python/issues/1169
+bazel_dep(
+    name = "rules_python",
+    version = "0.23.1",
+)
+
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    configure_coverage_tool = False,
+    ignore_root_user_error = True,
+    python_version = "3.11",
+)
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+
+maven.artifact(
+    artifact = "closure-compiler",
+    group = "com.google.javascript",
+    version = "v20240317",
+)
+
+use_repo(maven, "maven")
+
+http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "org_gwtproject_gwt",
+    sha256 = "731879b8e56024a34f36b83655975a474e1ac1dffdfe72724e337976ac0e1749",
+    strip_prefix = "gwt-073679594c6ead7abe501009f8ba31eb390047fc",
+    url = "https://github.com/gwtproject/gwt/archive/073679594c6ead7abe501009f8ba31eb390047fc.zip",
+)
+
+http_archive(
+    name = "bazel_common_javadoc",
+    sha256 = "3f090bfb3c0c66e3c2d9ae229d184af1147e4c06223551aeb2ff292661371b9a",
+    strip_prefix = "bazel-common-ebce2af3f0de560b649dcf98ef732a56b80e829c/tools/javadoc",
+    urls = ["https://github.com/google/bazel-common/archive/ebce2af3f0de560b649dcf98ef732a56b80e829c.zip"],
+)

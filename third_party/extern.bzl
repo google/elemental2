@@ -7,7 +7,7 @@ def extern(name, path = None):
 
     native.genrule(
         name = name,
-        srcs = ["@com_google_javascript_closure_compiler"],
+        srcs = ["@maven//:com_google_javascript_closure_compiler"],
         outs = ["%s.js" % name],
         tools = ["@bazel_tools//tools/zip:zipper"],
         cmd = """
@@ -16,7 +16,7 @@ def extern(name, path = None):
             ZIPPER=$$WD/$(location @bazel_tools//tools/zip:zipper)
             # Switch to temp since zipper only works with relative paths.
             cd $$TMP
-            $$ZIPPER x $$WD/$(location @com_google_javascript_closure_compiler) externs.zip
+            $$ZIPPER x $$WD/$(location @maven//:com_google_javascript_closure_compiler) externs.zip
             $$ZIPPER x externs.zip %s
             mv $$TMP/%s $$WD/$@
             rm -rf $$TMP
