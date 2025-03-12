@@ -39,7 +39,6 @@ elemental2.media.ChannelSplitterOptions.setNumberOfOutputs.numberOfOutputs
 elemental2.media.JavaScriptAudioNode.bufferSize
 elemental2.media.OfflineAudioContext.constructor.length
 elemental2.media.OfflineAudioContext.constructor.numberOfChannels
-elemental2.media.MediaKeyStatusMap.getSize
 elemental2.media.ScriptProcessorNode.bufferSize
 elemental2.media.Gamepad.getIndex
 elemental2.media.Gamepad.setIndex.index

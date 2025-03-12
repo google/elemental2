@@ -281,6 +281,7 @@ elemental2.dom.MediaError.MEDIA_ERR_DECODE
 elemental2.dom.MediaError.MEDIA_ERR_NETWORK
 elemental2.dom.MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED
 elemental2.dom.MediaError.code
+elemental2.dom.MediaKeyStatusMap.getSize
 elemental2.dom.MediaList.length
 elemental2.dom.MediaList.item.index
 elemental2.dom.MediaRecorder.audioBitsPerSecond
