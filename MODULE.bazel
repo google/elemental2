@@ -109,10 +109,3 @@ http_archive(
     strip_prefix = "gwt-073679594c6ead7abe501009f8ba31eb390047fc",
     url = "https://github.com/gwtproject/gwt/archive/073679594c6ead7abe501009f8ba31eb390047fc.zip",
 )
-
-http_archive(
-    name = "bazel_common_javadoc",
-    sha256 = "3f090bfb3c0c66e3c2d9ae229d184af1147e4c06223551aeb2ff292661371b9a",
-    strip_prefix = "bazel-common-ebce2af3f0de560b649dcf98ef732a56b80e829c/tools/javadoc",
-    urls = ["https://github.com/google/bazel-common/archive/ebce2af3f0de560b649dcf98ef732a56b80e829c.zip"],
-)

@@ -2,7 +2,7 @@
 # This API is hard to generate automaticaly with the JsInterop generator
 # and the resulting API is not user friendly
 
-load("@bazel_common_javadoc//:javadoc.bzl", "javadoc_library")
+load("@google_bazel_common//tools/javadoc:javadoc.bzl", "javadoc_library")
 load("@com_google_jsinterop_generator//:jsinterop_generator_import.bzl", "jsinterop_generator_import")
 
 package(
