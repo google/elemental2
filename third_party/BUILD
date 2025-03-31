@@ -302,6 +302,11 @@ extern(
     path = "browser/whatwg_encoding.js",
 )
 
+extern(
+    name = "wicg_attribution_reporting.js",
+    path = "browser/wicg_attribution_reporting.js",
+)
+
 java_library(
     name = "gwt-array-stamper",
     srcs = [
