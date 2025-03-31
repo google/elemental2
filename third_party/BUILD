@@ -307,6 +307,11 @@ extern(
     path = "browser/wicg_attribution_reporting.js",
 )
 
+extern(
+    name = "wicg_entries.js",
+    path = "browser/wicg_entries.js",
+)
+
 java_library(
     name = "gwt-array-stamper",
     srcs = [

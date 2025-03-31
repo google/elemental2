@@ -97,6 +97,7 @@ filegroup(
         "//third_party:w3c_pointerlock.js",
         "//third_party:wicg_resizeobserver.js",
         "//third_party:wicg_attribution_reporting.js",
+        "//third_party:wicg_entries.js",
     ],
 )
 
