@@ -172,6 +172,8 @@ elemental2.dom.FileReader.readyState
 elemental2.dom.FileReader.DONE
 elemental2.dom.FileReader.EMPTY
 elemental2.dom.FileReader.LOADING
+elemental2.dom.Gamepad.getIndex
+elemental2.dom.Gamepad.setIndex.index
 elemental2.dom.Geolocation.clearWatch.watchId
 elemental2.dom.Geolocation.watchPosition
 elemental2.dom.History.go.delta
