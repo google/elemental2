@@ -37,10 +37,11 @@ usage() {
 
 deploy=true
 git_tag=true
+lib_version=""
 
 while [[ "$1" != "" ]]; do
   case $1 in
-    --version )    if [ -z $2 ] || [[ $2 == "--no-deploy" ]]; then
+    --version )    if [[ -z "$2" ]] || [[ "$2" == "--"* ]]; then
                      echo "Error: Incorrect version value."
                      usage
                      exit 1
