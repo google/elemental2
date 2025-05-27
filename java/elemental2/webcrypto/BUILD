@@ -1,8 +1,5 @@
 # This package contains the build rule to build elemental2-dom.
-load(
-    "//build_defs/internal_do_not_use:elemental_utils.bzl",
-    "patch_extern_file",
-)
+
 load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 package(
@@ -14,16 +11,10 @@ package(
     licenses = ["notice"],
 )
 
-patch_extern_file(
-    name = "w3c_webcrypto_patched",
-    src = "//third_party:w3c_webcrypto.js",
-    patch_file = "w3c_webcrypto.js.diff",
-)
-
 filegroup(
     name = "externs",
     srcs = [
-        ":w3c_webcrypto_patched",
+        "//third_party:w3c_webcrypto.js",
     ],
 )
 
