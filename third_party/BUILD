@@ -312,6 +312,11 @@ extern(
     path = "browser/wicg_entries.js",
 )
 
+extern(
+    name = "web_animations.js",
+    path = "browser/web_animations.js",
+)
+
 java_library(
     name = "gwt-array-stamper",
     srcs = [
