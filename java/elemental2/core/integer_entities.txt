@@ -219,6 +219,8 @@ elemental2.core.ReadonlyArray.ReduceRightCallbackFn.onInvoke.p2
 elemental2.core.ReadonlyArray.SomeCallbackFn.onInvoke.p1
 elemental2.core.RegExpResult.index
 elemental2.core.RegExpResult.length
+elemental2.core.SetLike.getSize
+elemental2.core.SetLike.setSize.size
 elemental2.core.TypedArray.at.index
 elemental2.core.TypedArray.BYTES_PER_ELEMENT
 elemental2.core.TypedArray.length
