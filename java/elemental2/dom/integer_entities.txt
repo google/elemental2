@@ -1,3 +1,5 @@
+elemental2.dom.AbstractRange.endOffset
+elemental2.dom.AbstractRange.startOffset
 elemental2.dom.Blob.size
 elemental2.dom.Blob.slice.length
 elemental2.dom.Blob.slice.start
@@ -365,10 +367,8 @@ elemental2.dom.PointerEventInit.getTiltY
 elemental2.dom.PointerEventInit.setTiltY.tiltY
 elemental2.dom.Range.compareBoundaryPoints
 elemental2.dom.Range.compareBoundaryPoints.how
-elemental2.dom.Range.endOffset
 elemental2.dom.Range.setEnd.offset
 elemental2.dom.Range.setStart.offset
-elemental2.dom.Range.startOffset
 elemental2.dom.Range.END_TO_END
 elemental2.dom.Range.END_TO_START
 elemental2.dom.Range.START_TO_END
