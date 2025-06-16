@@ -1,0 +1,30 @@
+{
+  "homepage": "https://github.com/google/elemental2",
+  "maintainers": [
+    {
+      "name": "Goktug Gokdogan",
+      "email": "goktug@google.com",
+      "github": "gkdn"
+    },
+    {
+      "name": "Julien Dramaix",
+      "email": "dramaix@google.com",
+      "github": "jDramaix"
+    },
+    {
+      "name": "Kevin O'Connor",
+      "email": "kevinoconnor@google.com",
+      "github": "kevinoconnor7"
+    },
+    {
+      "name": "Yuan Tian",
+      "email": "mollyibot@google.com",
+      "github": "mollyibot"
+    }
+  ],
+  "repository": [
+    "github:google/elemental2"
+  ],
+  "versions": [],
+  "yanked_versions": {}
+}
