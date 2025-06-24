@@ -1,6 +1,7 @@
 module(
-    name = "com_google_elemental2",
+    name = "elemental2",
     bazel_compatibility = [">=8.0.1"],
+    repo_name = "com_google_elemental2",
 )
 
 bazel_dep(name = "j2cl", repo_name = "com_google_j2cl")
