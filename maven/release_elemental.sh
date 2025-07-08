@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/bin/bash
 # Copyright 2019 Google Inc. All Rights Reserved
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,13 @@
 # The script generates the open source artifacts for elemental and
 # uploads them to sonatype.
 #
-set -e
+set -euo pipefail
+
+source "$(dirname "$0")/deploy.sh"
+
+readonly GROUP_ID="com.google.elemental2"
+readonly ELEMENTAL_ARTIFACTS="core dom indexeddb media promise svg webgl webstorage webassembly"
+readonly LICENSE_HEADER="${BAZEL_ROOT}/maven/license.txt"
 
 usage() {
     echo ""
@@ -35,99 +41,88 @@ usage() {
     echo ""
 }
 
-deploy=true
-git_tag=true
-lib_version=""
+parse_arguments() {
+  deploy_flag=""
+  git_tag=true
+  lib_version=""
 
-while [[ "$1" != "" ]]; do
-  case $1 in
-    --version )    if [[ -z "$2" ]] || [[ "$2" == "--"* ]]; then
-                     echo "Error: Incorrect version value."
-                     usage
-                     exit 1
-                   fi
-                   shift
-                   lib_version=$1
-                   ;;
-    --no-deploy )  deploy=false
-                   ;;
-    --no-git-tag ) git_tag=false
-                   ;;
-    --help )       usage
-                   exit 1
-                   ;;
-    * )            echo "Error: unexpected option $1"
-                   usage
-                   exit 1
-                   ;;
-  esac
-  shift
-done
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      --version )
+        shift
+        lib_version=$1
+        ;;
+      --no-deploy )
+        deploy_flag="--no-deploy"
+        ;;
+      --no-git-tag )
+        git_tag=false
+        ;;
+      --help )
+        usage
+        exit 0
+        ;;
+      * )
+        common::error "unexpected option $1"
+        ;;
+    esac
+    shift
+  done
+}
 
-if [[ -z "$lib_version" ]]; then
-  echo "Error: --version flag is missing"
-  usage
-  exit 1
-fi
+check_prerequisites() {
+  common::check_bazel
+  common::check_maven
+  common::check_version_set
+}
 
-if [ ! -f "MODULE.bazel" ]; then
-  echo "Error: should be run from the root of the Bazel repository"
-  exit 1
-fi
+build() {
+  local artifact="$1"
+  local artifact_bazel_path="//java/elemental2/${artifact}"
+  common::bazel_build "${artifact_bazel_path}:lib${artifact}.jar"
+  common::bazel_build "${artifact_bazel_path}:lib${artifact}-src.jar"
+  common::bazel_build "${artifact_bazel_path}:${artifact}-javadoc.jar"
+}
 
-bazel_root=$(pwd)
+main() {
+  parse_arguments "$@"
+  check_prerequisites
 
-deploy_target='@com_google_j2cl//maven:deploy'
-license_header="${bazel_root}/maven/license.txt"
-group_id="com.google.elemental2"
-gpg_flag=""
-deploy_flag=""
-artifact_directory_flag=""
-
-if [[ ${deploy} == true ]]; then
-  echo "enter your gpg passphrase:"
-  read -s gpg_passphrase
-  if [[ -n "$gpg_passphrase" ]]; then
-    gpg_flag="--gpg-passphrase ${gpg_passphrase}"
+  local artifact_dir_flag=""
+  if [[ "${deploy_flag}" == "--no-deploy" ]]; then
+    # pass a temp directory to the deploy script so that it can create the
+    # artifacts in the same directory.
+    artifact_dir_flag="--artifact_dir $(mktemp -d)"
   fi
-else
-  deploy_flag="--no-deploy"
-  artifact_directory_flag="--artifact_dir $(mktemp -d)"
-fi
 
-cd ${bazel_root}
+  for artifact in ${ELEMENTAL_ARTIFACTS}; do
+    common::info "Building elemental2-${artifact}"
+    build "${artifact}"
 
-elemental_artifacts="core dom indexeddb media promise svg webgl webstorage webassembly"
+    local artifact_path="${BAZEL_ROOT}/bazel-bin/java/elemental2/${artifact}"
+    local jar_file="${artifact_path}/lib${artifact}.jar"
+    local src_jar="${artifact_path}/lib${artifact}-src.jar"
+    local javadoc_jar="${artifact_path}/${artifact}-javadoc.jar"
+    local pom_template="${BAZEL_ROOT}/maven/pom-${artifact}.xml"
+    local maven_artifact="elemental2-${artifact}"
 
-for artifact in ${elemental_artifacts}; do
-  artifact_path=${bazel_root}/bazel-bin/java/elemental2/${artifact}
-  artifact_bazel_path=//java/elemental2/${artifact}
-  jar_file=lib${artifact}.jar
-  src_jar=lib${artifact}-src.jar
-  javadoc_jar=${artifact}-javadoc.jar
+    common::deploy_to_sonatype ${deploy_flag} ${artifact_dir_flag} \
+        --artifact "${maven_artifact}" \
+        --jar-file  "${jar_file}" \
+        --src-jar "${src_jar}" \
+        --javadoc-jar "${javadoc_jar}" \
+        --license-header "${LICENSE_HEADER}" \
+        --pom-template "${pom_template}" \
+        --lib-version "${lib_version}" \
+        --group-id "${GROUP_ID}"
+  done
 
-  # ask bazel to explicitly build both jar files
-  bazel build ${artifact_bazel_path}:${jar_file}
-  bazel build ${artifact_bazel_path}:${src_jar}
-  bazel build ${artifact_bazel_path}:${javadoc_jar}
+  if [[ ${git_tag} == true ]]; then
+    common::create_and_push_git_tag "${lib_version}"
+  fi
+}
 
-  pom_template=${bazel_root}/maven/pom-${artifact}.xml
-  maven_artifact="elemental2-${artifact}"
+# Set the trap to cleanup temporary files on EXIT
+trap common::cleanup_temp_files EXIT
 
-  # run that script with bazel as its a dependency of this project
-  bazel run ${deploy_target} --  ${deploy_flag} ${gpg_flag} ${artifact_directory_flag} \
-    --artifact ${maven_artifact} \
-    --jar-file  ${artifact_path}/${jar_file} \
-    --src-jar ${artifact_path}/${src_jar} \
-    --javadoc-jar ${artifact_path}/${javadoc_jar} \
-    --license-header ${license_header} \
-    --pom-template ${pom_template} \
-    --lib-version ${lib_version} \
-    --group-id ${group_id}
-
-done
-
-if [[ ${git_tag} == true ]]; then
-  git tag -a ${lib_version} -m "${lib_version} release"
-  git push origin ${lib_version}
-fi
+main "$@"
