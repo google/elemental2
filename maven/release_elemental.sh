@@ -21,9 +21,8 @@ set -euo pipefail
 
 source "$(dirname "$0")/deploy.sh"
 
-readonly GROUP_ID="com.google.elemental2"
-readonly ELEMENTAL_ARTIFACTS="core dom indexeddb media promise svg webgl webstorage webassembly"
-readonly LICENSE_HEADER="${BAZEL_ROOT}/maven/license.txt"
+readonly ELEMENTAL_ARTIFACTS="promise core dom indexeddb media svg webgl webstorage webassembly"
+readonly LICENSE_HEADER_FILE="${BAZEL_ROOT}/maven/license.txt"
 
 usage() {
     echo ""
@@ -38,13 +37,16 @@ usage() {
     echo "        Skip the deployment part but build all artifacts."
     echo "    --no-git-tag"
     echo "        Skip the creation of git tag."
+    echo "    --sonatype-auto-release"
+    echo "        Release the artifact on sonatype automatically after upload."
     echo ""
 }
 
 parse_arguments() {
-  deploy_flag=""
+  deploy_to_sonatype=true
   git_tag=true
   lib_version=""
+  sonatype_auto_release=false
 
   while [[ $# -gt 0 ]]; do
     case $1 in
@@ -53,10 +55,13 @@ parse_arguments() {
         lib_version=$1
         ;;
       --no-deploy )
-        deploy_flag="--no-deploy"
+        deploy_to_sonatype=false
         ;;
       --no-git-tag )
         git_tag=false
+        ;;
+      --sonatype-auto-release )
+        sonatype_auto_release=true
         ;;
       --help )
         usage
@@ -70,51 +75,26 @@ parse_arguments() {
   done
 }
 
-check_prerequisites() {
-  common::check_bazel
-  common::check_maven
-  common::check_version_set
-}
-
-build() {
-  local artifact="$1"
-  local artifact_bazel_path="//java/elemental2/${artifact}"
-  common::bazel_build "${artifact_bazel_path}:lib${artifact}.jar"
-  common::bazel_build "${artifact_bazel_path}:lib${artifact}-src.jar"
-  common::bazel_build "${artifact_bazel_path}:${artifact}-javadoc.jar"
-}
-
 main() {
   parse_arguments "$@"
-  check_prerequisites
 
-  local artifact_dir_flag=""
-  if [[ "${deploy_flag}" == "--no-deploy" ]]; then
-    # pass a temp directory to the deploy script so that it can create the
-    # artifacts in the same directory.
-    artifact_dir_flag="--artifact_dir $(mktemp -d)"
-  fi
+  common::check_version_set
+
+  # Put all the artifacts in the same directory.
+  local maven_artifacts_dir=$(mktemp -d)
 
   for artifact in ${ELEMENTAL_ARTIFACTS}; do
-    common::info "Building elemental2-${artifact}"
-    build "${artifact}"
+    common::info "Processing elemental2-${artifact}"
 
-    local artifact_path="${BAZEL_ROOT}/bazel-bin/java/elemental2/${artifact}"
-    local jar_file="${artifact_path}/lib${artifact}.jar"
-    local src_jar="${artifact_path}/lib${artifact}-src.jar"
-    local javadoc_jar="${artifact_path}/${artifact}-javadoc.jar"
-    local pom_template="${BAZEL_ROOT}/maven/pom-${artifact}.xml"
-    local maven_artifact="elemental2-${artifact}"
+    BAZEL_PATH="java/elemental2/${artifact}"
+    BAZEL_ARTIFACT="${artifact}"
+    MAVEN_ARTIFACT="elemental2-${artifact}"
 
-    common::deploy_to_sonatype ${deploy_flag} ${artifact_dir_flag} \
-        --artifact "${maven_artifact}" \
-        --jar-file  "${jar_file}" \
-        --src-jar "${src_jar}" \
-        --javadoc-jar "${javadoc_jar}" \
-        --license-header "${LICENSE_HEADER}" \
-        --pom-template "${pom_template}" \
-        --lib-version "${lib_version}" \
-        --group-id "${GROUP_ID}"
+    common::check_bazel_prerequisites
+    common::check_maven_prerequisites
+
+    common::build
+    common::deploy_to_sonatype "$maven_artifacts_dir"
   done
 
   if [[ ${git_tag} == true ]]; then

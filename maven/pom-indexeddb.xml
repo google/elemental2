@@ -3,10 +3,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>__GROUP_ID__</groupId>
-  <artifactId>__ARTIFACT_ID__</artifactId>
+  <groupId>com.google.elemental2</groupId>
+  <artifactId>elemental2-indexeddb</artifactId>
   <version>__VERSION__</version>
-  <packaging>jar</packaging>
 
   <name>Elemental2 IndexedDb</name>
   <description>Thin Java abstractions for the IndexedDB APIs</description>
@@ -51,14 +50,16 @@
       <version>1.0.1</version>
     </dependency>
     <dependency>
-      <groupId>__GROUP_ID__</groupId>
+      <groupId>com.google.elemental2</groupId>
       <artifactId>elemental2-core</artifactId>
       <version>__VERSION__</version>
     </dependency>
     <dependency>
-      <groupId>__GROUP_ID__</groupId>
+      <groupId>com.google.elemental2</groupId>
       <artifactId>elemental2-dom</artifactId>
       <version>__VERSION__</version>
     </dependency>
   </dependencies>
+
+__BUILD_SECTION__
 </project>
