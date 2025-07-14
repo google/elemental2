@@ -1,0 +1,52 @@
+# Copyright 2025 Google Inc. All Rights Reserved
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+name: Release Project
+
+# TODO(dramaix): Consider triggering the workflow on git tag creation instead.
+# This workflow is triggered manually from the Actions tab.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The version to release'
+        required: true
+        type: string
+      sonatype_auto_publish:
+        description: 'Automatically publish the release to Sonatype'
+        type: boolean
+        required: true
+        default: false
+      create_tag:
+        description: 'Create a git tag'
+        type: boolean
+        required: true
+        default: true
+
+jobs:
+  release:
+    uses: google/j2cl/.github/workflows/release-common.yaml@main
+
+    # The reusable workflow requires 'write' access to contents to push a git tag.
+    permissions:
+      contents: write
+
+    # Pass the inputs from the manual trigger to the reusable workflow.
+    with:
+      version: ${{ github.event.inputs.version }}
+      sonatype_auto_publish: ${{ github.event.inputs.sonatype_auto_publish }}
+      create_tag: ${{ github.event.inputs.create_tag }}
+
+    # Allow the reusable workflow to access the secrets.
+    secrets: inherit

@@ -35,8 +35,6 @@ usage() {
     echo "        Maven version of the library to use for deploying to sonatype."
     echo "    --no-deploy"
     echo "        Skip the deployment part but build all artifacts."
-    echo "    --no-git-tag"
-    echo "        Skip the creation of git tag."
     echo "    --sonatype-auto-publish"
     echo "        Publish the artifact on sonatype automatically after upload."
     echo ""
@@ -44,7 +42,6 @@ usage() {
 
 parse_arguments() {
   deploy_to_sonatype=true
-  git_tag=true
   lib_version=""
   sonatype_auto_publish=false
 
@@ -56,9 +53,6 @@ parse_arguments() {
         ;;
       --no-deploy )
         deploy_to_sonatype=false
-        ;;
-      --no-git-tag )
-        git_tag=false
         ;;
       --sonatype-auto-publish )
         sonatype_auto_publish=true
@@ -96,10 +90,6 @@ main() {
     common::build
     common::deploy_to_sonatype "$maven_artifacts_dir"
   done
-
-  if [[ ${git_tag} == true ]]; then
-    common::create_and_push_git_tag "${lib_version}"
-  fi
 }
 
 # Set the trap to cleanup temporary files on EXIT
