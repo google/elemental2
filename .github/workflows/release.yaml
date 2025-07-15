@@ -36,7 +36,7 @@ on:
 
 jobs:
   release:
-    uses: google/j2cl/.github/workflows/release-common.yaml@main
+    uses: google/j2cl/.github/workflows/release_common.yaml@master
 
     # The reusable workflow requires 'write' access to contents to push a git tag.
     permissions:
@@ -45,8 +45,8 @@ jobs:
     # Pass the inputs from the manual trigger to the reusable workflow.
     with:
       version: ${{ github.event.inputs.version }}
-      sonatype_auto_publish: ${{ github.event.inputs.sonatype_auto_publish }}
-      create_tag: ${{ github.event.inputs.create_tag }}
+      sonatype_auto_publish: ${{ github.event.inputs.sonatype_auto_publish == 'true' }}
+      create_tag: ${{ github.event.inputs.create_tag == 'true' }}
 
     # Allow the reusable workflow to access the secrets.
     secrets: inherit
