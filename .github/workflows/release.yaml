@@ -44,6 +44,7 @@ jobs:
     # Pass the inputs from the manual trigger to the reusable workflow.
     with:
       version: ${{ github.event.inputs.version }}
+      publish_to_sonatype: true
       sonatype_auto_publish: ${{ github.event.inputs.sonatype_auto_publish == 'true' }}
       create_tag: ${{ github.event.inputs.create_tag == 'true' }}
 
