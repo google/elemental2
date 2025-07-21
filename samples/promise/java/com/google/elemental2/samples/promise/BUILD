@@ -1,7 +1,7 @@
 # Description:
 #   Elemental Sample app playing with Promise
 
-load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
+load("@j2cl//build_defs:rules.bzl", "j2cl_application", "j2cl_library")
 
 package(
     default_applicable_licenses = ["//:license"],
@@ -19,7 +19,7 @@ j2cl_library(
         "//:elemental2-core-j2cl",
         "//:elemental2-dom-j2cl",
         "//:elemental2-promise-j2cl",
-        "@com_google_j2cl//:jsinterop-annotations-j2cl",
+        "@j2cl//:jsinterop-annotations-j2cl",
         "@com_google_jsinterop_base//:jsinterop-base-j2cl",
     ],
 )

@@ -3,7 +3,7 @@ module(
     repo_name = "com_google_elemental2",
 )
 
-bazel_dep(name = "j2cl", repo_name = "com_google_j2cl", version = "20250630")
+bazel_dep(name = "j2cl", version = "20250630")
 
 # Use head j2cl for testing purposes.
 archive_override(

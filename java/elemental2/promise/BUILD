@@ -31,7 +31,7 @@ javadoc_library(
         "notap",
     ],
     deps = [
-        "@com_google_j2cl//:jsinterop-annotations",
+        "@j2cl//:jsinterop-annotations",
         "@com_google_jsinterop_base//:jsinterop-base",
         "@com_google_jsinterop_generator//third_party:jspecify_annotations",
     ],
