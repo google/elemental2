@@ -5,7 +5,7 @@ load(
     "patch_extern_file",
 )
 load("@rules_java//java:defs.bzl", "java_library")
-load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
+load("@jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 package(
     default_applicable_licenses = ["//:license"],
@@ -44,8 +44,8 @@ java_library(
     visibility = ["//visibility:public"],
     deps = [
         "//third_party:guava",
-        "@com_google_jsinterop_generator//java/jsinterop/generator/helper",
-        "@com_google_jsinterop_generator//java/jsinterop/generator/model",
+        "@jsinterop_generator//java/jsinterop/generator/helper",
+        "@jsinterop_generator//java/jsinterop/generator/model",
     ],
 )
 

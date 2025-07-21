@@ -20,7 +20,7 @@ j2cl_library(
         "//:elemental2-dom-j2cl",
         "//:elemental2-promise-j2cl",
         "@j2cl//:jsinterop-annotations-j2cl",
-        "@com_google_jsinterop_base//:jsinterop-base-j2cl",
+        "@jsinterop_base//:jsinterop-base-j2cl",
     ],
 )
 

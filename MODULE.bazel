@@ -1,7 +1,4 @@
-module(
-    name = "elemental2",
-    repo_name = "com_google_elemental2",
-)
+module(name = "elemental2")
 
 bazel_dep(name = "j2cl", version = "20250630")
 
@@ -12,10 +9,7 @@ archive_override(
     urls = ["https://github.com/google/j2cl/archive/master.zip"],
 )
 
-bazel_dep(
-  name = "jsinterop_generator",
-  repo_name = "com_google_jsinterop_generator"
-)
+bazel_dep(name = "jsinterop_generator")
 
 # jsinterop-generator is not available in BCR.
 archive_override(
@@ -24,7 +18,7 @@ archive_override(
     urls = ["https://github.com/google/jsinterop-generator/archive/master.zip"],
 )
 
-bazel_dep(name = "jsinterop_base", repo_name = "com_google_jsinterop_base")
+bazel_dep(name = "jsinterop_base")
 
 # jsinterop-base is not available in BCR.
 archive_override(

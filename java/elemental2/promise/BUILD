@@ -3,7 +3,7 @@
 # and the resulting API is not user friendly
 
 load("@google_bazel_common//tools/javadoc:javadoc.bzl", "javadoc_library")
-load("@com_google_jsinterop_generator//:jsinterop_generator_import.bzl", "jsinterop_generator_import")
+load("@jsinterop_generator//:jsinterop_generator_import.bzl", "jsinterop_generator_import")
 
 package(
     default_applicable_licenses = ["//:license"],
@@ -32,7 +32,7 @@ javadoc_library(
     ],
     deps = [
         "@j2cl//:jsinterop-annotations",
-        "@com_google_jsinterop_base//:jsinterop-base",
-        "@com_google_jsinterop_generator//third_party:jspecify_annotations",
+        "@jsinterop_base//:jsinterop-base",
+        "@jsinterop_generator//third_party:jspecify_annotations",
     ],
 )

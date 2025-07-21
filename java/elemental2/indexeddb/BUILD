@@ -1,6 +1,6 @@
 # This package contains the build rule to build elemental2-indexeddb.
 
-load("@com_google_jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
+load("@jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 package(
     default_applicable_licenses = ["//:license"],
