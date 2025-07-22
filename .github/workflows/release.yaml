@@ -27,11 +27,11 @@ on:
         type: boolean
         required: true
         default: false
-      create_tag:
-        description: 'Create a git tag'
+      continue_if_tag_exists:
+        description: 'Continue the workflow even if the GitHub tag already exists'
         type: boolean
         required: true
-        default: true
+        default: false
 
 jobs:
   release:
@@ -46,7 +46,7 @@ jobs:
       version: ${{ github.event.inputs.version }}
       publish_to_sonatype: true
       sonatype_auto_publish: ${{ github.event.inputs.sonatype_auto_publish == 'true' }}
-      create_tag: ${{ github.event.inputs.create_tag == 'true' }}
+      continue_if_tag_exists: ${{ github.event.inputs.continue_if_tag_exists == 'true' }}
 
     # Allow the reusable workflow to access the secrets.
     secrets: inherit
