@@ -1,0 +1,22 @@
+#!/bin/bash
+# This file is used to prepare the githubrelease.
+# It is not intended to be run directly but called from the github release
+# workflow: bazel-contrib/.github/workflows/release_ruleset.yaml\
+set -euo pipefail
+
+tag="$1"
+# The prefix is used to determine the directory structure of the archive. We strip the 'v'
+# prefix from the version number.
+directory="elemental2-${tag#v}"
+archive="elemental2-${tag}.tar.gz"
+
+git archive --format=tar --prefix=${directory}/ -o "${archive}" ${tag}
+
+# The stdout of this program will be used as the top of the release notes for this release.
+cat << EOF
+## Using Bazel 8 or later, add to your \`MODULE.bazel\` file:
+
+\`\`\`starlark
+bazel_dep(name = "elemental2", version = "${tag}")
+\`\`\`
+EOF
