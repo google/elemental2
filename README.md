@@ -7,24 +7,14 @@ that is both implemented in GWT and J2CL.
 
 Bazel dependencies
 ------------------
-If your project uses [Bazel](https://bazel.build), add this repository as an
-external dependency in your `WORKSPACE` file:
+Using Bazel 8 or later, add to your \`MODULE.bazel\` file:
 
+```starlark
+bazel_dep(name = "elemental2", version = "<RELEASE_VERSION>")
 ```
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-http_archive(
-    name = "com_google_elemental2",
-    strip_prefix = "elemental2-1.2.1",
-    url = "https://github.com/google/elemental2/archive/1.2.1.zip",
-)
-
-load("@com_google_elemental2//build_defs:repository.bzl", "load_elemental2_repo_deps")
-load_elemental2_repo_deps()
-
-load("@com_google_elemental2//build_defs:workspace.bzl", "setup_elemental2_workspace")
-setup_elemental2_workspace()
-```
+Replace `RELEASE_VERSION` with an actual
+[release version](https://github.com/google/elemental2/releases):
 
 Now from you can add elemental2 targets as needed to your `j2cl_library` deps.
 
@@ -32,24 +22,25 @@ Following are the different elemental2 modules and their target names:
 
  module     | Bazel targets for J2CL
  -----------| -----------------------
- core       | `@com_google_elemental2//:elemental2-core-j2cl`
- dom        | `@com_google_elemental2//:elemental2-dom-j2cl`
- promise    | `@com_google_elemental2//:elemental2-promise-j2cl`
- indexeddb  | `@com_google_elemental2//:elemental2-indexeddb-j2cl`
- svg        | `@com_google_elemental2//:elemental2-svg-j2cl`
- webgl      | `@com_google_elemental2//:elemental2-webgl-j2cl`
- media      | `@com_google_elemental2//:elemental2-media-j2cl`
- webstorage | `@com_google_elemental2//:elemental2-webstorage-j2cl`
+ core       | `@elemental2//:elemental2-core-j2cl`
+ dom        | `@elemental2//:elemental2-dom-j2cl`
+ promise    | `@elemental2//:elemental2-promise-j2cl`
+ indexeddb  | `@elemental2//:elemental2-indexeddb-j2cl`
+ svg        | `@elemental2//:elemental2-svg-j2cl`
+ webgl      | `@elemental2//:elemental2-webgl-j2cl`
+ media      | `@elemental2//:elemental2-media-j2cl`
+ webstorage | `@elemental2//:elemental2-webstorage-j2cl`
 
 Maven dependencies
 ------------------
 If your project uses [Maven](https://maven.apache.org), add the following maven
-dependencies in your `pom.xml`:
+dependencies in your `pom.xml`. Replace `RELEASE_VERSION` with an actual
+[release version](https://github.com/google/elemental2/releases):
 
     <dependency>
       <groupId>com.google.elemental2</groupId>
       <artifactId>${artifact-id}</artifactId>
-      <version>1.2.1</version>
+      <version>RELEASE_VERSION</version>
     </dependency>
 
 
@@ -63,21 +54,6 @@ dependencies in your `pom.xml`:
  webgl | `elemental2-webgl`
  media | `elemental2-media`
  webstorage | `elemental2-webstorage`
-
-Download the jar files
-----------------------
-You can also download manually the jars files.
-
- module | jar file
- ------ | --------
- core | [elemental2-core.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-core/1.2.1/elemental2-core-1.2.1.jar)
- dom | [elemental2-dom.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-dom/1.2.1/elemental2-dom-1.2.1.jar)
- promise | [elemental2-promise.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-promise/1.2.1/elemental2-promise-1.2.1.jar)
- indexeddb | [elemental2-indexeddb.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-indexeddb/1.2.1/elemental2-indexeddb-1.2.1.jar)
- svg | [elemental2-svg.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-svg/1.2.1/elemental2-svg-1.2.1.jar)
- webgl | [elemental2-webgl.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webgl/1.2.1/elemental2-webgl-1.2.1.jar)
- media | [elemental2-media.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-media/1.2.1/elemental2-media-1.2.1.jar)
- webstorage | [elemental2-webstorage.jar](https://oss.sonatype.org/content/repositories/releases/com/google/elemental2/elemental2-webstorage/1.2.1/elemental2-webstorage-1.2.1.jar)
 
 GWT
 ---
