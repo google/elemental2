@@ -1,4 +1,4 @@
-# Elemental2 &middot; [![Build Status](https://github.com/google/elemental2/actions/workflows/ci.yaml/badge.svg)](https://github.com/google/elemental2/actions/workflows/ci.yaml)
+# Elemental2 &middot; ![Latest Release](https://img.shields.io/github/v/release/google/elemental2) &middot; [![Build Status](https://github.com/google/elemental2/actions/workflows/ci.yaml/badge.svg)](https://github.com/google/elemental2/actions/workflows/ci.yaml)
 
 Elemental2 provides type checked access to all browser APIs for Java code. This
 is done by using [closure extern files](https://github.com/google/closure-compiler/tree/master/externs)
