@@ -39,16 +39,7 @@
   </developers>
 
   <dependencies>
-    <dependency>
-      <groupId>com.google.jsinterop</groupId>
-      <artifactId>jsinterop-annotations</artifactId>
-      <version>2.0.2</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.jsinterop</groupId>
-      <artifactId>base</artifactId>
-      <version>1.0.1</version>
-    </dependency>
+    __COMMON_DEPENDENCIES__
   </dependencies>
 
 __BUILD_SECTION__
