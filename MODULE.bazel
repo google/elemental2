@@ -18,7 +18,7 @@ archive_override(
     urls = ["https://github.com/google/jsinterop-generator/archive/master.zip"],
 )
 
-bazel_dep(name = "jsinterop_base", version = "1.1.0")
+bazel_dep(name = "jsinterop_base", version = "1.1.1")
 
 # Use head jsinterop-base for testing purposes.
 archive_override(
