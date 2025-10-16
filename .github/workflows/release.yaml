@@ -100,7 +100,7 @@ jobs:
     # Pass the inputs from the manual trigger to the reusable workflow.
     with:
       version: ${{ github.event.inputs.version }}
-      git_ref: ${{ github.event.inputs.base_rc_version && format('refs/tags/{0}', github.event.inputs.base_rc_version) || github.ref }}
+      # git_ref: ${{ github.event.inputs.base_rc_version && format('refs/tags/{0}', github.event.inputs.base_rc_version) || github.ref }}
       publish_to_sonatype: ${{ github.event.repository.name != 'jsinterop-generator' && github.event.repository.name != 'j2cl' }}
       continue_if_tag_exists: ${{ github.event.inputs.continue_if_tag_exists == 'true' }}
       publish_to_bcr: ${{ github.event.repository.name != 'jsinterop-annotations' }}
