@@ -38,7 +38,7 @@ on:
 jobs:
   validate_inputs:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.base_rc_version != "" }}
+    if: ${{ github.event.inputs.base_rc_version != '' }}
     steps:
       - name: Validate base_rc_version
         run: |
