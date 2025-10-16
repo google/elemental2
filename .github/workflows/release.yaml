@@ -25,27 +25,30 @@ on:
         description: 'The version to release'
         required: true
         type: string
-      continue_if_tag_exists:
-        description: 'Continue the workflow even if the GitHub tag already exists'
-        type: boolean
-        required: true
-        default: false
       base_rc_version:
         description: 'The base RC version to use to create the final release. Should be formatted as X.Y.Z-RC.N'
         type: string
         required: false
+      continue_if_tag_exists:
+        description: 'Continue the workflow even if the GitHub tag already exists'
+        type: boolean 
+        required: true
+        default: false
 
 jobs:
   validate_inputs:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.base_rc_version != '' }}
     steps:
       - name: Validate base_rc_version
         run: |
-          version="${{ github.event.inputs.version }}"
           base_rc_version="${{ github.event.inputs.base_rc_version }}"
-          repo_name="${{ github.event.repository.name }}"
+          if [[ -z "$base_rc_version" ]]; then
+            echo "The base RC version field is empty, no validation needed."
+            exit 0
+          fi
 
+          version="${{ github.event.inputs.version }}"
+          repo_name="${{ github.event.repository.name }}"
           RC_REGEX='^([0-9]+\.[0-9]+\.[0-9]+)-RC\.?[0-9]+$'
           VERSION_REGEX='^[0-9]+\.[0-9]+\.[0-9]+$'
 
@@ -97,7 +100,7 @@ jobs:
     # Pass the inputs from the manual trigger to the reusable workflow.
     with:
       version: ${{ github.event.inputs.version }}
-      #git_ref: ${{ github.event.inputs.base_rc_version && format('refs/tags/{0}', github.event.inputs.base_rc_version) || github.ref }}
+      git_ref: ${{ github.event.inputs.base_rc_version && format('refs/tags/{0}', github.event.inputs.base_rc_version) || github.ref }}
       publish_to_sonatype: ${{ github.event.repository.name != 'jsinterop-generator' && github.event.repository.name != 'j2cl' }}
       continue_if_tag_exists: ${{ github.event.inputs.continue_if_tag_exists == 'true' }}
       publish_to_bcr: ${{ github.event.repository.name != 'jsinterop-annotations' }}
