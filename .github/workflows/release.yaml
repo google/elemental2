@@ -39,8 +39,6 @@ jobs:
   validate_inputs:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout current commit
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - name: Validate base_rc_version
         run: |
           base_rc_version="${{ github.event.inputs.base_rc_version }}"
@@ -83,7 +81,7 @@ jobs:
           fi
 
           # Check if the base version is an existing git tag
-          if ! git ls-remote origin "refs/tags/${base_rc_version}" | grep -q "refs/tags/${base_rc_version}"; then
+          if ! git ls-remote ${{ github.server_url }}/${{ github.repository }} "refs/tags/${base_rc_version}" | grep -q "refs/tags/${base_rc_version}"; then
             echo "Error: The base version '${base_rc_version}' is not a valid tag in the repository."
             exit 1
           fi
