@@ -27,7 +27,7 @@ archive_override(
     urls = ["https://github.com/google/jsinterop-base/archive/master.zip"],
 )
 
-bazel_dep(name = "bazel_skylib", version = "1.7.1")
+bazel_dep(name = "bazel_skylib", version = "1.9.0")
 bazel_dep(name = "google_bazel_common", version = "0.0.1")
 bazel_dep(name = "rules_java", version = "8.13.0")
 bazel_dep(name = "rules_license", version = "1.0.0")
