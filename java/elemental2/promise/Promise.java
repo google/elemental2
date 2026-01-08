@@ -124,6 +124,16 @@ public class Promise<T extends @Nullable Object> implements IThenable<T> {
   private static native <V extends @Nullable Object> Promise<V> raceInternal(
       IThenable<? extends V>[] promises);
 
+  @JsOverlay
+  public static <V extends @Nullable Object> Promise<AllSettledResultElement<V>[]> allSettled(
+      IThenable<? extends V>... promises) {
+    return allSettledInternal(promises);
+  }
+
+  @JsMethod(name = "allSettled")
+  private static native <V extends @Nullable Object> Promise<AllSettledResultElement<V>[]> allSettledInternal(
+      IThenable<? extends V>[] promises);
+
   public static native <V extends @Nullable Object> Promise<V> reject(@Nullable Object error);
 
   @JsOverlay

@@ -1,2 +1,3 @@
 IThenable=elemental2.promise.IThenable
 Promise=elemental2.promise.Promise
+AllSettledResultElement=elemental2.promise.AllSettledResultElement
