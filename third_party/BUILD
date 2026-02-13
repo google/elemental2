@@ -1,3 +1,7 @@
+# Description:
+#   Thirdparty dependencies indirection for bazel.
+
+load("@rules_java//java:defs.bzl", "java_library")
 load(":extern.bzl", "extern")
 
 package(default_visibility = [
