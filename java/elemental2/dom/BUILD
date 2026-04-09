@@ -45,16 +45,6 @@ patch_extern_file(
     patch_file = "w3c_rtc.js.diff",
 )
 
-# Patch for w3c_css.js:
-#   - Exclude StylePropertyMapReadonly api that are not released.
-# TODO(b/422164865): Remove the patch when a new jscompiler release containing the change is
-# installed.
-patch_extern_file(
-    name = "w3c_css_patched",
-    src = "//third_party:w3c_css.js",
-    patch_file = "w3c_css.js.diff",
-)
-
 filegroup(
     name = "externs",
     srcs = [
@@ -65,6 +55,7 @@ filegroup(
         "//third_party:w3c_touch_event.js",
         "//third_party:mediakeys.js",
         "//third_party:w3c_trusted_types.js",
+        "//third_party:web_animations.js",
         "//third_party:w3c_dom1.js",
         ":w3c_dom2_patched",
         "//third_party:w3c_dom3.js",
@@ -77,7 +68,7 @@ filegroup(
         ":window_patched",
         "//third_party:w3c_range.js",
         "//third_party:w3c_geometry1.js",
-        ":w3c_css_patched",
+        "//third_party:w3c_css.js",
         "//third_party:w3c_css3d.js",
         "//third_party:w3c_xml.js",
         "//third_party:flash.js",

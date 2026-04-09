@@ -40,7 +40,7 @@ maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.artifact(
     artifact = "closure-compiler",
     group = "com.google.javascript",
-    version = "v20240317",
+    version = "v20260330",
 )
 use_repo(maven, "maven")
 
