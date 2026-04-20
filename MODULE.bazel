@@ -1,6 +1,6 @@
 module(name = "elemental2")
 
-bazel_dep(name = "j2cl", version = "20250630")
+bazel_dep(name = "j2cl", version = "20260402")
 
 # Use head j2cl for testing purposes.
 archive_override(
