@@ -2,35 +2,33 @@ module(name = "elemental2")
 
 bazel_dep(name = "j2cl", version = "20260402")
 
-# Use head j2cl for testing purposes.
+bazel_dep(name = "jsinterop_generator", version = "20250910")
+bazel_dep(name = "jsinterop_base", version = "1.1.1")
+bazel_dep(name = "bazel_skylib", version = "1.9.0")
+bazel_dep(name = "google_bazel_common", version = "0.0.1")
+bazel_dep(name = "rules_java", version = "8.13.0")
+bazel_dep(name = "rules_license", version = "1.0.0")
+
+# --- BEGIN DEV OVERRIDES ---
+# Use head versions of our project dependencies for testing purposes.
 archive_override(
     module_name = "j2cl",
     strip_prefix = "j2cl-master",
     urls = ["https://github.com/google/j2cl/archive/master.zip"],
 )
 
-bazel_dep(name = "jsinterop_generator", version = "20250910")
-
-# Use head jsinterop-generator for testing purposes.
 archive_override(
     module_name = "jsinterop_generator",
     strip_prefix = "jsinterop-generator-master",
     urls = ["https://github.com/google/jsinterop-generator/archive/master.zip"],
 )
 
-bazel_dep(name = "jsinterop_base", version = "1.1.1")
-
-# Use head jsinterop-base for testing purposes.
 archive_override(
     module_name = "jsinterop_base",
     strip_prefix = "jsinterop-base-master",
     urls = ["https://github.com/google/jsinterop-base/archive/master.zip"],
 )
-
-bazel_dep(name = "bazel_skylib", version = "1.9.0")
-bazel_dep(name = "google_bazel_common", version = "0.0.1")
-bazel_dep(name = "rules_java", version = "8.13.0")
-bazel_dep(name = "rules_license", version = "1.0.0")
+# --- END DEV OVERRIDES ---
 
 # Maven dependencies.
 
