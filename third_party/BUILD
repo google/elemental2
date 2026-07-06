@@ -257,6 +257,11 @@ extern(
 )
 
 extern(
+    name = "webgl2",
+    path = "browser/webgl2.js",
+)
+
+extern(
     name = "webstorage",
     path = "browser/webstorage.js",
 )
