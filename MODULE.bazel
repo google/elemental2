@@ -1,8 +1,8 @@
 module(name = "elemental2")
 
 _J2CL_VERSION = "20260402"
-_JSINTEROP_GENERATOR_VERSION = "20250910"
-_JSINTEROP_BASE_VERSION = "1.1.1"
+_JSINTEROP_GENERATOR_VERSION = "20260701"
+_JSINTEROP_BASE_VERSION = "1.2.0"
 
 bazel_dep(name = "j2cl", version = _J2CL_VERSION)
 bazel_dep(name = "jsinterop_generator", version = _JSINTEROP_GENERATOR_VERSION)
