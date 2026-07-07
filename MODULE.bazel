@@ -38,6 +38,9 @@ archive_override(
 bazel_dep(name = "rules_jvm_external", version = "6.6")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+# TODO(b/532249785): we need to have an empty maven.install() here due to
+#   https://github.com/bazel-contrib/rules_jvm_external/issues/1438
+maven.install()
 maven.artifact(
     artifact = "closure-compiler",
     group = "com.google.javascript",
