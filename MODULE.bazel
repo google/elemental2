@@ -9,7 +9,7 @@ bazel_dep(name = "jsinterop_generator", version = _JSINTEROP_GENERATOR_VERSION)
 bazel_dep(name = "jsinterop_base", version = _JSINTEROP_BASE_VERSION)
 bazel_dep(name = "bazel_skylib", version = "1.9.0")
 bazel_dep(name = "google_bazel_common", version = "0.0.1")
-bazel_dep(name = "rules_java", version = "8.13.0")
+bazel_dep(name = "rules_java", version = "8.16.1")
 bazel_dep(name = "rules_license", version = "1.0.0")
 
 # --- BEGIN DEV OVERRIDES ---
