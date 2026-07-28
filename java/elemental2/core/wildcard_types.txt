@@ -1,6 +1,6 @@
 elemental2.core.JsSet.forEach.callback#0=SUPER
-elemental2.core.JsSet.ForEachCallbackFn.onInvoke.p2#0=EXTENDS
 elemental2.core.JsMap.forEach.callback#0=SUPER
 elemental2.core.JsMap.forEach.callback#1=SUPER
 elemental2.core.ReadonlyMap.forEach.callback#0=SUPER
 elemental2.core.ReadonlyMap.forEach.callback#1=SUPER
+elemental2.core.ReadonlySet.ForEachCallbackFn.onInvoke.p2#0=EXTENDS
