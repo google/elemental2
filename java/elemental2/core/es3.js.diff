@@ -1,12 +1,12 @@
-2322c2322
+2342c2342
 <  * @param {*} pattern
 ---
 >  * @param {string} pattern
-2333c2333
+2353c2353
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
-2341c2341
+2361c2361
 <  * @param {*} str The string to search.
 ---
 >  * @param {string} str The string to search.
