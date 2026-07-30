@@ -22,6 +22,19 @@ extern(
     name = "es6",
 )
 
+# Placeholder genrule for es6_typed_array.js: once it is part of a Closure Compiler release, we
+# should remove this and use the commented-out extern() below, in the same commit that we upgrade
+# to a newer release.
+# TODO(b/540824206): Remove this genrule and uncomment the extern() below.
+genrule(
+    name = "es6_typed_array",
+    outs = ["es6_typed_array.js"],
+    cmd = "touch $@",
+)
+# extern(
+#     name = "es6_typed_array",
+# )
+
 extern(
     name = "es6_collections",
 )
