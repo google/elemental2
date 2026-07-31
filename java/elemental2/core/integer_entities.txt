@@ -20,6 +20,9 @@ elemental2.core.Atomics.wait.index
 elemental2.core.Atomics.waitAsync.index
 elemental2.core.Atomics.wake.index
 elemental2.core.Atomics.xor.index
+elemental2.core.BigInt.asIntN.width
+elemental2.core.BigInt.asUintN.width
+elemental2.core.BigInt.toString.radix
 elemental2.core.BigInt64Array.FromMapFn.onInvoke.index
 elemental2.core.BigInt64Array.with.index
 elemental2.core.BigUint64Array.FromMapFn.onInvoke.index
@@ -65,6 +68,7 @@ elemental2.core.Float64Array.FromMapFn.onInvoke.index
 elemental2.core.Float64Array.constructor.byteOffset
 elemental2.core.Float64Array.constructor.length
 elemental2.core.Float64Array.constructor.length0
+elemental2.core.Function.arity
 elemental2.core.Function.length
 elemental2.core.Global.parseInt
 elemental2.core.Global.parseInt.base
@@ -170,6 +174,9 @@ elemental2.core.JsDate.setUTCMonth.monthValue
 elemental2.core.JsDate.setUTCSeconds.msValue
 elemental2.core.JsDate.setUTCSeconds.secondsValue
 elemental2.core.JsDate.setYear.yearValue
+elemental2.core.JsError.lineNumber
+elemental2.core.JsError.stackTraceLimit
+elemental2.core.JsMap.getSize
 elemental2.core.JsMap.size
 elemental2.core.JsMath.ceil
 elemental2.core.JsMath.clz32
@@ -235,12 +242,15 @@ elemental2.core.ReadonlyArray.slice.end
 elemental2.core.ReadonlyArray.toSpliced.skipCount
 elemental2.core.ReadonlyArray.toSpliced.start
 elemental2.core.ReadonlyArray.with.index
+elemental2.core.ReadonlyMap.getSize
 elemental2.core.RegExpResult.index
 elemental2.core.RegExpResult.length
 elemental2.core.SetLike.getSize
 elemental2.core.SetLike.setSize.size
 elemental2.core.SharedArrayBuffer.byteLength
 elemental2.core.SharedArrayBuffer.constructor.length
+elemental2.core.SharedArrayBuffer.slice.begin
+elemental2.core.SharedArrayBuffer.slice.end
 elemental2.core.TypedArray.BYTES_PER_ELEMENT
 elemental2.core.TypedArray.at.index
 elemental2.core.TypedArray.copyWithin.end
