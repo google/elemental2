@@ -23,6 +23,7 @@ jsinterop_generator(
     srcs = [":externs"],
     # override auto generated js_deps since modified externs cause conflicts
     externs_deps = [],
+    integer_entities_files = ["integer_entities.txt"],
     deps = [
         "//java/elemental2/core",
         "//java/elemental2/promise",
