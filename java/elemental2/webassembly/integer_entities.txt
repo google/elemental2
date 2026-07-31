@@ -14,3 +14,5 @@ elemental2.webassembly.webassembly.Table.grow
 elemental2.webassembly.webassembly.Table.grow.delta
 elemental2.webassembly.webassembly.Table.length
 elemental2.webassembly.webassembly.Table.set.index
+elemental2.webassembly.webassembly.ValueTypeMap.getI32
+elemental2.webassembly.webassembly.ValueTypeMap.setI32.i32
