@@ -335,13 +335,6 @@ extern(
 )
 
 java_library(
-    name = "gwt-array-stamper",
-    srcs = [
-        "@org_gwtproject_gwt//user:super/com/google/gwt/emul/javaemul/internal/ArrayStamper.java",
-    ],
-)
-
-java_library(
     name = "guava",
     exports = ["@google_bazel_common//third_party/java/guava"],
 )

@@ -47,12 +47,3 @@ maven.artifact(
     version = "v20260330",
 )
 use_repo(maven, "maven")
-
-http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-
-http_archive(
-    name = "org_gwtproject_gwt",
-    sha256 = "731879b8e56024a34f36b83655975a474e1ac1dffdfe72724e337976ac0e1749",
-    strip_prefix = "gwt-073679594c6ead7abe501009f8ba31eb390047fc",
-    url = "https://github.com/gwtproject/gwt/archive/073679594c6ead7abe501009f8ba31eb390047fc.zip",
-)

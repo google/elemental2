@@ -60,9 +60,7 @@ jsinterop_generator(
     # override auto generated js_deps since modified externs cause conflicts
     externs_deps = [],
     global_scope_class_name = "Global",
-    gwt_java_deps = [
-        "//third_party:gwt-array-stamper",
-    ],
+    gwt_java_deps = [":gwt-array-stamper"],
     integer_entities_files = ["integer_entities.txt"],
     name_mapping_files = ["name_mappings.txt"],
     wildcard_types_files = ["wildcard_types.txt"],
@@ -72,4 +70,20 @@ jsinterop_generator(
     deps = [
         "//java/elemental2/promise",
     ],
+)
+
+java_library(
+    name = "gwt-array-stamper",
+    srcs = [":ArrayStamper"],
+)
+
+# Stub for GWT's ArrayStamper.java
+genrule(
+    name = "ArrayStamper",
+    outs = ["ArrayStamper.java"],
+    cmd = """echo 'package javaemul.internal;
+    public class ArrayStamper {
+      public static native <T> T[] stampJavaTypeInfo(Object array, T[] referenceType);
+    }' > $@""",
+    visibility = ["//visibility:private"],
 )
