@@ -451,10 +451,10 @@ elemental2.dom.RTCOutboundRtpStreamStats.getFirCount
 elemental2.dom.RTCOutboundRtpStreamStats.getNackCount
 elemental2.dom.RTCOutboundRtpStreamStats.getPliCount
 elemental2.dom.RTCReceivedRtpStreamStats.getFramesDropped
-elemental2.dom.RTCRtpCodecCapability.getChannels
-elemental2.dom.RTCRtpCodecCapability.getClockRate
-elemental2.dom.RTCRtpCodecCapability.setChannels.channels
-elemental2.dom.RTCRtpCodecCapability.setClockRate.clockRate
+elemental2.dom.RTCRtpCodec.getChannels
+elemental2.dom.RTCRtpCodec.getClockRate
+elemental2.dom.RTCRtpCodec.setChannels.channels
+elemental2.dom.RTCRtpCodec.setClockRate.clockRate
 elemental2.dom.RTCRtpStreamStats.getSsrc
 elemental2.dom.RTCSentRtpStreamStats.getBytesSent
 elemental2.dom.RTCSentRtpStreamStats.getPacketsSent

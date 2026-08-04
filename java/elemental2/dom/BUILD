@@ -39,6 +39,8 @@ patch_extern_file(
 # Patch for w3c_rtc.js:
 #   - Remove dependency to w3c_webcrypto.js
 #  TODO(b/288249420): remove when namespaced type definitions are supported.
+#  - Remove dependency on EncodedVideoChunkType
+# TODO(b/540973092): remove when w3c_webcodecs.js is included in elemental2-dom src
 patch_extern_file(
     name = "w3c_rtc_patched",
     src = "//third_party:w3c_rtc.js",
