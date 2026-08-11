@@ -1,0 +1,12 @@
+162c162
+<  * @typedef {!OffscreenCanvasRenderingContext2D|!ImageBitmapRenderingContext|!WebGLRenderingContext|!WebGL2RenderingContext|!GPUCanvasContext}
+---
+>  * @typedef {Object}
+172c172
+< /** @typedef {!CanvasRenderingContext2D|!ImageBitmapRenderingContext|!WebGLRenderingContext|!WebGL2RenderingContext|!GPUCanvasContext} */
+---
+> /** @typedef {Object} */
+1145c1145
+< /** @type {!PredefinedColorSpace|undefined} */
+---
+> /** @type {string|undefined} */
