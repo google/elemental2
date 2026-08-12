@@ -9,9 +9,7 @@ load("@jsinterop_generator//:jsinterop_generator.bzl", "jsinterop_generator")
 
 package(
     default_applicable_licenses = [":license"],
-    default_visibility = [
-        "//visibility:public",
-    ],
+    default_visibility = ["//visibility:public"],
     licenses = ["notice"],
 )
 
