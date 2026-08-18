@@ -53,8 +53,8 @@ elemental2.dom.CSSRule.UNKNOWN_RULE
 elemental2.dom.CSSRule.type
 elemental2.dom.CSSRuleList.length
 elemental2.dom.CSSRuleList.item.index
-elemental2.dom.CSSStyleDeclaration.length
-elemental2.dom.CSSStyleDeclaration.item.index
+elemental2.dom.CSSStyleDeclarationBase.length
+elemental2.dom.CSSStyleDeclarationBase.item.index
 elemental2.dom.CSSStyleSheet.deleteRule.index
 elemental2.dom.CSSStyleSheet.insertRule
 elemental2.dom.CSSStyleSheet.insertRule.index
