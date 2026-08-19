@@ -69,7 +69,6 @@ public class BuiltInClosureTypeCleaner implements ModelVisitor {
   private static final ImmutableSet<String> TYPED_ARRAY_TYPES =
       ImmutableSet.of(
           "ArrayBufferView",
-          "TypedArray",
           "Int8Array",
           "Uint8Array",
           "Uint8ClampedArray",
