@@ -6,7 +6,7 @@
 < /** @typedef {!CanvasRenderingContext2D|!ImageBitmapRenderingContext|!WebGLRenderingContext|!WebGL2RenderingContext|!GPUCanvasContext} */
 ---
 > /** @typedef {Object} */
-1145c1145
+1138c1138
 < /** @type {!PredefinedColorSpace|undefined} */
 ---
 > /** @type {string|undefined} */

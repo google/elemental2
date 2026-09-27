@@ -44,6 +44,6 @@ maven.install()
 maven.artifact(
     artifact = "closure-compiler",
     group = "com.google.javascript",
-    version = "v20260330",
+    version = "v20260913",
 )
 use_repo(maven, "maven")

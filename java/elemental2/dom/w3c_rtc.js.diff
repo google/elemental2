@@ -1,4 +1,8 @@
-3589c3589
+720c720
+<  * @const {!EncodedVideoChunkType}
+---
+>  * @const {string}
+3567c3567
 <  * @param {!webCrypto.AlgorithmIdentifier|!RTCCertificateExpiration} keygenAlgorithm
 ---
 >  * @param {*} keygenAlgorithm
