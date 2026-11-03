@@ -1,3 +1,4 @@
+elemental2.webassembly.webassembly.Exception.getArg.index
 elemental2.webassembly.webassembly.MemoryDescriptor.getInitial
 elemental2.webassembly.webassembly.MemoryDescriptor.getMaximum
 elemental2.webassembly.webassembly.MemoryDescriptor.setInitial.initial

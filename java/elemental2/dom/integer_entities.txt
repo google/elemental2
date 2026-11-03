@@ -9,6 +9,7 @@ elemental2.dom.ByteLengthQueuingStrategy.SizeChunkType.setByteLength.byteLength
 elemental2.dom.CloseEventInit.getCode
 elemental2.dom.CloseEventInit.setCode.code
 elemental2.dom.CloseEvent.code
+elemental2.dom.CSSKeyframesRule.length
 elemental2.dom.CSSMediaRule.deleteRule.index
 elemental2.dom.CSSMediaRule.insertRule.index
 elemental2.dom.CSSPrimitiveValue.CSS_UNKNOWN
@@ -44,6 +45,7 @@ elemental2.dom.CSSRule.FONT_FEATURE_VALUES_RULE
 elemental2.dom.CSSRule.IMPORT_RULE
 elemental2.dom.CSSRule.KEYFRAME_RULE
 elemental2.dom.CSSRule.KEYFRAMES_RULE
+elemental2.dom.CSSRule.MARGIN_RULE
 elemental2.dom.CSSRule.MEDIA_RULE
 elemental2.dom.CSSRule.NAMESPACE_RULE
 elemental2.dom.CSSRule.PAGE_RULE
@@ -146,6 +148,7 @@ elemental2.dom.DOMException.VALIDATION_ERR
 elemental2.dom.DOMException.WRONG_DOCUMENT_ERR
 elemental2.dom.DOMStringList.length
 elemental2.dom.DOMStringList.item.index
+elemental2.dom.DOMTokenList.ForEachCallbackFn.onInvoke.p1
 elemental2.dom.DOMTokenList.length
 elemental2.dom.DOMTokenList.item.index
 elemental2.dom.DOMImplementationList.length
@@ -183,10 +186,14 @@ elemental2.dom.FileReader.readyState
 elemental2.dom.FileReader.DONE
 elemental2.dom.FileReader.EMPTY
 elemental2.dom.FileReader.LOADING
+elemental2.dom.FontFaceSet.getSize
+elemental2.dom.FontFaceSet.setSize.size
 elemental2.dom.Gamepad.index
 elemental2.dom.Geolocation.clearWatch.watchId
 elemental2.dom.Geolocation.watchPosition
 elemental2.dom.Highlight.priority
+elemental2.dom.HighlightRegistry.getSize
+elemental2.dom.HighlightRegistry.setSize.size
 elemental2.dom.History.go.delta
 elemental2.dom.History.length
 elemental2.dom.HTMLAnchorElement.tabIndex
@@ -209,7 +216,9 @@ elemental2.dom.HTMLImageElement.naturalHeight
 elemental2.dom.HTMLImageElement.naturalWidth
 elemental2.dom.HTMLImageElement.vspace
 elemental2.dom.HTMLImageElement.width
+elemental2.dom.HTMLInputElement.height
 elemental2.dom.HTMLInputElement.maxLength
+elemental2.dom.HTMLInputElement.minLength
 elemental2.dom.HTMLInputElement.selectionEnd
 elemental2.dom.HTMLInputElement.selectionStart
 elemental2.dom.HTMLInputElement.setRangeText.end
@@ -220,6 +229,7 @@ elemental2.dom.HTMLInputElement.size
 elemental2.dom.HTMLInputElement.stepDown.n
 elemental2.dom.HTMLInputElement.stepUp.n
 elemental2.dom.HTMLInputElement.tabIndex
+elemental2.dom.HTMLInputElement.width
 elemental2.dom.HTMLLIElement.value
 elemental2.dom.HTMLMediaElement.NETWORK_EMPTY
 elemental2.dom.HTMLMediaElement.NETWORK_IDLE

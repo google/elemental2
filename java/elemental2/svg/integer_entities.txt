@@ -38,6 +38,7 @@ elemental2.svg.SVGLengthList.insertItemBefore.index
 elemental2.svg.SVGLengthList.numberOfItems
 elemental2.svg.SVGLengthList.removeItem.index
 elemental2.svg.SVGLengthList.replaceItem.index
+elemental2.svg.SVGMarkerElement.SVG_MARKER_ORIENT_AUTO_START_REVERSE
 elemental2.svg.SVGNumberList.getItem.index
 elemental2.svg.SVGNumberList.insertItemBefore.index
 elemental2.svg.SVGNumberList.numberOfItems
