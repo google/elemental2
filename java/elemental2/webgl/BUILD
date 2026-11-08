@@ -13,7 +13,7 @@ package(
 
 filegroup(
     name = "externs",
-    srcs = ["//third_party:webgl.js"],
+    srcs = ["//third_party:webgl.js", "//third_party:webgl2.js"],
 )
 
 jsinterop_generator(
