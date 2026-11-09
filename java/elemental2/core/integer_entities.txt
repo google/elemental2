@@ -3,8 +3,12 @@
 elemental2.core.Arguments.length
 elemental2.core.ArrayBuffer.byteLength
 elemental2.core.ArrayBuffer.constructor.length
+elemental2.core.ArrayBuffer.maxByteLength
+elemental2.core.ArrayBuffer.resize.newByteLength
 elemental2.core.ArrayBuffer.slice.begin
 elemental2.core.ArrayBuffer.slice.end
+elemental2.core.ArrayBuffer.transfer.newByteLength
+elemental2.core.ArrayBuffer.transferToFixedLength.newByteLength
 elemental2.core.ArrayBufferView.byteLength
 elemental2.core.ArrayBufferView.byteOffset
 elemental2.core.Atomics.add.index
@@ -511,6 +515,8 @@ elemental2.core.SetLike.getSize
 elemental2.core.SetLike.setSize.size
 elemental2.core.SharedArrayBuffer.byteLength
 elemental2.core.SharedArrayBuffer.constructor.length
+elemental2.core.SharedArrayBuffer.grow.newByteLength
+elemental2.core.SharedArrayBuffer.maxByteLength
 elemental2.core.SharedArrayBuffer.slice.begin
 elemental2.core.SharedArrayBuffer.slice.end
 elemental2.core.Uint16Array.BYTES_PER_ELEMENT
