@@ -61,6 +61,11 @@ extern(
 )
 
 extern(
+    name = "w3c_aria_mixin.js",
+    path = "browser/w3c_aria_mixin.js",
+)
+
+extern(
     name = "w3c_dom1",
     path = "browser/w3c_dom1.js",
 )
