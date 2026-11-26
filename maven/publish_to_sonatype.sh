@@ -21,7 +21,7 @@ set -euo pipefail
 
 source "$(dirname "$0")/deploy.sh"
 
-readonly ELEMENTAL_ARTIFACTS="promise core dom indexeddb media svg webgl webstorage webassembly"
+readonly ELEMENTAL_ARTIFACTS="promise core dom indexeddb media svg webcrypto webgl webstorage webassembly"
 readonly LICENSE_HEADER_FILE="${BAZEL_ROOT}/maven/license.txt"
 readonly COMMON_DEPENDENCIES_FILE="${BAZEL_ROOT}/maven/common_dependencies.xml"
 
